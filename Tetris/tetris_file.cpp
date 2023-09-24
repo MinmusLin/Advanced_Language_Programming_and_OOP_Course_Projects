@@ -3,7 +3,7 @@
  * File Name:     tetris_file.cpp
  * File Function: 历史最高分记录函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/25
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -56,7 +56,7 @@ static void readArrayFromFile(const char* filename, T* array, size_t size)
 void updateHighestScore(int score)
 {
     int highestScore[1] = { score };
-    saveArrayToFile("data/highest_score.dat", highestScore, 0);
+    saveArrayToFile("data/highest_score.dat", highestScore, 1);
 }
 
 /*
@@ -68,6 +68,6 @@ void updateHighestScore(int score)
 int readHighestScore(void)
 {
     int highestScore[1];
-    readArrayFromFile("data/highest_score.dat", highestScore, 0);
+    readArrayFromFile("data/highest_score.dat", highestScore, 1);
     return highestScore[0];
 }

@@ -3,7 +3,7 @@
  * File Name:     tetris.h
  * File Function: Control类、历史最高分记录函数、图形化界面函数、主体函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/25
  ****************************************************************/
 
 #pragma once
