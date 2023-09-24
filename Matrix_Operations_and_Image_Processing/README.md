@@ -159,7 +159,7 @@ int calculate_Otsu_threshold(Mat grayImage, int height, int width)
 
 ## 库依赖
 
-* OpenCV
+* `OpenCV`
 
   * `配置属性` - `VC++ 目录` - `常规` - `包含目录`
 
@@ -178,6 +178,8 @@ int calculate_Otsu_threshold(Mat grayImage, int height, int width)
     * `...\opencv\build\x64\vc15\lib\opencv_world341d.lib`
 
 ## 相关资料
+
+* [OpenCV Documentation](https://docs.opencv.org)
 
 * [Convolution Visualizer](https://ezyang.github.io/convolution-visualizer/index.html)
 这个交互式可视化演示了不同的卷积参数如何影响输入、权重和输出矩阵之间的形状和数据依赖关系。当鼠标悬停在输入/输出上时，将突出显示相应的输出/输入；当鼠标悬停在权重上时，将突出显示用于计算输出的相应输入。

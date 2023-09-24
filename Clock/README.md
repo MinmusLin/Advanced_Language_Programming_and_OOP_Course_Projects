@@ -179,7 +179,11 @@ delete backBuffer;
 
 ## 库依赖
 
-* EasyX
+* `EasyX`
+
+## 相关资料
+
+* [EasyX Documentation](https://docs.easyx.cn/)
 
 ## 文档更新日期
 
