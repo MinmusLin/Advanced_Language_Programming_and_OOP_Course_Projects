@@ -27,7 +27,7 @@ int main()
 
     /* Play color linez game */
     while (1) {
-        /* Initialize GAME and CONSOLE_GRAPHICS_INFO class */
+        /* Initialize game and CGI objects */
         class GAME game;
         CONSOLE_GRAPHICS_INFO CGI;
 

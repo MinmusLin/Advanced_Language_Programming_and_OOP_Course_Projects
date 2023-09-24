@@ -160,6 +160,6 @@ int main()
     }
     cout << endl;
 
-    /* Return 0 */
+    /* Program ends */
     return 0;
 }

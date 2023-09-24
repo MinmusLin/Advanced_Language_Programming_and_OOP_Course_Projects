@@ -24,7 +24,7 @@ int main()
 
     /* Play 2048 game */
     while (1) {
-        /* Initialize GAME and CONSOLE_GRAPHICS_INFO class */
+        /* Initialize game and CGI objects */
         int row, col;
         menu(row, col);
         class GAME game = { row, col };

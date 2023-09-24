@@ -35,5 +35,6 @@ int main()
     /* Print heart shape */
     print_heart_shape();
 
+    /* Program ends */
     return 0;
 }

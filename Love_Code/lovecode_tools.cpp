@@ -74,7 +74,7 @@ void print_elapsed_time(struct system_time& current_time, int bg_color, int fg_c
     current_time.minutes = int((t % 3600) / 60);
     current_time.seconds = int(t % 60);
 
-    /* Initialize pixel ASCIIs class */
+    /* Initialize p_ASCIIs object */
     class pixel_ASCIIs* p_ASCIIs = new(nothrow) class pixel_ASCIIs(pixel_ASCII);
     if (p_ASCIIs == NULL)
         exit(-1);
@@ -131,14 +131,14 @@ void print_elapsed_time(struct system_time& current_time, int bg_color, int fg_c
  */
 void print_heart_shape(void)
 {
-    /* Initialize pixel characters class and print pixel characters */
+    /* Initialize characters object and print pixel characters */
     class pixel_characters characters[13] = { pixel_characters(pixel_ling), pixel_characters(pixel_yang),pixel_characters(pixel_yi_first), pixel_characters(pixel_zhi), pixel_characters(pixel_pa), pixel_characters(pixel_qia), pixel_characters(pixel_gou), pixel_characters(pixel_yi_third), pixel_characters(pixel_jing), pixel_characters(pixel_tian), pixel_characters(pixel_shi), pixel_characters(pixel_fen), pixel_characters(pixel_miao) };
     for (int i = 0; i < 9; i++)
         characters[i].print_character(LEFT_INDENT + 16 * i, ORIGIN_OF_ORDINATE * 2 - LINE_SPACE, COLOR_HWHITE, COLOR_HWHITE);
     for (int i = 0; i < 4; i++)
         characters[i + 9].print_character(LEFT_INDENT - LEFT_SHIFT_DISTANCE + 8 * (5 + 4 * i), ORIGIN_OF_ORDINATE * 2 + 16, COLOR_HWHITE, COLOR_HWHITE);
 
-    /* Initialize system time class and print current time */
+    /* Initialize current_time object and print current time */
     struct system_time current_time;
     print_elapsed_time(current_time);
 
@@ -150,7 +150,7 @@ void print_heart_shape(void)
 
         /* Print heart shape once */
         for (int j = 0; j < CYCLE_INDEX; j++) {
-            /* Initialize point set class */
+            /* Initialize point_set objects */
             class point_set* p_expend = new(nothrow) class point_set[MAGNIFICATION * POINT_SET_DENSITY];
             if (p_expend == NULL)
                 exit(-1);
