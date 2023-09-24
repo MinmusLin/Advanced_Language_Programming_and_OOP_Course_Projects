@@ -207,59 +207,59 @@ public:
 #### 私有数据成员
 
 ```cpp
-SnakeCategory snakeCategory; //蛇的类别标识
+SnakeCategory snakeCategory; // 蛇的类别标识
 ```
 
 ```cpp
-GridCondition** map; //游戏地图的首地址
+GridCondition** map; // 游戏地图的首地址
 ```
 
 ```cpp
-struct SnakeSegment { //链表形式表示蛇的身体
-    COORD coordinate; //当前身体段坐标
-    Direction direction; //当前身体段方向
-    SnakeSegment* nextSegment; //下一身体段地址
+struct SnakeSegment { // 链表形式表示蛇的身体
+    COORD coordinate; // 当前身体段坐标
+    Direction direction; // 当前身体段方向
+    SnakeSegment* nextSegment; // 下一身体段地址
 };
 ```
 
 ```cpp
-SnakeSegment* head; //指向蛇头
+SnakeSegment* head; // 指向蛇头
 ```
 
 ```cpp
-SnakeSegment* tail; //指向蛇尾
+SnakeSegment* tail; // 指向蛇尾
 ```
 
 ```cpp
-int* pGoodFood; //游戏地图中“食物”数量的指针
+int* pGoodFood; // 游戏地图中“食物”数量的指针
 ```
 
 ```cpp
-int* pGreatFood; //游戏地图中“美食”数量的指针
+int* pGreatFood; // 游戏地图中“美食”数量的指针
 ```
 
 ```cpp
-int* pBadFood; //游戏地图中“恶果”数量的指针
+int* pBadFood; // 游戏地图中“恶果”数量的指针
 ```
 
 ```cpp
-int* pBoomFood; //游戏地图中“炸弹”数量的指针
+int* pBoomFood; // 游戏地图中“炸弹”数量的指针
 ```
 
 ```cpp
-int* pObstacle; //游戏地图中“障碍”数量的指针
+int* pObstacle; // 游戏地图中“障碍”数量的指针
 ```
 
 ```cpp
-int score = 0; //蛇的得分
+int score = 0; // 蛇的得分
 ```
 
 ```cpp
-int length = 1; //蛇的长度
+int length = 1; // 蛇的长度
 ```
 
 ```cpp
-int death = 0; //蛇的死亡次数
+int death = 0; // 蛇的死亡次数
 ```
 
 #### 析构函数
@@ -394,45 +394,45 @@ public:
 #### 私有数据成员
 
 ```cpp
-Mode mode; //游戏模式
+Mode mode; // 游戏模式
 ```
 
 ```cpp
-DWORD startTickCount; //游戏开始时的系统时间计数。
+DWORD startTickCount; // 游戏开始时的系统时间计数。
 ```
 
 ```cpp
-GridCondition** map; //游戏地图的首地址
+GridCondition** map; // 游戏地图的首地址
 ```
 
 ```cpp
-int* pGoodFood; //游戏地图中“食物”数量的指针
+int* pGoodFood; // 游戏地图中“食物”数量的指针
 ```
 
 ```cpp
-int* pGreatFood; //游戏地图中“美食”数量的指针
+int* pGreatFood; // 游戏地图中“美食”数量的指针
 ```
 
 ```cpp
-int* pBadFood; //游戏地图中“恶果”数量的指针
+int* pBadFood; // 游戏地图中“恶果”数量的指针
 ```
 
 ```cpp
-int* pBoomFood; //游戏地图中“炸弹”数量的指针
+int* pBoomFood; // 游戏地图中“炸弹”数量的指针
 ```
 
 ```cpp
-int* pObstacle; //游戏地图中“障碍”数量的指针
+int* pObstacle; // 游戏地图中“障碍”数量的指针
 ```
 
 #### 公有数据成员
 
 ```cpp
-Snake Snake_A; //Snake对象，代表玩家或AI控制的蛇
+Snake Snake_A; // Snake对象，代表玩家或AI控制的蛇
 ```
 
 ```cpp
-Snake Snake_B; //Snake对象，代表玩家或AI控制的蛇
+Snake Snake_B; // Snake对象，代表玩家或AI控制的蛇
 ```
 
 #### 构造函数
@@ -1105,4 +1105,4 @@ void resetHighestScore(void)
 
 ## 文档更新日期
 
-2023年9月24日
+2023年9月25日

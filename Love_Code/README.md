@@ -59,11 +59,11 @@ public:
 #### 私有数据成员
 
 ```cpp
-struct point points[MAXIMUN_OF_POINTS]; //点的位置信息
+struct point points[MAXIMUN_OF_POINTS]; // 点的位置信息
 ```
 
 ```cpp
-int number_of_points; //点的数量信息
+int number_of_points; // 点的数量信息
 ```
 
 #### 公有成员函数
@@ -99,7 +99,7 @@ public:
 #### 私有数据成员
 
 ```cpp
-int pixel_matrix[16][16]; //基于像素的字符渲染和显示矩阵
+int pixel_matrix[16][16]; // 基于像素的字符渲染和显示矩阵
 ```
 
 #### 构造函数
@@ -137,7 +137,7 @@ public:
 #### 私有数据成员
 
 ```cpp
-int pixel_matrix[95][16][8]; //基于像素的ASCII字符渲染和显示矩阵
+int pixel_matrix[95][16][8]; // 基于像素的ASCII字符渲染和显示矩阵
 ```
 
 #### 构造函数
@@ -166,4 +166,4 @@ void print_character(int x, int y, int bg_color, int fg_color);
 
 ## 文档更新日期
 
-2023年9月24日
+2023年9月25日

@@ -40,13 +40,13 @@ double calculate_line_SDF(int x, int y, int x1, int y1, int x2, int y2, int d)
     double projection = (px * dx + py * dy) / length;
 
     /* Calculate the signed distance field of a straight line */
-    if (projection < 0) { //Return the distance from the point to the starting point if the projection is before the endpoints
+    if (projection < 0) { // Return the distance from the point to the starting point if the projection is before the endpoints
         return sqrt(px * px + py * py) - d;
     }
-    else if (projection > length) { //Return the distance from the point to the ending point if the projection is after the endpoints
+    else if (projection > length) { // Return the distance from the point to the ending point if the projection is after the endpoints
         return sqrt(qx * qx + qy * qy) - d;
     }
-    else { //Return the perpendicular distance from a point to a line segment
+    else { // Return the perpendicular distance from a point to a line segment
         return fabs(px * dy - py * dx) / length - d;
     }
 }
@@ -187,4 +187,4 @@ delete backBuffer;
 
 ## 文档更新日期
 
-2023年9月24日
+2023年9月25日

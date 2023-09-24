@@ -78,19 +78,19 @@ public:
 #### 私有数据成员
 
 ```cpp
-int matrix[row + 2][col + 2] = { 0 }; //游戏矩阵的二维数组
+int matrix[row + 2][col + 2] = { 0 }; // 游戏矩阵的二维数组
 ```
 
 ```cpp
-int score = 0; //游戏得分
+int score = 0; // 游戏得分
 ```
 
 ```cpp
-int next_generate[3] = { 0 }; //下一轮生成的球的种类
+int next_generate[3] = { 0 }; // 下一轮生成的球的种类
 ```
 
 ```cpp
-struct statistic data[7]; //不同球的统计数据
+struct statistic data[7]; // 不同球的统计数据
 ```
 
 #### 构造函数
@@ -417,4 +417,4 @@ int BFS(int grid[][col], int startRow, int startCol, int targetRow, int targetCo
 
 ## 文档更新日期
 
-2023年9月24日
+2023年9月25日

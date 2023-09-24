@@ -155,31 +155,31 @@ public:
 #### 私有数据成员
 
 ```cpp
-int* data = NULL; //数据首地址
+int* data = NULL; // 数据首地址
 ```
 
 ```cpp
-int shape[HIGHEST_DIMENSION] = { 0 }; //维度大小
+int shape[HIGHEST_DIMENSION] = { 0 }; // 维度大小
 ```
 
 ```cpp
-int axisNum = 0; //维数
+int axisNum = 0; // 维数
 ```
 
 ```cpp
-int nowAxis = 0; //当前维数
+int nowAxis = 0; // 当前维数
 ```
 
 ```cpp
-int index = 0; //索引
+int index = 0; // 索引
 ```
 
 ```cpp
-int len = 1; //数据个数
+int len = 1; // 数据个数
 ```
 
 ```cpp
-bool check = true; //是否在析构函数中释放内存
+bool check = true; // 是否在析构函数中释放内存
 ```
 
 #### 构造函数
@@ -558,4 +558,4 @@ PlaySoundA(filename, NULL, SND_FILENAME | SND_ASYNC);
 
 ## 文档更新日期
 
-2023年9月24日
+2023年9月25日
