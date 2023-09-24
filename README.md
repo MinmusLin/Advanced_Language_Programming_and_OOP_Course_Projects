@@ -4,6 +4,10 @@
 
 My_Cpp_Projects
 
+## 解决方案简介
+
+`My_Cpp_Projects` is a collection of my C++ projects.
+
 ## 解决方案项目组成
 
 * [2048 Game](2048_Game/README.md)
