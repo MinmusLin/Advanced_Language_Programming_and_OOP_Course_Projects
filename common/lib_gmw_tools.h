@@ -51,17 +51,17 @@ typedef struct _status_line_info_ {
 /* Define a structure describing the game main frame area */
 typedef struct _console_frame_info_ {
     /* The shapes of the game main frames */
-    char top_left[CFI_LEN]; //"╔"
-    char lower_left[CFI_LEN]; //"╚"
-    char top_right[CFI_LEN]; //"╗"
-    char lower_right[CFI_LEN]; //"╝"
-    char h_normal[CFI_LEN]; //"═"
-    char v_normal[CFI_LEN]; //"║"
-    char h_top_separator[CFI_LEN]; //"╤"
-    char h_lower_separator[CFI_LEN]; //"╧"
-    char v_left_separator[CFI_LEN]; //"╟"
-    char v_right_separator[CFI_LEN]; //"╢"
-    char mid_separator[CFI_LEN]; //"┼"
+    char top_left[CFI_LEN]; // "╔"
+    char lower_left[CFI_LEN]; // "╚"
+    char top_right[CFI_LEN]; // "╗"
+    char lower_right[CFI_LEN]; // "╝"
+    char h_normal[CFI_LEN]; // "═"
+    char v_normal[CFI_LEN]; // "║"
+    char h_top_separator[CFI_LEN]; // "╤"
+    char h_lower_separator[CFI_LEN]; // "╧"
+    char v_left_separator[CFI_LEN]; // "╟"
+    char v_right_separator[CFI_LEN]; // "╢"
+    char mid_separator[CFI_LEN]; // "┼"
 
     /* Fill bytes */
     char pad1[3];
@@ -98,12 +98,12 @@ typedef struct _console_frame_info_ {
 /* Define a structure describing color block information */
 typedef struct _console_block_info_ {
     /* The shapes of the color block frames */
-    char top_left[CBI_LEN]; //"╔"
-    char lower_left[CBI_LEN]; //"╚"
-    char top_right[CBI_LEN]; //"╗"
-    char lower_right[CBI_LEN]; //"╝"
-    char h_normal[CBI_LEN]; //"═"
-    char v_normal[CBI_LEN]; //"║"
+    char top_left[CBI_LEN]; // "╔"
+    char lower_left[CBI_LEN]; // "╚"
+    char top_right[CBI_LEN]; // "╗"
+    char lower_right[CBI_LEN]; // "╝"
+    char h_normal[CBI_LEN]; // "═"
+    char v_normal[CBI_LEN]; // "║"
 
     /* Whether border is needed */
     bool block_border;
@@ -127,10 +127,10 @@ typedef struct _block_display_info_ {
 //Usage example:
 /*
     const BLOCK_DISPLAY_INFO bdi[] = {
-        {BDI_VALUE_BLANK,-1,-1,NULL}, //如果为BDI_VALUE_BLANK，则不显示内容
-        {1,COLOR_HYELLOW,COLOR_HRED,"★"}, //如果二维数组中的值为1，则显示★
-        {2,COLOR_HYELLOW,COLOR_HRED,-1,NULL}, //NULL表示直接显示二维数组中的值2
-        {BDI_VALUE_END,-1,-1,NULL} //如果为BDI_VALUE_END，则结束
+        {BDI_VALUE_BLANK,-1,-1,NULL}, // 如果为BDI_VALUE_BLANK，则不显示内容
+        {1,COLOR_HYELLOW,COLOR_HRED,"★"}, // 如果二维数组中的值为1，则显示★
+        {2,COLOR_HYELLOW,COLOR_HRED,-1,NULL}, // NULL表示直接显示二维数组中的值2
+        {BDI_VALUE_END,-1,-1,NULL} // 如果为BDI_VALUE_END，则结束
     };
 */
 
@@ -156,16 +156,16 @@ typedef struct _console_font_type_ {
 /* Define a structure describing all the information of the entire window */
 typedef struct _console_graphics_info_ {
     /* Main frame information */
-    CONSOLE_FRAME_INFO CFI; //136 Bytes
+    CONSOLE_FRAME_INFO CFI; // 136 Bytes
 
     /* Color block information */
-    CONSOLE_BLOCK_INFO CBI; //84 Bytes
+    CONSOLE_BLOCK_INFO CBI; // 84 Bytes
 
     /* Status line information */
-    STATUS_LINE_INFO SLI; //120 Bytes
+    STATUS_LINE_INFO SLI; // 120 Bytes
 
     /* Font information */
-    CONSOLE_FONT_TYPE CFT; //20 Bytes
+    CONSOLE_FONT_TYPE CFT; // 20 Bytes
 
     /* A flag indicating whether initialization has been performed. If initialized, set it to 99999 */
     int inited;

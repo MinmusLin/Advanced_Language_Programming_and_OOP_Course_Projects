@@ -97,8 +97,8 @@ void console_eliminate(int divider_or_not)
                         break;
                     default:
                         break;
-                } //end of switch (maction)
-            } //end of if (ret == CCT_MOUSE_EVENT)
+                } // end of switch (maction)
+            } // end of if (ret == CCT_MOUSE_EVENT)
             else if (ret == CCT_KEYBOARD_EVENT) {
                 switch (keycode1) {
                     case '\r':
@@ -116,12 +116,12 @@ void console_eliminate(int divider_or_not)
                         break;
                     default:
                         break;
-                } //end of switch (keycode1)
-            } //end of else if (ret == CCT_KEYBOARD_EVENT)
-        } //end of while (loop2)
+                } // end of switch (keycode1)
+            } // end of else if (ret == CCT_KEYBOARD_EVENT)
+        } // end of while (loop2)
         cct_disable_mouse();
         cct_setcursor(CURSOR_VISIBLE_NORMAL);
-    } //end of while (loop1)
+    } // end of while (loop1)
 }
 
 /*
@@ -205,8 +205,8 @@ void console_fullVersion(int divider_or_not)
                                 break;
                             default:
                                 break;
-                        } //end of switch (maction)
-                    } //end of if (ret == CCT_MOUSE_EVENT)
+                        } // end of switch (maction)
+                    } // end of if (ret == CCT_MOUSE_EVENT)
                     else if (ret == CCT_KEYBOARD_EVENT) {
                         switch (keycode1) {
                             case '\r':
@@ -228,14 +228,14 @@ void console_fullVersion(int divider_or_not)
                                 loop4 = 0;
                             default:
                                 break;
-                        } //end of switch (keycode1)
-                    } //end of else if (ret == CCT_KEYBOARD_EVENT)
-                } //end of while (loop2)
+                        } // end of switch (keycode1)
+                    } // end of else if (ret == CCT_KEYBOARD_EVENT)
+                } // end of while (loop2)
                 cct_disable_mouse();
                 cct_setcursor(CURSOR_VISIBLE_NORMAL);
-            } //end of while (loop1)
-        } //end of while (1)
-    } //end of while (loop)
+            } // end of while (loop1)
+        } // end of while (1)
+    } // end of while (loop)
 }
 
 /*
@@ -274,7 +274,7 @@ void print_frame(int row, int column, int divider_or_not)
                     Sleep(SLEEP_TIME_FRAME);
             }
             cct_showstr((divider_or_not ? 8 * column + 2 : 6 * column + 4), 3 + j + (divider_or_not + 3) * i, "║", COLOR_HWHITE, COLOR_BLACK, 1, -1);
-        } //end of for
+        } // end of for
 
         /* Print the delimiter row */
         if (divider_or_not && i != row - 1) {
@@ -285,8 +285,8 @@ void print_frame(int row, int column, int divider_or_not)
                     Sleep(SLEEP_TIME_FRAME);
             }
             cct_showstr((divider_or_not ? 8 * column + 2 : 6 * column + 4), 4 * i + 6, "╣", COLOR_HWHITE, COLOR_BLACK, 1, -1);
-        } //end of if (divider_or_not)
-    } //end of for
+        } // end of if (divider_or_not)
+    } // end of for
 
     /* Print the last row */
     cct_showstr(2, (divider_or_not + 3) * (row - 1) + 6, "╚", COLOR_HWHITE, COLOR_BLACK, 1, -1);
@@ -442,8 +442,8 @@ int mouse_and_keyboard_operations(int matrix[][10], int row, int column, int& X,
                     break;
                 default:
                     break;
-            } //end of switch (maction)
-        } //end of if (ret == CCT_MOUSE_EVENT)
+            } // end of switch (maction)
+        } // end of if (ret == CCT_MOUSE_EVENT)
         else if (ret == CCT_KEYBOARD_EVENT) {
             if (keycode1 == 224 && (keycode2 == KB_ARROW_DOWN || keycode2 == KB_ARROW_LEFT || keycode2 == KB_ARROW_RIGHT || keycode2 == KB_ARROW_UP))
                 print_current(matrix, row, column, X, Y, select_r, select_c, "键盘", divider_or_not);
@@ -454,8 +454,8 @@ int mouse_and_keyboard_operations(int matrix[][10], int row, int column, int& X,
                     return print_selected_or_exit(row, column, select_r, select_c, divider_or_not, CONTINUE_GAME);
                 default:
                     break;
-            } //end of switch (keycode1)
-        } //end of else if (ret == CCT_KEYBOARD_EVENT)
+            } // end of switch (keycode1)
+        } // end of else if (ret == CCT_KEYBOARD_EVENT)
     }
 }
 
@@ -494,28 +494,28 @@ int judgment_legality(int matrix[][10], int row, int column, int X, int Y, int& 
     int _select_r = 0, _select_c = 0;
 
     /* Check the legality of the coordinate position */
-    if (divider_or_not) { //With dividing lines
-        get_row_column(row, column, X, Y, _select_r, _select_c, divider_or_not); //Get the old rows and columns
-        if (X >= 4 && Y >= 3 && X <= 3 + 6 * column + 2 * (column - 1) && Y <= 2 + 3 * row + (row - 1) && (X - 2) % 8 != 0 && (X - 2) % 8 != 1 && (Y - 2) % 4 != 0 && matrix[_select_r][_select_c] != 0) { //Coordinate position is legal
+    if (divider_or_not) { // With dividing lines
+        get_row_column(row, column, X, Y, _select_r, _select_c, divider_or_not); // Get the old rows and columns
+        if (X >= 4 && Y >= 3 && X <= 3 + 6 * column + 2 * (column - 1) && Y <= 2 + 3 * row + (row - 1) && (X - 2) % 8 != 0 && (X - 2) % 8 != 1 && (Y - 2) % 4 != 0 && matrix[_select_r][_select_c] != 0) { // Coordinate position is legal
+            if (trans_or_not)
+                get_row_column(row, column, X, Y, select_r, select_c, divider_or_not); // Get the new rows and columns
+            return 1;
+        }
+        else { // Coordinate position is illegal
+            return 0;
+        }
+    } // end of if (divider_or_not)
+    else { // Without dividing lines
+        get_row_column(row, column, X, Y, _select_r, _select_c, divider_or_not); // Get the old rows and columns
+        if (X >= 4 && Y >= 3 && X <= 3 + 6 * column && Y <= 2 + 3 * row && matrix[_select_r][_select_c] != 0) { // Coordinate position is legal
             if (trans_or_not)
                 get_row_column(row, column, X, Y, select_r, select_c, divider_or_not); //Get the new rows and columns
             return 1;
         }
-        else { //Coordinate position is illegal
+        else { // Coordinate position is illegal
             return 0;
         }
-    } //end of if (divider_or_not)
-    else { //Without dividing lines
-        get_row_column(row, column, X, Y, _select_r, _select_c, divider_or_not); //Get the old rows and columns
-        if (X >= 4 && Y >= 3 && X <= 3 + 6 * column && Y <= 2 + 3 * row && matrix[_select_r][_select_c] != 0) { //Coordinate position is legal
-            if (trans_or_not)
-                get_row_column(row, column, X, Y, select_r, select_c, divider_or_not); //Get the new rows and columns
-            return 1;
-        }
-        else { //Coordinate position is illegal
-            return 0;
-        }
-    } //end of else
+    } // end of else
 }
 
 /*
@@ -536,11 +536,11 @@ void print_current(int matrix[][10], int row, int column, int X, int Y, int sele
 {
     cct_showstr(0, 3 * row + 4 + divider_or_not * (row - 1), "[当前", COLOR_BLACK, COLOR_WHITE, 1 - 1);
     cout << prompt << "] ";
-    if (judgment_legality(matrix, row, column, X, Y, select_r, select_c, divider_or_not, TRANSFORMATION)) { //Coordinate position is legal
+    if (judgment_legality(matrix, row, column, X, Y, select_r, select_c, divider_or_not, TRANSFORMATION)) { // Coordinate position is legal
         cct_setcolor(COLOR_BLACK, COLOR_HGREEN);
         cout << char(select_r + 'A') << "行" << select_c << "列" << setw(6 * column + 7 + divider_or_not * (column - 1) * 2 - 17) << "";
     }
-    else { //Coordinate position is illegal
+    else { // Coordinate position is illegal
         cct_setcolor(COLOR_BLACK, COLOR_HRED);
         cout << "位置非法" << setw(6 * column + 7 + divider_or_not * (column - 1) * 2 - 19) << "";
     }
@@ -590,7 +590,7 @@ void synthesize_drop(int matrix[][10], int judgment_array[][12], int row, int co
                 default:
                     break;
             }
-        } //end of if (ret == CCT_MOUSE_EVENT)
+        } // end of if (ret == CCT_MOUSE_EVENT)
         else if (ret == CCT_KEYBOARD_EVENT) {
             switch (keycode1) {
                 case '\r':
@@ -600,8 +600,8 @@ void synthesize_drop(int matrix[][10], int judgment_array[][12], int row, int co
                 default:
                     break;
             }
-        } //end of else if (ret == CCT_KEYBOARD_EVENT)
-    } //end of while (loop)
+        } // end of else if (ret == CCT_KEYBOARD_EVENT)
+    } // end of while (loop)
 
     /* Print prompt message */
     clear_information(row, column, divider_or_not);
@@ -620,7 +620,7 @@ void synthesize_drop(int matrix[][10], int judgment_array[][12], int row, int co
                 default:
                     break;
             }
-        } //end of if (ret == CCT_MOUSE_EVENT)
+        } // end of if (ret == CCT_MOUSE_EVENT)
         else if (ret == CCT_KEYBOARD_EVENT) {
             switch (keycode1) {
                 case 'C':
@@ -630,8 +630,8 @@ void synthesize_drop(int matrix[][10], int judgment_array[][12], int row, int co
                 default:
                     break;
             }
-        } //end of else if (ret == CCT_KEYBOARD_EVENT)
-    } //end of while (loop)
+        } // end of else if (ret == CCT_KEYBOARD_EVENT)
+    } // end of while (loop)
     cct_disable_mouse();
     cct_setcursor(CURSOR_VISIBLE_NORMAL);
 
@@ -652,13 +652,13 @@ void synthesize_drop(int matrix[][10], int judgment_array[][12], int row, int co
 void print_move_vertical(int matrix[][10], int src_r, int src_c, int len, int divider_or_not)
 {
     for (int y = 3 + src_r * (3 + divider_or_not); y < 3 + (src_r + len) * (3 + divider_or_not); y++) {
-        if (divider_or_not && (y - 2) % 4 == 0) //Print frame
+        if (divider_or_not && (y - 2) % 4 == 0) // Print frame
             cct_showstr(4 + src_c * (6 + 2 * divider_or_not), y, "═", COLOR_HWHITE, COLOR_BLACK, 3);
-        else //Not print frame
+        else // Not print frame
             cct_showch(4 + src_c * (6 + 2 * divider_or_not), y, ' ', COLOR_HWHITE, COLOR_BLACK, 6);
         print_block(matrix, src_r + len, src_c, divider_or_not, COLOR_BLACK, BLOCK_WIDTH, BLOCK_HEIGHT, 4 + src_c * (6 + 2 * divider_or_not), y + 1, COORDINATE_UNLOCK);
         if (y % 2)
-            Sleep(SLEEP_TIME_BLOCK); //Delaying animation effects
+            Sleep(SLEEP_TIME_BLOCK); // Delaying animation effects
     }
 }
 
@@ -675,17 +675,17 @@ void print_move_vertical(int matrix[][10], int src_r, int src_c, int len, int di
 void print_move_horizontal(int matrix[][10], int src_r, int src_c, int len, int divider_or_not)
 {
     for (int x = 4 + src_c * (6 + 2 * divider_or_not); x > 4 + (src_c - len) * (6 + 2 * divider_or_not); x -= 2) {
-        if (divider_or_not && (x + 2) % 8 == 0) { //Print frame
+        if (divider_or_not && (x + 2) % 8 == 0) { // Print frame
             for (int i = 0; i < 3; i++)
                 cct_showstr(x + 4, 3 + src_r * (3 + 1 * divider_or_not) + i, "║", COLOR_HWHITE, COLOR_BLACK, 1);
         }
-        else { //Not print frame
+        else { // Not print frame
             for (int i = 0; i < 3; i++)
                 cct_showch(x + 4, 3 + src_r * (3 + 1 * divider_or_not) + i, ' ', COLOR_HWHITE, COLOR_BLACK, 2);
         }
         print_block(matrix, src_r, src_c - len, divider_or_not, COLOR_BLACK, BLOCK_WIDTH, BLOCK_HEIGHT, x - 2, 3 + src_r * (3 + 1 * divider_or_not), COORDINATE_UNLOCK);
         if (x % 4)
-            Sleep(SLEEP_TIME_BLOCK); //Delaying animation effects
+            Sleep(SLEEP_TIME_BLOCK); // Delaying animation effects
     }
 }
 
@@ -752,12 +752,12 @@ void move_coordinate_keyboard(int matrix[][10], int row, int column, int select_
                 break;
             default:
                 break;
-        } //end of switch (keycode2)
+        } // end of switch (keycode2)
 
         /* Save the new state */
         X = 4 + (6 + 2 * divider_or_not) * temp_c;
         Y = 3 + (3 + divider_or_not) * temp_r;
-    } //end of if (ret == CCT_KEYBOARD_EVENT && keycode1 == 224 && (keycode2 == KB_ARROW_DOWN || keycode2 == KB_ARROW_LEFT || keycode2 == KB_ARROW_RIGHT || keycode2 == KB_ARROW_UP))
+    } // end of if (ret == CCT_KEYBOARD_EVENT && keycode1 == 224 && (keycode2 == KB_ARROW_DOWN || keycode2 == KB_ARROW_LEFT || keycode2 == KB_ARROW_RIGHT || keycode2 == KB_ARROW_UP))
 }
 
 /*
@@ -774,19 +774,19 @@ void move_coordinate_keyboard(int matrix[][10], int row, int column, int select_
  */
 void get_row_column(int row, int column, int X, int Y, int& select_r, int& select_c, int divider_or_not)
 {
-    if (divider_or_not) { //With dividing lines
-        for (int i = 0; i < column; i++) //Get column
+    if (divider_or_not) { // With dividing lines
+        for (int i = 0; i < column; i++) // Get column
             if (X >= 8 * i + 4 && X <= 8 * i + 9)
                 select_c = i;
-        for (int i = 0; i < row; i++) //Get row
+        for (int i = 0; i < row; i++) // Get row
             if (Y >= 4 * i + 3 && Y <= 4 * i + 5)
                 select_r = i;
     }
-    else { //Without dividing lines
-        for (int i = 0; i < column; i++) //Get column
+    else { // Without dividing lines
+        for (int i = 0; i < column; i++) // Get column
             if (X >= 6 * i + 4 && X <= 6 * i + 9)
                 select_c = i;
-        for (int i = 0; i < row; i++) //Get row
+        for (int i = 0; i < row; i++) // Get row
             if (Y >= 3 * i + 3 && Y <= 3 * i + 5)
                 select_r = i;
     }
@@ -865,7 +865,7 @@ void judgment_synthesis(int matrix[][10], int judgment_array[][12], int row, int
     clear_information(row, column, divider_or_not);
 
     /* Count the number of consecutive identical values */
-    if (judgment_continuity(matrix, judgment_array, row, column, select_r, select_c) == 1) { //No consecutive identical values
+    if (judgment_continuity(matrix, judgment_array, row, column, select_r, select_c) == 1) { // No consecutive identical values
         /* Print prompt message */
         cct_setcolor(COLOR_BLACK, COLOR_HRED);
         cout << "[无连续值] ";
@@ -873,7 +873,7 @@ void judgment_synthesis(int matrix[][10], int judgment_array[][12], int row, int
         cout << "箭头键/鼠标移动，回车键/左键选择，Q/右键结束";
         print_block(matrix, select_r, select_c, divider_or_not, COLOR_WHITE, BLOCK_WIDTH, BLOCK_HEIGHT, COORDINATE_LOCK, COORDINATE_LOCK, COORDINATE_LOCK);
     }
-    else { //Consecutive identical values
+    else { // Consecutive identical values
         /* Print prompt message */
         cct_setcolor(COLOR_BLACK, COLOR_HGREEN);
         cout << "[有连续值] ";
@@ -912,7 +912,7 @@ void calculate_print_score(int matrix[][10], int judgment_array[][12], int row, 
 {
     /* Count the number of consecutive identical values at a matrix coordinate position */
     num = judgment_continuity(matrix, judgment_array, row, column, select_r, select_c);
-    if (num != 1) { //Consecutive identical values
+    if (num != 1) { // Consecutive identical values
         /* Calculate and print the current score and total score */
         score_bound = num * num * 5;
         score_total += score_bound;
@@ -1001,7 +1001,7 @@ int print_score_level(int matrix[][10], int row, int column, int& score_reward, 
 {
     /* Determine if an array has consecutive identical values */
     int remain = array_judgment(matrix, row, column);
-    if (remain >= 0) { //No consecutive identical values
+    if (remain >= 0) { // No consecutive identical values
         /* Calculate the score */
         score_reward = (remain >= 10 ? 0 : (10 - remain) * 180);
         score_total += score_reward;
@@ -1029,7 +1029,7 @@ int print_score_level(int matrix[][10], int row, int column, int& score_reward, 
         cout << endl << setw(14) << "";
         return 0;
     }
-    else { //Consecutive identical values
+    else { // Consecutive identical values
         return 1;
     }
 }

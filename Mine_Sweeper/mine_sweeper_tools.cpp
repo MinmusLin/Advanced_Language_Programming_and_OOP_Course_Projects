@@ -155,41 +155,41 @@ void print_continuity(const CONSOLE_GRAPHICS_INFO* const pCGI, const int row_no,
             if (array[i][j] == '!') {
                 matrix[i][j].status = KNOWN;
                 draw_block(pCGI, i - 1, j - 1, matrix, bdi);
-                if (matrix[i + 1][j].value >= 1 && matrix[i][j].value <= 8 && matrix[i + 1][j].status == UNKNOWN) { //(1,0)
+                if (matrix[i + 1][j].value >= 1 && matrix[i][j].value <= 8 && matrix[i + 1][j].status == UNKNOWN) { // (1,0)
                     matrix[i + 1][j].status = KNOWN;
                     draw_block(pCGI, i, j - 1, matrix, bdi);
                 }
-                if (matrix[i][j + 1].value >= 1 && matrix[i][j].value <= 8 && matrix[i][j + 1].status == UNKNOWN) { //(0,1)
+                if (matrix[i][j + 1].value >= 1 && matrix[i][j].value <= 8 && matrix[i][j + 1].status == UNKNOWN) { // (0,1)
                     matrix[i][j + 1].status = KNOWN;
                     draw_block(pCGI, i - 1, j, matrix, bdi);
                 }
-                if (matrix[i - 1][j].value >= 1 && matrix[i][j].value <= 8 && matrix[i - 1][j].status == UNKNOWN) { //(-1,0)
+                if (matrix[i - 1][j].value >= 1 && matrix[i][j].value <= 8 && matrix[i - 1][j].status == UNKNOWN) { // (-1,0)
                     matrix[i - 1][j].status = KNOWN;
                     draw_block(pCGI, i - 2, j - 1, matrix, bdi);
                 }
-                if (matrix[i][j - 1].value >= 1 && matrix[i][j].value <= 8 && matrix[i][j - 1].status == UNKNOWN) { //(0,-1)
+                if (matrix[i][j - 1].value >= 1 && matrix[i][j].value <= 8 && matrix[i][j - 1].status == UNKNOWN) { // (0,-1)
                     matrix[i][j - 1].status = KNOWN;
                     draw_block(pCGI, i - 1, j - 2, matrix, bdi);
                 }
-                if (matrix[i - 1][j - 1].value >= 1 && matrix[i - 1][j - 1].value <= 8 && matrix[i - 1][j - 1].status == UNKNOWN && matrix[i][j - 1].status == KNOWN && matrix[i - 1][j].status == KNOWN) { //(-1,-1)
+                if (matrix[i - 1][j - 1].value >= 1 && matrix[i - 1][j - 1].value <= 8 && matrix[i - 1][j - 1].status == UNKNOWN && matrix[i][j - 1].status == KNOWN && matrix[i - 1][j].status == KNOWN) { // (-1,-1)
                     matrix[i - 1][j - 1].status = KNOWN;
                     draw_block(pCGI, i - 2, j - 2, matrix, bdi);
                 }
-                if (matrix[i - 1][j + 1].value >= 1 && matrix[i - 1][j + 1].value <= 8 && matrix[i - 1][j + 1].status == UNKNOWN && matrix[i][j + 1].status == KNOWN && matrix[i - 1][j].status == KNOWN) { //(-1,1)
+                if (matrix[i - 1][j + 1].value >= 1 && matrix[i - 1][j + 1].value <= 8 && matrix[i - 1][j + 1].status == UNKNOWN && matrix[i][j + 1].status == KNOWN && matrix[i - 1][j].status == KNOWN) { // (-1,1)
                     matrix[i - 1][j + 1].status = KNOWN;
                     draw_block(pCGI, i - 2, j, matrix, bdi);
                 }
-                if (matrix[i + 1][j - 1].value >= 1 && matrix[i + 1][j - 1].value <= 8 && matrix[i + 1][j - 1].status == UNKNOWN && matrix[i][j - 1].status == KNOWN && matrix[i + 1][j].status == KNOWN) { //(1,-1)
+                if (matrix[i + 1][j - 1].value >= 1 && matrix[i + 1][j - 1].value <= 8 && matrix[i + 1][j - 1].status == UNKNOWN && matrix[i][j - 1].status == KNOWN && matrix[i + 1][j].status == KNOWN) { // (1,-1)
                     matrix[i + 1][j - 1].status = KNOWN;
                     draw_block(pCGI, i, j - 2, matrix, bdi);
                 }
-                if (matrix[i + 1][j + 1].value >= 1 && matrix[i + 1][j + 1].value <= 8 && matrix[i + 1][j + 1].status == UNKNOWN && matrix[i][j + 1].status == KNOWN && matrix[i + 1][j].status == KNOWN) { //(1,1)
+                if (matrix[i + 1][j + 1].value >= 1 && matrix[i + 1][j + 1].value <= 8 && matrix[i + 1][j + 1].status == UNKNOWN && matrix[i][j + 1].status == KNOWN && matrix[i + 1][j].status == KNOWN) { // (1,1)
                     matrix[i + 1][j + 1].status = KNOWN;
                     draw_block(pCGI, i, j, matrix, bdi);
                 }
-            } //end of if (array[i][j] == '!')
-        } //end of for
-    } //end of for
+            } // end of if (array[i][j] == '!')
+        } // end of for
+    } // end of for
 }
 
 /*

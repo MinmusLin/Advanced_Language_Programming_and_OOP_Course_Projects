@@ -66,11 +66,11 @@ int main()
                         break;
                     default:
                         break;
-                } //end of switch (KeyCode2)
+                } // end of switch (KeyCode2)
                 cct_showint(26, 0, game.get_score());
                 if (game.gameover_judgment() == 2)
                     game.generate(&CGI);
-            } //end of if (KeyCode1 == 224 && (KeyCode2 == KB_ARROW_UP || KeyCode2 == KB_ARROW_DOWN || KeyCode2 == KB_ARROW_LEFT || KeyCode2 == KB_ARROW_RIGHT))
-        } //end of while (1)
-    } //end of while (1)
+            } // end of if (KeyCode1 == 224 && (KeyCode2 == KB_ARROW_UP || KeyCode2 == KB_ARROW_DOWN || KeyCode2 == KB_ARROW_LEFT || KeyCode2 == KB_ARROW_RIGHT))
+        } // end of while (1)
+    } // end of while (1)
 }

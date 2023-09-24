@@ -77,39 +77,39 @@ int main()
                                     matrix[i][j].status = KNOWN;
                                     Sleep(50);
                                     draw_block(&CGI, i - 1, j - 1, matrix, bdi);
-                                } //end of if (matrix[i][j].value == '*')
-                            } //end of for
-                        } //end of for
+                                } // end of if (matrix[i][j].value == '*')
+                            } // end of for
+                        } // end of for
                         print_prompt(start_time, false);
                         break;
-                    } //end of if (matrix[MRow + 1][MCol + 1].value == '*')
+                    } // end of if (matrix[MRow + 1][MCol + 1].value == '*')
                     else if (matrix[MRow + 1][MCol + 1].value) {
                         matrix[MRow + 1][MCol + 1].status = KNOWN;
                         draw_block(&CGI, MRow, MCol, matrix, bdi);
-                    } //end of else if (matrix[MRow + 1][MCol + 1].value)
+                    } // end of else if (matrix[MRow + 1][MCol + 1].value)
                     else {
                         print_continuity(&CGI, MRow, MCol, matrix, bdi, row, col);
-                    } //end of else
-                } //end of if (matrix[MRow + 1][MCol + 1].status == UNKNOWN && matrix[MRow + 1][MCol + 1].status != MARKED_MINE && matrix[MRow + 1][MCol + 1].status != MARKED_QUESTION)
-            } //end of if (MAction == MOUSE_LEFT_BUTTON_CLICK || MAction == MOUSE_LEFT_BUTTON_DOUBLE_CLICK)
+                    } // end of else
+                } // end of if (matrix[MRow + 1][MCol + 1].status == UNKNOWN && matrix[MRow + 1][MCol + 1].status != MARKED_MINE && matrix[MRow + 1][MCol + 1].status != MARKED_QUESTION)
+            } // end of if (MAction == MOUSE_LEFT_BUTTON_CLICK || MAction == MOUSE_LEFT_BUTTON_DOUBLE_CLICK)
             else if (MAction == MOUSE_RIGHT_BUTTON_CLICK || MAction == MOUSE_RIGHT_BUTTON_DOUBLE_CLICK) {
                 if (matrix[MRow + 1][MCol + 1].status == UNKNOWN) {
                     matrix[MRow + 1][MCol + 1].status = MARKED_MINE;
                     cct_showch(10, 0, ' ', COLOR_BLACK, COLOR_BLACK, 4);
                     cct_showint(10, 0, --mine, COLOR_BLACK, COLOR_HYELLOW);
                     draw_block(&CGI, MRow, MCol, matrix, bdi);
-                } //end of if (matrix[MRow + 1][MCol + 1].status == UNKNOWN)
+                } // end of if (matrix[MRow + 1][MCol + 1].status == UNKNOWN)
                 else if (matrix[MRow + 1][MCol + 1].status == MARKED_MINE) {
                     matrix[MRow + 1][MCol + 1].status = MARKED_QUESTION;
                     cct_showch(10, 0, ' ', COLOR_BLACK, COLOR_BLACK, 4);
                     cct_showint(10, 0, ++mine, COLOR_BLACK, COLOR_HYELLOW);
                     draw_block(&CGI, MRow, MCol, matrix, bdi);
-                } //else if (matrix[MRow + 1][MCol + 1].status == MARKED_MINE)
+                } // else if (matrix[MRow + 1][MCol + 1].status == MARKED_MINE)
                 else if (matrix[MRow + 1][MCol + 1].status == MARKED_QUESTION) {
                     matrix[MRow + 1][MCol + 1].status = UNKNOWN;
                     draw_block(&CGI, MRow, MCol, matrix, bdi);
-                } //end of else if (matrix[MRow + 1][MCol + 1].status == MARKED_QUESTION)
-            } //end of else if (MAction == MOUSE_RIGHT_BUTTON_CLICK || MAction == MOUSE_RIGHT_BUTTON_DOUBLE_CLICK)
-        } //end of while (1)
-    } //end of while (1)
+                } // end of else if (matrix[MRow + 1][MCol + 1].status == MARKED_QUESTION)
+            } // end of else if (MAction == MOUSE_RIGHT_BUTTON_CLICK || MAction == MOUSE_RIGHT_BUTTON_DOUBLE_CLICK)
+        } // end of while (1)
+    } // end of while (1)
 }

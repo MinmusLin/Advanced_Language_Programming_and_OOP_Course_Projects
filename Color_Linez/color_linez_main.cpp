@@ -57,7 +57,7 @@ int main()
                         break;
                 }
                 break;
-            } //end of if (!game.get_blank())
+            } // end of if (!game.get_blank())
 
             /* Set break flag */
             bool loop_break = false;
@@ -83,7 +83,7 @@ int main()
                     gmw_draw_block(&CGI, startRow, startCol, 10 * game.get_value(startRow, startCol), bdi);
                     break;
                 }
-            } //end of while (loop_flag)
+            } // end of while (loop_flag)
 
             /* Determine whether to restart the game */
             if (loop_break)
@@ -135,7 +135,7 @@ int main()
 
                             /* Set loop flag */
                             loop_flag = false;
-                        } //end of if (BFS(BFS_matrix, startRow, startCol, targetRow, targetCol, path) == -1)
+                        } // end of if (BFS(BFS_matrix, startRow, startCol, targetRow, targetCol, path) == -1)
                         else {
                             /* Print moving path */
                             print_moving_path(&CGI, path, startRow, startCol, selectd_value);
@@ -163,15 +163,15 @@ int main()
                                             game.set_value(i - 1, j - 1, 0);
                                             game.print_score();
                                         }
-                            } //end of if (game.is_eliminate(eliminate_matrix, targetRow, targetCol))
+                            } // end of if (game.is_eliminate(eliminate_matrix, targetRow, targetCol))
 
                             /* Generate the balls for the next round */
                             game.generate(&CGI, game.get_blank() > 3 ? 3 : game.get_blank());
 
                             /* Set loop flag */
                             loop_flag = true;
-                        } //end of else
-                    } //end of if (game.is_empty(MRow, MCol))
+                        } // end of else
+                    } // end of if (game.is_empty(MRow, MCol))
                     else {
                         /* Print the selected ball */
                         gmw_draw_block(&CGI, startRow, startCol, game.get_value(startRow, startCol), bdi);
@@ -181,12 +181,12 @@ int main()
 
                         /* Set loop flag */
                         loop_flag = false;
-                    } //end of else
+                    } // end of else
 
                     /* Break the loop */
                     break;
-                } //end of if ((MAction == MOUSE_LEFT_BUTTON_CLICK || MAction == MOUSE_LEFT_BUTTON_DOUBLE_CLICK))
-            } //end of while (1)
+                } // end of if ((MAction == MOUSE_LEFT_BUTTON_CLICK || MAction == MOUSE_LEFT_BUTTON_DOUBLE_CLICK))
+            } // end of while (1)
 
             /* Determine whether to restart the game */
             if (loop_break)
@@ -195,6 +195,6 @@ int main()
             /* Calculate and print statistic */
             game.calculate();
             game.print_statistic();
-        } //end of while (1)
-    } //end of while (1)
+        } // end of while (1)
+    } // end of while (1)
 }

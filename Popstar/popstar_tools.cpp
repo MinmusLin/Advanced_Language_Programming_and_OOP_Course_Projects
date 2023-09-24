@@ -171,8 +171,8 @@ void wait_for_end(void)
                 }
                 else
                     continue;
-            } //end of while (1)
-        } //end of for
+            } // end of while (1)
+        } // end of for
 
         /* Validate the correctness of the input */
         if (strcasecmp(input, "End")) {
@@ -181,7 +181,7 @@ void wait_for_end(void)
         }
         else
             break;
-    } //end of while (1)
+    } // end of while (1)
 }
 
 /*
@@ -226,7 +226,7 @@ int strcasecmp(const char s1[], const char s2[])
         }
         else
             return a - b;
-    } //end of while (1)
+    } // end of while (1)
 }
 
 /*
@@ -276,9 +276,9 @@ void array_translation(int matrix[][10], int row, int column, int graphical_or_n
                     if (graphical_or_not)
                         print_move_vertical(matrix, j, i, len, divider_or_not);
                 }
-            } //end of if (matrix[j][i])
-        } //end of for
-    } //end of for
+            } // end of if (matrix[j][i])
+        } // end of for
+    } // end of for
 
     /* Shift zero values horizontally in the array */
     for (int i = 0; i < column; i++) {
@@ -296,8 +296,8 @@ void array_translation(int matrix[][10], int row, int column, int graphical_or_n
                             print_move_horizontal(matrix, k, i, len, divider_or_not);
                     }
                 }
-        } //end of if (matrix[row - 1][i])
-    } //end of for
+        } // end of if (matrix[row - 1][i])
+    } // end of for
 }
 
 /*

@@ -103,7 +103,7 @@ void base_level(void)
             cout << endl << "剩余" << remain << "个不可消除项，本关结束" << endl;
             cct_setcolor();
             break;
-        } //end of if (remain >= 0)
+        }
 
         /* Calculate the score for this round and the total score */
         score_bound = coordinate_input(matrix, judgment_array, row, column, select_r, select_c);
@@ -125,7 +125,7 @@ void base_level(void)
 
         /* Press the Enter key to continue */
         wait_for_enter("本次消除结束，按回车键继续新一次的消除...");
-    } //end of while (1)
+    } // end of while (1)
 }
 
 /*
@@ -162,7 +162,7 @@ void print_array(int matrix[][10], int judgment_array[][12], int row, int column
         default:
             cout << endl << "当前数组：" << endl;
             break;
-    } //end of switch (prompt)
+    } // end of switch (prompt)
     cct_setcolor();
 
     /* Print array */
@@ -175,32 +175,32 @@ void print_array(int matrix[][10], int judgment_array[][12], int row, int column
         for (int j = 0; j < column; j++) {
             cout << "  ";
             switch (prompt) {
-                case 1: //Result array
+                case 1: // Result array
                     if (judgment_array[i + 1][j + 1] == '*')
                         cout << "*";
                     else
                         cout << "0";
                     break;
-                case 2: //Current array
-                case 3: //Merged array (with different colors for identification)
+                case 2: // Current array
+                case 3: // Merged array (with different colors for identification)
                     if (judgment_array[i + 1][j + 1] == '*')
                         cct_setcolor(COLOR_HYELLOW, COLOR_BLACK);
                     cout << matrix[i][j];
                     if (judgment_array[i + 1][j + 1] == '*')
                         cct_setcolor();
                     break;
-                case 4: //Array after the fall
-                default: //Current array
+                case 4: // Array after the fall
+                default: // Current array
                     if (matrix[i][j] == 0)
                         cct_setcolor(COLOR_HYELLOW, COLOR_BLACK);
                     cout << matrix[i][j];
                     if (matrix[i][j] == 0)
                         cct_setcolor();
                     break;
-            } //end of switch (prompt)
-        } //end of for
+            } // end of switch (prompt)
+        } // end of for
         cout << endl;
-    } //end of for
+    } // end of for
 }
 
 /*
@@ -284,13 +284,13 @@ int coordinate_input(int matrix[][10], int judgment_array[][12], int row, int co
                 cct_setcolor();
                 return num * num * 5;
             }
-        } //end of if (((input[0] >= 'a' && input[0] < 'a' + row) || (input[0] >= 'A' && input[0] < 'A' + row)) && (input[1] >= '0' && input[1] < '0' + column))
+        } // end of if (((input[0] >= 'a' && input[0] < 'a' + row) || (input[0] >= 'A' && input[0] < 'A' + row)) && (input[1] >= '0' && input[1] < '0' + column))
         else {
             cct_setcolor(COLOR_BLACK, COLOR_HRED);
             cout << "输入错误，请重新输入";
             cct_setcolor();
-        } //end of else
-    } //end of while (1)
+        } // end of else
+    } // end of while (1)
 }
 
 /*
@@ -316,19 +316,19 @@ int eliminate_confirm(int dst_r, int dst_c)
         else if (input == 'Y' || input == 'y' || input == 'N' || input == 'n' || input == 'Q' || input == 'q') {
             cout << input << endl;
             switch (input) {
-                case 'Y': //Complete the current operation
+                case 'Y': // Complete the current operation
                 case 'y':
                     return 2;
-                case 'N': //Abort the current operation
+                case 'N': // Abort the current operation
                 case 'n':
                     return 1;
-                default: //Quit
+                default: // Quit
                     return 0;
             }
         }
         else
             continue;
-    } //end of while (1)
+    } // end of while (1)
 }
 
 /*

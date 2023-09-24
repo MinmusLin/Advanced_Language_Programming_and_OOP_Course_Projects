@@ -15,8 +15,8 @@
 #include "..\common\cmd_console_tools.h"
 using namespace std;
 
-static const HANDLE __hout = GetStdHandle(STD_OUTPUT_HANDLE); //Get the handle of the standard output device
-static const HANDLE __hin = GetStdHandle(STD_INPUT_HANDLE); //Get the handle of the standard input device
+static const HANDLE __hout = GetStdHandle(STD_OUTPUT_HANDLE); // Get the handle of the standard output device
+static const HANDLE __hin = GetStdHandle(STD_INPUT_HANDLE); // Get the handle of the standard input device
 
 /*
  * Function Name:    cct_cls

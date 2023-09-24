@@ -76,7 +76,7 @@ static int menu(void)
         }
         else
             continue;
-    } //end of while (1)
+    } // end of while (1)
 }
 
 /*
@@ -129,7 +129,7 @@ int main()
                 break;
             default:
                 return 0;
-        } //end of switch (menu())
+        } // end of switch (menu())
         wait_for_end();
-    } //end of while (1)
+    } // end of while (1)
 }

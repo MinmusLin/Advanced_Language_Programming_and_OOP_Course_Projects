@@ -27,22 +27,22 @@
 #define COLOR_HWHITE 15
 
 /* Define mouse and keyboard events */
-#define CCT_MOUSE_EVENT 0 //Mouse events
-#define CCT_KEYBOARD_EVENT 1 //Keyboard events
-#define KB_ARROW_UP 72 //Up arrow key
-#define KB_ARROW_DOWN 80 //Down arrow key
-#define KB_ARROW_LEFT 75 //Left arrow key
-#define KB_ARROW_RIGHT 77 //Right arrow key
-#define MOUSE_NO_ACTION 0x0000 //No mouse operation
-#define MOUSE_ONLY_MOVED 0x0001 //Mouse movement
-#define MOUSE_LEFT_BUTTON_CLICK 0x0002 //Left mouse button clicked
-#define MOUSE_LEFT_BUTTON_DOUBLE_CLICK 0x0004 //Left mouse button double-clicked
-#define MOUSE_RIGHT_BUTTON_CLICK 0x0008 //Right mouse button clicked
-#define MOUSE_RIGHT_BUTTON_DOUBLE_CLICK 0x0010 //Right mouse button double-clicked
-#define MOUSE_LEFTRIGHT_BUTTON_CLICK 0x0020 //Left and right mouse buttons clicked simultaneously
-#define MOUSE_WHEEL_CLICK 0x0040 //Mouse wheel button clicked
-#define MOUSE_WHEEL_MOVED_UP 0x0080 //Mouse wheel moved up
-#define MOUSE_WHEEL_MOVED_DOWN 0x0100 //Mouse wheel moved down
+#define CCT_MOUSE_EVENT 0 // Mouse events
+#define CCT_KEYBOARD_EVENT 1 // Keyboard events
+#define KB_ARROW_UP 72 // Up arrow key
+#define KB_ARROW_DOWN 80 // Down arrow key
+#define KB_ARROW_LEFT 75 // Left arrow key
+#define KB_ARROW_RIGHT 77 // Right arrow key
+#define MOUSE_NO_ACTION 0x0000 // No mouse operation
+#define MOUSE_ONLY_MOVED 0x0001 // Mouse movement
+#define MOUSE_LEFT_BUTTON_CLICK 0x0002 // Left mouse button clicked
+#define MOUSE_LEFT_BUTTON_DOUBLE_CLICK 0x0004 // Left mouse button double-clicked
+#define MOUSE_RIGHT_BUTTON_CLICK 0x0008 // Right mouse button clicked
+#define MOUSE_RIGHT_BUTTON_DOUBLE_CLICK 0x0010 // Right mouse button double-clicked
+#define MOUSE_LEFTRIGHT_BUTTON_CLICK 0x0020 // Left and right mouse buttons clicked simultaneously
+#define MOUSE_WHEEL_CLICK 0x0040 // Mouse wheel button clicked
+#define MOUSE_WHEEL_MOVED_UP 0x0080 // Mouse wheel moved up
+#define MOUSE_WHEEL_MOVED_DOWN 0x0100 // Mouse wheel moved down
 
 /* Define cursor state */
 #define CURSOR_VISIBLE_FULL 0
