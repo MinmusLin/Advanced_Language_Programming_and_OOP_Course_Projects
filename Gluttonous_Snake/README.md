@@ -1099,6 +1099,10 @@ void resetHighestScore(void)
 
 * `EasyX`
 
+  * ```cpp
+    #include <graphics.h>
+    ```
+
 ## 相关资料
 
 * [EasyX Documentation](https://docs.easyx.cn/)

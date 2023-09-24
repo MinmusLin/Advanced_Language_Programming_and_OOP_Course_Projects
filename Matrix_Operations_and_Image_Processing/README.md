@@ -177,6 +177,10 @@ int calculate_Otsu_threshold(Mat grayImage, int height, int width)
 
     * `...\opencv\build\x64\vc15\lib\opencv_world341d.lib`
 
+  * ```cpp
+    #include <opencv2/opencv.hpp>
+    ```
+
 ## 相关资料
 
 * [OpenCV Documentation](https://docs.opencv.org)
