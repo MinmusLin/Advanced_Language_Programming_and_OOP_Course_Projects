@@ -1,7 +1,7 @@
 /****************************************************************
  * Project Name:  Gluttonous_Snake
  * File Name:     gluttonous_snake.h
- * File Function: Control类、Snake类、历史最高分记录函数、游戏函数、图形化界面函数、主函数、菜单函数的头文件
+ * File Function: Control类、Snake类、历史最高分记录函数、游戏函数、图形化界面函数、主体函数、菜单函数的头文件
  * Author:        Jishen Lin (林继申)
  * Update Date:   2023/9/24
  ****************************************************************/

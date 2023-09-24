@@ -49,7 +49,7 @@ Gluttonous_Snake
 ### 头文件
 
 * `gluttonous_snake.h`
-`Control` 类、 `Snake` 类、历史最高分记录函数、游戏函数、图形化界面函数、主函数、菜单函数的头文件
+`Control` 类、 `Snake` 类、历史最高分记录函数、游戏函数、图形化界面函数、主体函数、菜单函数的头文件
 
 ### 源文件
 
@@ -672,28 +672,28 @@ while (true) {
         m = GetMouseMsg();
     switch (m.uMsg) {
         case WM_MOUSEMOVE:
-            //鼠标移动消息
+            // 鼠标移动消息
             break;
         case WM_MOUSEWHEEL:
-            //鼠标滚轮拨动消息
+            // 鼠标滚轮拨动消息
             break;
         case WM_LBUTTONDOWN:
-            //左键按下消息
+            // 左键按下消息
             break;
         case WM_LBUTTONDBLCLK:
-            //左键双击消息
+            // 左键双击消息
             break;
         case WM_MBUTTONDOWN:
-            //中键按下消息
+            // 中键按下消息
             break;
         case WM_MBUTTONDBLCLK:
-            //中键双击消息
+            // 中键双击消息
             break;
         case WM_RBUTTONDOWN:
-            //右键按下消息
+            // 右键按下消息
             break;
         case WM_RBUTTONDBLCLK:
-            //右键双击消息
+            // 右键双击消息
             break;
         default:
             break;
