@@ -3,10 +3,11 @@
  * File Name:     gluttonous_snake_snake.cpp
  * File Function: Snake类的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include "gluttonous_snake.h"
+
 using namespace std;
 
 /*

@@ -3,7 +3,7 @@
  * File Name:     mine_sweeper_menu.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -13,6 +13,7 @@
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_gmw_tools.h"
 #include "mine_sweeper.h"
+
 using namespace std;
 
 /*

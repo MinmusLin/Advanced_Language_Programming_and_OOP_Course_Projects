@@ -3,7 +3,7 @@
  * File Name:     color_linez_classes.cpp
  * File Function: 类的成员函数的体外实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <iostream>
@@ -11,6 +11,7 @@
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_gmw_tools.h"
 #include "color_linez.h"
+
 using namespace std;
 
 /*

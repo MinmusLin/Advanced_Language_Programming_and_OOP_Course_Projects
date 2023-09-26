@@ -3,7 +3,7 @@
  * File Name:     mine_sweeper_tools.cpp
  * File Function: 工具函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <iostream>
@@ -11,6 +11,7 @@
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_gmw_tools.h"
 #include "mine_sweeper.h"
+
 using namespace std;
 
 /*

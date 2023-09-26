@@ -46,9 +46,6 @@ ASCII图像查看器和视频播放器
 * [Simulated LED Screen](Simulated_LED_Screen/README.md)
 模拟LED显示屏
 
-* [Tetris](Tetris/README.md)
-俄罗斯方块游戏
-
 * [common](common/README.md)
 存放共用文件
 
@@ -58,4 +55,4 @@ ASCII图像查看器和视频播放器
 
 ## 文档更新日期
 
-2023年9月25日
+2023年9月27日

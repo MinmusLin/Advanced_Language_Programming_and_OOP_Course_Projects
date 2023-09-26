@@ -3,7 +3,7 @@
  * File Name:     hanoi.h
  * File Function: 主体函数、菜单函数、汉诺塔综合演示解决方案函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #pragma once

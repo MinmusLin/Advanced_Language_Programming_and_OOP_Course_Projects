@@ -3,7 +3,7 @@
  * File Name:     cmd_console_tools.cpp
  * File Function: 伪图形界面函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -13,6 +13,7 @@
 #include <string.h>
 #include <Windows.h>
 #include "..\common\cmd_console_tools.h"
+
 using namespace std;
 
 static const HANDLE __hout = GetStdHandle(STD_OUTPUT_HANDLE); // Get the handle of the standard output device

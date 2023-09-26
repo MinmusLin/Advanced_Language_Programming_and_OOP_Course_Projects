@@ -3,7 +3,7 @@
  * File Name:     LED_retrieve_bitinfo.cpp
  * File Function: 读取点阵信息函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -11,6 +11,7 @@
 #include <Windows.h>
 #include <iomanip>
 #include "../common/cmd_console_tools.h"
+
 using namespace std;
 
 /*

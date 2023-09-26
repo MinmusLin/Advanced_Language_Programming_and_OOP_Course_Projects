@@ -3,13 +3,14 @@
  * File Name:     lovecode_classes.cpp
  * File Function: 类的成员函数的体外实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <iostream>
 #include "..\common\cmd_console_tools.h"
 #include "lovecode.h"
 #include "pixel_matrixs.h"
+
 using namespace std;
 
 /*

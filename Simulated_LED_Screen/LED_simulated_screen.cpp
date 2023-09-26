@@ -3,7 +3,7 @@
  * File Name:     LED_simulated_screen.cpp
  * File Function: 模拟LED显示屏函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -13,6 +13,7 @@
 #include <cstring>
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_hdc_tools.h"
+
 using namespace std;
 
 /* Macro definition */

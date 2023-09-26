@@ -3,11 +3,12 @@
  * File Name:     gluttonous_snake_menu.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <conio.h>
 #include "gluttonous_snake.h"
+
 using namespace std;
 
 /* Define static variable */

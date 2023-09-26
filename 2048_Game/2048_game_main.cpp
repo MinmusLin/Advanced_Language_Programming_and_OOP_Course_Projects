@@ -3,13 +3,14 @@
  * File Name:     2048_game_main.cpp
  * File Function: 主体函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <iostream>
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_gmw_tools.h"
 #include "2048_game.h"
+
 using namespace std;
 
 /*

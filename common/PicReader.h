@@ -3,7 +3,7 @@
  * File Name:     PicReader.h
  * File Function: 读取图像文件函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #pragma once

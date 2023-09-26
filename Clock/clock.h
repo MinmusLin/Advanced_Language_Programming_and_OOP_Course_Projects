@@ -3,7 +3,7 @@
  * File Name:     clock.h
  * File Function: 抗锯齿图形处理函数、主体函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #pragma once

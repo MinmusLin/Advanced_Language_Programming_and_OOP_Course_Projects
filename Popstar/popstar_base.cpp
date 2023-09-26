@@ -3,7 +3,7 @@
  * File Name:     popstar_base.cpp
  * File Function: 内部数组方式函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <iostream>
@@ -11,6 +11,7 @@
 #include <conio.h>
 #include "..\common\cmd_console_tools.h"
 #include "popstar.h"
+
 using namespace std;
 
 /*

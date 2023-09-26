@@ -3,7 +3,7 @@
  * File Name:     lib_gmw_tools.cpp
  * File Function: 消除类游戏通用函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -12,6 +12,7 @@
 #include <iomanip>
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_gmw_tools.h"
+
 using namespace std;
 
 /*

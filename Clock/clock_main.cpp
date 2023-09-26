@@ -3,13 +3,14 @@
  * File Name:     clock_main.cpp
  * File Function: 主体函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <graphics.h>
 #include <cmath>
 #include <ctime>
 #include "clock.h"
+
 using namespace std;
 
 /*

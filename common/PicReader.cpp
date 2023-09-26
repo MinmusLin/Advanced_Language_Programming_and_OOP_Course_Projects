@@ -3,11 +3,12 @@
  * File Name:     PicReader.cpp
  * File Function: 读取图像文件函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/24
+ * Update Date:   2023/9/27
  ****************************************************************/
 
 #include <iostream>
 #include "../common/PicReader.h"
+
 using namespace std;
 
 /*
