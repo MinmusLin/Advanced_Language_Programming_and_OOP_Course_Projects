@@ -18,7 +18,6 @@
 #include "Array.h"
 
 using namespace std;
-using namespace cv;
 
 /* Function declaration in Image.cpp */
 void imageViewer(bool is_color, bool is_inverse = false, bool is_video = false, int frame = 0, int _reductionFactor = 0, int _total = 0);
@@ -63,10 +62,10 @@ void videoPlayer(bool is_color, bool is_inverse)
     QueryPerformanceCounter(&begin);
 
     /* Read video file */
-    VideoCapture cap(path);
+    cv::VideoCapture cap(path);
     if (!cap.isOpened())
         exit(-1);
-    Mat frame;
+    cv::Mat frame;
     int frameNumber = 0;
     while (true) {
         cap >> frame;
@@ -76,8 +75,8 @@ void videoPlayer(bool is_color, bool is_inverse)
         imwrite(path, frame);
         cout << ">>> ±£´æµÚ" << setw(5) << ++frameNumber << " Ö¡Îª " << &path[7] << endl;
     }
-    int x = int(cap.get(CAP_PROP_FRAME_WIDTH));
-    int y = int(cap.get(CAP_PROP_FRAME_HEIGHT));
+    int x = int(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+    int y = int(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
     double frameRate = cap.get(cv::CAP_PROP_FPS);
     cap.release();
 

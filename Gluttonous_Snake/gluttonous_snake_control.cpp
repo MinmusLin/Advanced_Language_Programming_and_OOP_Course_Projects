@@ -21,7 +21,7 @@ using namespace std;
  */
 void Control::allocateAndInitialize(int*& p)
 {
-    p = new int;
+    p = new(nothrow) int;
     if (p == NULL)
         exit(-1);
     *p = 0;

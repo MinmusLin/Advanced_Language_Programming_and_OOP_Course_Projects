@@ -173,7 +173,7 @@ void simulated_screen(bool is_simplified)
     string str;
     cin >> str;
     int strLen = strlen(str.c_str());
-    char* prompt = new char[row * col * 2 + 1] {0};
+    char* prompt = new(nothrow) char[row * col * 2 + 1] {0};
     if (prompt == NULL)
         exit(-1);
     for (int i = 0; i < row * col * 2; i++) {
@@ -419,7 +419,7 @@ void simulated_screen(bool is_simplified)
             }
             break;
         case 'Q': {
-            int* elements = new int[col * 16];
+            int* elements = new(nothrow) int[col * 16];
             if (elements == NULL)
                 exit(-1);
             for (int i = 0; i < col * 16; i++)
@@ -435,7 +435,7 @@ void simulated_screen(bool is_simplified)
             break;
         }
         case 'R': {
-            int* elements = new int[row * 16];
+            int* elements = new(nothrow) int[row * 16];
             if (elements == NULL)
                 exit(-1);
             for (int i = 0; i < row * 16; i++)
@@ -451,7 +451,9 @@ void simulated_screen(bool is_simplified)
             break;
         }
         case 'S': {
-            int* allPoints = new int[row * col * 256];
+            int* allPoints = new(nothrow) int[row * col * 256];
+            if (allPoints == NULL)
+                exit(-1);
             for (int i = 0; i < row * col * 256; i++)
                 allPoints[i] = i;
             shuffle(allPoints, row * col * 256);
@@ -465,7 +467,9 @@ void simulated_screen(bool is_simplified)
             break;
         }
         case 'T': {
-            int* allPoints = new int[row * col * 256];
+            int* allPoints = new(nothrow) int[row * col * 256];
+            if (allPoints == NULL)
+                exit(-1);
             for (int i = 0; i < row * col * 256; i++)
                 allPoints[i] = i;
             shuffle(allPoints, row * col * 256);

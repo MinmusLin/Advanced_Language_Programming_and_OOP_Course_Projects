@@ -296,11 +296,11 @@ Array::operator int(void)
 /*
  * Function Name:    operator<<
  * Function:         Overload operator <<
- * Input Parameters: ostream& out
+ * Input Parameters: std::ostream& out
  *                   const Array& arr
  * Return Value:     out
  */
-ostream& operator<<(ostream& out, const Array& arr)
+std::ostream& operator<<(std::ostream& out, const Array& arr)
 {
     out << "[" << *arr.data;
     for (int i = 1; i < arr.len; i++)
@@ -312,11 +312,11 @@ ostream& operator<<(ostream& out, const Array& arr)
 /*
  * Function Name:    operator>>
  * Function:         Overload operator >>
- * Input Parameters: ostream& in
+ * Input Parameters: std::ostream& in
  *                   Array& arr
  * Return Value:     in
  */
-istream& operator>>(istream& in, Array& arr)
+std::istream& operator>>(std::istream& in, Array& arr)
 {
     for (int i = 0; i < arr.len; i++) {
         int n;

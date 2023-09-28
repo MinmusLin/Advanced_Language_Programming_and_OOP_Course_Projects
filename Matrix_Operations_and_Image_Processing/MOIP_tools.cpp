@@ -14,7 +14,6 @@
 #include "MOIP.h"
 
 using namespace std;
-using namespace cv;
 
 /*
  * Function Name:    menu
@@ -356,12 +355,12 @@ bool get_kernel(int kernel[][kernelSize], int& kernel_sum)
 /*
  * Function Name:    calculate_Otsu_threshold
  * Function:         calculate Otsu threshold
- * Input Parameters: Mat grayImage
+ * Input Parameters: cv::Mat grayImage
  *                   int height
  *                   int width
  * Return Value:     Otsu threshold
  */
-int calculate_Otsu_threshold(Mat grayImage, int height, int width)
+int calculate_Otsu_threshold(cv::Mat grayImage, int height, int width)
 {
     /* Calculate histogram */
     int histogram[256] = { 0 };

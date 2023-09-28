@@ -9,8 +9,6 @@
 #pragma once
 #include <iostream>
 
-using namespace std;
-
 /* Macro definition */
 #define HIGHEST_DIMENSION 16
 
@@ -109,8 +107,8 @@ public:
     operator int(void);
 
     /* Friend function declarations in Array.cpp */
-    friend ostream& operator<<(ostream& out, const Array& arr);
-    friend istream& operator>>(istream& in, Array& arr);
+    friend std::ostream& operator<<(std::ostream& out, const Array& arr);
+    friend std::istream& operator>>(std::istream& in, Array& arr);
     friend Array elementwiseOperation(Array& arr, int n, Operation optn);
     friend Array operator*(Array& arr, int n);
     friend Array operator*(int n, Array& arr);
@@ -137,7 +135,7 @@ public:
             shape[i] = list[i];
         for (int i = 0; i < axisNum; i++)
             len *= shape[i];
-        data = new(nothrow) int[len] {0};
+        data = new(std::nothrow) int[len] {0};
         if (data == NULL)
             exit(-1);
     }
@@ -155,7 +153,7 @@ public:
         if (axisNum != sizeof...(args))
             exit(-1);
         checkTypes(true, args...);
-        int* indexs = new(nothrow) int[axisNum] {args...};
+        int* indexs = new(std::nothrow) int[axisNum] {args...};
         if (indexs == NULL)
             exit(-1);
         for (int i = 0; i < axisNum; i++)

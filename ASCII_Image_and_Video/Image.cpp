@@ -110,7 +110,7 @@ void imageViewer(bool is_color, bool is_inverse, bool is_video, int frame, int _
         }
 
     /* Convert four-channel color data to grayscale values */
-    BYTE* grayscale = new BYTE[x * y];
+    BYTE* grayscale = new(nothrow) BYTE[x * y];
     if (grayscale == NULL)
         exit(-1);
     int* p = reductionImage.get_content();

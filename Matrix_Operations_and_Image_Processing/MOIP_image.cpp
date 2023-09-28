@@ -11,7 +11,6 @@
 #include "MOIP.h"
 
 using namespace std;
-using namespace cv;
 
 /*
  * Function Name:    Image_Convolution
@@ -39,7 +38,7 @@ void Image_Convolution(void)
     char path[64] = "images/";
     cct_showstr(4, 10 + kernelSize, "请输入要打开的图像文件: ", COLOR_HWHITE, COLOR_BLACK);
     cin >> &path[7];
-    Mat colorImage = imread(path);
+    cv::Mat colorImage = cv::imread(path);
 
     /* Determine whether the file is opened successfully */
     if (colorImage.empty()) {
@@ -51,13 +50,13 @@ void Image_Convolution(void)
         print_prompt("文件打开成功! ", COLOR_HWHITE, COLOR_HGREEN);
 
         /* Initialize grayImage and processedImage, show colorImage and grayImage */
-        Mat grayImage;
-        cvtColor(colorImage, grayImage, COLOR_BGR2GRAY);
-        namedWindow("Color Image");
+        cv::Mat grayImage;
+        cvtColor(colorImage, grayImage, cv::COLOR_BGR2GRAY);
+        cv::namedWindow("Color Image");
         imshow("Color Image", colorImage);
-        namedWindow("Gray Image");
+        cv::namedWindow("Gray Image");
         imshow("Gray Image", grayImage);
-        Mat processedImage = grayImage;
+        cv::Mat processedImage = grayImage;
 
         /* Get the image size */
         int width = processedImage.cols, height = processedImage.rows;
@@ -113,12 +112,12 @@ void Image_Convolution(void)
         print_prompt("利用矩阵卷积运算进行图像处理应用完成! ", COLOR_HWHITE, COLOR_GREEN);
 
         /* Show processedImage */
-        namedWindow("Processed Image");
+        cv::namedWindow("Processed Image");
         imshow("Processed Image", processedImage);
 
         /* Wait for keyboard input to close all image windows */
-        if (waitKey(0))
-            destroyAllWindows();
+        if (cv::waitKey(0))
+            cv::destroyAllWindows();
     }
 
     /* Pause and return */
@@ -138,7 +137,7 @@ void Image_Otsu(void)
     char path[64] = "images/";
     cct_showstr(4, 6, "请输入要打开的图像文件: ", COLOR_HWHITE, COLOR_BLACK);
     cin >> &path[7];
-    Mat colorImage = imread(path);
+    cv::Mat colorImage = cv::imread(path);
 
     /* Determine whether the file is opened successfully */
     if (colorImage.empty()) {
@@ -150,13 +149,13 @@ void Image_Otsu(void)
         print_prompt("文件打开成功! ", COLOR_HWHITE, COLOR_HGREEN);
 
         /* Initialize grayImage and processedImage, show colorImage and grayImage */
-        Mat grayImage;
-        cvtColor(colorImage, grayImage, COLOR_BGR2GRAY);
-        namedWindow("Color Image");
+        cv::Mat grayImage;
+        cvtColor(colorImage, grayImage, cv::COLOR_BGR2GRAY);
+        cv::namedWindow("Color Image");
         imshow("Color Image", colorImage);
-        namedWindow("Gray Image");
+        cv::namedWindow("Gray Image");
         imshow("Gray Image", grayImage);
-        Mat processedImage = grayImage;
+        cv::Mat processedImage = grayImage;
 
         /* Get the image size */
         int width = processedImage.cols, height = processedImage.rows;
@@ -197,12 +196,12 @@ void Image_Otsu(void)
         print_prompt("利用Otsu算法(大津算法)进行图像处理应用完成! ", COLOR_HWHITE, COLOR_GREEN);
 
         /* Show processedImage */
-        namedWindow("Processed Image");
+        cv::namedWindow("Processed Image");
         imshow("Processed Image", processedImage);
 
         /* Wait for keyboard input to close all image windows */
-        if (waitKey(0))
-            destroyAllWindows();
+        if (cv::waitKey(0))
+            cv::destroyAllWindows();
     }
 
     /* Pause and return */
@@ -222,7 +221,7 @@ void Image_Segmentation(void)
     char path[64] = "images/";
     cct_showstr(4, 6, "请输入要打开的图像文件: ", COLOR_HWHITE, COLOR_BLACK);
     cin >> &path[7];
-    Mat colorImage = imread(path);
+    cv::Mat colorImage = cv::imread(path);
 
     /* Determine whether the file is opened successfully */
     if (colorImage.empty()) {
@@ -234,13 +233,13 @@ void Image_Segmentation(void)
         print_prompt("文件打开成功! ", COLOR_HWHITE, COLOR_HGREEN);
 
         /* Initialize grayImage and processedImage, show colorImage and grayImage */
-        Mat grayImage;
-        cvtColor(colorImage, grayImage, COLOR_BGR2GRAY);
-        namedWindow("Color Image");
+        cv::Mat grayImage;
+        cvtColor(colorImage, grayImage, cv::COLOR_BGR2GRAY);
+        cv::namedWindow("Color Image");
         imshow("Color Image", colorImage);
-        namedWindow("Gray Image");
+        cv::namedWindow("Gray Image");
         imshow("Gray Image", grayImage);
-        Mat processedGrayImage = grayImage;
+        cv::Mat processedGrayImage = grayImage;
 
         /* Get the image size */
         int width = processedGrayImage.cols, height = processedGrayImage.rows;
@@ -268,11 +267,11 @@ void Image_Segmentation(void)
                     processedGrayImage.at<uchar>(i, j) = 0;
 
         /* Process the color image */
-        Mat processedColorImage = colorImage;
+        cv::Mat processedColorImage = colorImage;
         for (int i = 0; i < height; i++)
             for (int j = 0; j < width; j++)
                 if (grayArray[i][j] < Otsu_threshold) {
-                    Vec3b& pixel = colorImage.at<cv::Vec3b>(i, j);
+                    cv::Vec3b& pixel = colorImage.at<cv::Vec3b>(i, j);
                     pixel[0] = cv::saturate_cast<uchar>(0);
                     pixel[1] = cv::saturate_cast<uchar>(0);
                     pixel[2] = cv::saturate_cast<uchar>(0);
@@ -287,14 +286,14 @@ void Image_Segmentation(void)
         print_prompt("利用Segmentation算法(传统分割算法)进行图像处理应用完成! ", COLOR_HWHITE, COLOR_GREEN);
 
         /* Show processedImage */
-        namedWindow("Processed Gray Image");
+        cv::namedWindow("Processed Gray Image");
         imshow("Processed Gray Image", processedGrayImage);
-        namedWindow("Processed Color Image");
+        cv::namedWindow("Processed Color Image");
         imshow("Processed Color Image", processedColorImage);
 
         /* Wait for keyboard input to close all image windows */
-        if (waitKey(0))
-            destroyAllWindows();
+        if (cv::waitKey(0))
+            cv::destroyAllWindows();
     }
 
     /* Pause and return */
