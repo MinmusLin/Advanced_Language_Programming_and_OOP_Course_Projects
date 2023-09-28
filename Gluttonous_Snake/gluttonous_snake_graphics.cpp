@@ -61,7 +61,7 @@ void initialize_graphics(Mode mode)
  */
 void print_grid_status(int row, int col, GridCondition gridCondition, SnakeCategory snakeCategory, Direction direction)
 {
-    /* Calculate coordinate */
+    /* Calculate coordinates */
     int x = leftGridMargin + col * (gridSideLength + gridSpace) + gridSpace, y = topGridMargin + row * (gridSideLength + gridSpace) + gridSpace;
 
     /* Match color */
