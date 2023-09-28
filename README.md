@@ -22,7 +22,7 @@ ASCII图像查看器和视频播放器
 * [Color Linez](Color_Linez/README.md)
 彩球游戏
 
-* [Conway_Life_Game](Conway_Life_Game/README.md)
+* [Conway Life Game](Conway_Life_Game/README.md)
 康威生命游戏
 
 * [Gluttonous Snake](Gluttonous_Snake/README.md)
