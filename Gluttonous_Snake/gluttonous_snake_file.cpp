@@ -3,7 +3,7 @@
  * File Name:     gluttonous_snake_file.cpp
  * File Function: 历史最高分记录函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS

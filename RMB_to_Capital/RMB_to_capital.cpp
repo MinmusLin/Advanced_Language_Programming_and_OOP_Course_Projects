@@ -3,7 +3,7 @@
  * File Name:     RMB_to_capital.cpp
  * File Function: 人民币转大写函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #include <iostream>

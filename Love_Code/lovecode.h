@@ -3,7 +3,7 @@
  * File Name:     lovecode.h
  * File Function: 主体函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #pragma once

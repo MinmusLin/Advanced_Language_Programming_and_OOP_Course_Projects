@@ -3,7 +3,7 @@
  * File Name:     pixel_matrixs.h
  * File Function: 存放点阵信息的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #pragma once

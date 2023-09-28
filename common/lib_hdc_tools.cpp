@@ -3,7 +3,7 @@
  * File Name:     lib_hdc_tools.cpp
  * File Function: 图形界面绘制函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #include <cmath>

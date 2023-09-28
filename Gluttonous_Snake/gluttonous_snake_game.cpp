@@ -3,7 +3,7 @@
  * File Name:     gluttonous_snake_game.cpp
  * File Function: 游戏函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #include <conio.h>

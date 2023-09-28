@@ -3,7 +3,7 @@
  * File Name:     MOIP.h
  * File Function: 图像处理函数、菜单函数、矩阵运算函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #pragma once

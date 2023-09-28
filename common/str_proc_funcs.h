@@ -3,7 +3,7 @@
  * File Name:     str_proc_funcs.h
  * File Function: 字符串处理函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/27
+ * Update Date:   2023/9/28
  ****************************************************************/
 
 #pragma once
