@@ -303,7 +303,7 @@ for (int j = 0; j < col * 8; j++) {
 #### 随机线条（垂直）
 
 ```cpp
-int* elements = new int[col * 16];
+int* elements = new(nothrow) int[col * 16];
 if (elements == NULL)
     exit(-1);
 for (int i = 0; i < col * 16; i++)
@@ -321,7 +321,7 @@ delete[] elements;
 #### 随机线条（水平）
 
 ```cpp
-int* elements = new int[row * 16];
+int* elements = new(nothrow) int[row * 16];
 if (elements == NULL)
     exit(-1);
 for (int i = 0; i < row * 16; i++)
@@ -339,7 +339,9 @@ delete[] elements;
 #### 溶解
 
 ```cpp
-int* allPoints = new int[row * col * 256];
+int* allPoints = new(nothrow) int[row * col * 256];
+if (allPoints == NULL)
+    exit(-1);
 for (int i = 0; i < row * col * 256; i++)
     allPoints[i] = i;
 shuffle(allPoints, row * col * 256);
@@ -355,7 +357,9 @@ delete[] allPoints;
 #### 随机每点颜色
 
 ```cpp
-int* allPoints = new int[row * col * 256];
+int* allPoints = new(nothrow) int[row * col * 256];
+if (allPoints == NULL)
+    exit(-1);
 for (int i = 0; i < row * col * 256; i++)
     allPoints[i] = i;
 shuffle(allPoints, row * col * 256);

@@ -141,8 +141,8 @@ public:
     Array operator*(Array& arr);
     Array operator/(Array& arr);
     operator int(void);
-    friend ostream& operator<<(ostream& out, const Array& arr);
-    friend istream& operator>>(istream& in, Array& arr);
+    friend std::ostream& operator<<(std::ostream& out, const Array& arr);
+    friend std::istream& operator>>(std::istream& in, Array& arr);
     friend Array elementwiseOperation(Array& arr, int n, Operation optn);
     friend Array operator*(Array& arr, int n);
     friend Array operator*(int n, Array& arr);
@@ -315,12 +315,12 @@ operator int(void);
 #### 友元函数
 
 ```cpp
-friend ostream& operator<<(ostream& out, const Array& arr);
+friend std::ostream& operator<<(std::ostream& out, const Array& arr);
 ```
 重载流输出运算符 `<<`，用于将数组打印到输出流。
 
 ```cpp
-friend istream& operator>>(istream& in, Array& arr);
+friend std::istream& operator>>(std::istream& in, Array& arr);
 ```
 重载流插入运算符 `>>`，用于从输入流中读取数据并填充数组。
 
@@ -373,10 +373,10 @@ delete[] data;
 #### 视频文件每一帧的读取
 
 ```cpp
-VideoCapture cap(path);
+cv::VideoCapture cap(path);
 if (!cap.isOpened())
     exit(-1);
-Mat frame;
+cv::Mat frame;
 int frameNumber = 0;
 while (true) {
     cap >> frame;
@@ -386,8 +386,8 @@ while (true) {
     imwrite(path, frame);
     cout << ">>> Saved frame" << setw(5) << ++frameNumber << " as " << &path[7] << endl;
 }
-int x = int(cap.get(CAP_PROP_FRAME_WIDTH));
-int y = int(cap.get(CAP_PROP_FRAME_HEIGHT));
+int x = int(cap.get(cv::CAP_PROP_FRAME_WIDTH));
+int y = int(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
 double frameRate = cap.get(cv::CAP_PROP_FPS);
 cap.release();
 ```
