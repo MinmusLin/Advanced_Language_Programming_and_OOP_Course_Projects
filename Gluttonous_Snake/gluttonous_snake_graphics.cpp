@@ -48,7 +48,7 @@ void initialize_graphics(Mode mode)
     _stprintf(infoText, _T("[当前模式历史最高分：%d]"), highestScore);
     settextstyle(&Font);
     settextcolor(BLACK);
-    outtextxy(leftGridMargin + gridCol * (gridSideLength + gridSpace) + gridSpace - strlen(promptInfo) * (topGridMargin - topInfoMargin - bottomInfoMargin) / 2, topInfoMargin, infoText);
+    outtextxy(leftGridMargin + gridCol * (gridSideLength + gridSpace) + gridSpace - int(strlen(promptInfo)) * (topGridMargin - topInfoMargin - bottomInfoMargin) / 2, topInfoMargin, infoText);
 }
 
 /*

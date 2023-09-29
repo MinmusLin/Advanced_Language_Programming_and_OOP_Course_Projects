@@ -18,13 +18,13 @@
     <ClInclude Include="Array.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\common\cmd_console_tools.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="..\common\FastPrinter.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\common\PicReader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cmd_console_tools.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

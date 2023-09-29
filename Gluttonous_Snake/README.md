@@ -1093,7 +1093,7 @@ void resetHighestScore(void)
 
 ## 编译运行环境
 
-* 本项目仅适用于x86架构
+* 本项目适用于x86和x64架构
 
 ## 库依赖
 
