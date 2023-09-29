@@ -7,6 +7,7 @@
  ****************************************************************/
 
 #include <iostream>
+#include <Windows.h>
 
 using namespace std;
 
@@ -64,6 +65,9 @@ void capital(int num, int flag_of_zero)
  */
 int main()
 {
+    /* Set console title */
+    SetConsoleTitleA("RMB to Capital");
+
     /* Input */
     double num, temp;
     int a01, a02, a03, a04, a05, a06, a07, a08, a09, a10, a11, a12, mark = 0;
