@@ -3,7 +3,7 @@
  * File Name:     gluttonous_snake_menu.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <conio.h>
@@ -39,6 +39,8 @@ static bool isPointInRect(int x, int y, int top, int bottom, int left = 554, int
 void startPage(void)
 {
     initgraph(menuWidth, menuHeight);
+    HWND hwnd = GetHWnd();
+    SetWindowText(hwnd, _T("Gluttonous Snake"));
     IMAGE img;
     loadimage(&img, _T("data/start_page.png"));
     putimage(0, 0, &img);
@@ -54,8 +56,11 @@ void startPage(void)
 Mode menu(void)
 {
     /* Display menu page */
-    if (menuFlag)
+    if (menuFlag) {
         initgraph(menuWidth, menuHeight);
+        HWND hwnd = GetHWnd();
+        SetWindowText(hwnd, _T("Gluttonous Snake"));
+    }
     menuFlag = true;
     IMAGE img;
     loadimage(&img, _T("data/menu_page.png"));

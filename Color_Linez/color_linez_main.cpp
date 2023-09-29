@@ -3,7 +3,7 @@
  * File Name:     color_linez_main.cpp
  * File Function: 主体函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -27,7 +27,7 @@ int main()
     srand((unsigned int)(time(0)));
 
     /* Play color linez game */
-    while (1) {
+    while (true) {
         /* Initialize game and CGI objects */
         class GAME game;
         CONSOLE_GRAPHICS_INFO CGI;
@@ -45,12 +45,12 @@ int main()
         int startRow, startCol, targetRow, targetCol;
 
         /* Perform one operation */
-        while (1) {
+        while (true) {
             /* Determine if the game is over */
             if (!game.get_blank()) {
                 cct_showstr(2, 5 + row * 2, "游戏结束! 按回车键重新开始游戏", COLOR_BLACK, COLOR_HYELLOW);
                 cout << setw(42) << " ";
-                while (1) {
+                while (true) {
                     char optn = _getch();
                     if (optn == 0 || optn == -32)
                         optn = _getch();
@@ -91,7 +91,7 @@ int main()
                 break;
 
             /* Select the target point */
-            while (1) {
+            while (true) {
                 /* Read keyboard and mouse events */
                 int MAction, MRow, MCol, KeyCode1 = 0, KeyCode2 = 0;
                 gmw_read_keyboard_and_mouse(&CGI, MAction, MRow, MCol, KeyCode1, KeyCode2);
@@ -187,7 +187,7 @@ int main()
                     /* Break the loop */
                     break;
                 } // end of if ((MAction == MOUSE_LEFT_BUTTON_CLICK || MAction == MOUSE_LEFT_BUTTON_DOUBLE_CLICK))
-            } // end of while (1)
+            } // end of while (true)
 
             /* Determine whether to restart the game */
             if (loop_break)
@@ -196,6 +196,6 @@ int main()
             /* Calculate and print statistic */
             game.calculate();
             game.print_statistic();
-        } // end of while (1)
-    } // end of while (1)
+        } // end of while (true)
+    } // end of while (true)
 }

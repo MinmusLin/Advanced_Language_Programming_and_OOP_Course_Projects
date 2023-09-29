@@ -3,7 +3,7 @@
  * File Name:     MOIP_tools.cpp
  * File Function: 工具函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -37,7 +37,7 @@ int menu(void)
         cct_showstr(4, 6 + 2 * i, items[i], COLOR_HWHITE, COLOR_BLACK);
 
     /* Read the option */
-    while (1) {
+    while (true) {
         char optn = _getch();
         if (optn == 0 || optn == -32)
             optn = _getch();
@@ -128,7 +128,7 @@ void print_framework(void)
 int enter_digit(int x, int y, const char* prompt)
 {
     cct_showstr(x, y, prompt, COLOR_HWHITE, COLOR_BLACK);
-    while (1) {
+    while (true) {
         char input = _getch();
         if (input == 0 || input == -32)
             input = _getch();
@@ -311,7 +311,7 @@ bool get_kernel(int kernel[][kernelSize], int& kernel_sum)
 
     /* Select or input a kernel matrix */
     cct_showstr(4, 6 + 3 * (kernelSize + 4), "请选择卷积核矩阵(选择G输入自定义卷积核矩阵): ", COLOR_HWHITE, COLOR_BLACK);
-    while (1) {
+    while (true) {
         char optn = _getch();
         if (optn == 0 || optn == -32)
             optn = _getch();

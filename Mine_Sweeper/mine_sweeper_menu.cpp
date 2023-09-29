@@ -3,7 +3,7 @@
  * File Name:     mine_sweeper_menu.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -134,7 +134,7 @@ int enter_digit(const char* prompt)
 
     /* Input a ten-digit number */
     int num2;
-    while (1) {
+    while (true) {
         char input = _getch();
         if (input == 0 || input == -32)
             input = _getch();
@@ -149,7 +149,7 @@ int enter_digit(const char* prompt)
 
     /* Input the units digit */
     int num1;
-    while (1) {
+    while (true) {
         char input = _getch();
         if (input == 0 || input == -32)
             input = _getch();
@@ -179,7 +179,7 @@ int enter_digit(const char* prompt)
 char read_option(void)
 {
     /* Read the option */
-    while (1) {
+    while (true) {
         char optn = _getch();
         if (optn == 0 || optn == -32)
             optn = _getch();

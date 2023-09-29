@@ -3,7 +3,7 @@
  * File Name:     MOIP_matrix.cpp
  * File Function: 矩阵运算函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>

@@ -128,4 +128,4 @@ void hanoi(int n, char src, char tmp, char dst)
 
 ## 文档更新日期
 
-2023年9月28日
+2023年9月30日

@@ -3,7 +3,7 @@
  * File Name:     mine_sweeper_main.cpp
  * File Function: 主体函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -25,7 +25,7 @@ int main()
     srand((unsigned int)(time(0)));
 
     /* Play Minesweeper game */
-    while (1) {
+    while (true) {
         /* Call the menu function */
         int row, col, mine;
         int optn = menu(row, col, mine);
@@ -47,7 +47,7 @@ int main()
         time_t start_time = clock();
 
         /* Read keyboard and mouse events */
-        while (1) {
+        while (true) {
             /* Print the number of mines */
             cct_showint(10, 0, mine, COLOR_BLACK, COLOR_HYELLOW);
 
@@ -111,6 +111,6 @@ int main()
                     draw_block(&CGI, MRow, MCol, matrix, bdi);
                 } // end of else if (matrix[MRow + 1][MCol + 1].status == MARKED_QUESTION)
             } // end of else if (MAction == MOUSE_RIGHT_BUTTON_CLICK || MAction == MOUSE_RIGHT_BUTTON_DOUBLE_CLICK)
-        } // end of while (1)
-    } // end of while (1)
+        } // end of while (true)
+    } // end of while (true)
 }

@@ -3,7 +3,7 @@
  * File Name:     RMB_to_capital.cpp
  * File Function: 人民币转大写函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -68,7 +68,7 @@ int main()
     double num, temp;
     int a01, a02, a03, a04, a05, a06, a07, a08, a09, a10, a11, a12, mark = 0;
     cout << "请输入[0-100亿)之间的数字:" << endl;
-    while (1) {
+    while (true) {
         cin >> num;
         if (cin.good() && num >= 0 && num < 10000000000) {
             break;

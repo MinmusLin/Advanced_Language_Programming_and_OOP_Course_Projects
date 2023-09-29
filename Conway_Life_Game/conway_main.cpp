@@ -3,12 +3,13 @@
  * File Name:     conway_main.cpp
  * File Function: 主体函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <Windows.h>
 #include <ctime>
 #include <conio.h>
+#include <graphics.h>
 #include "conway.h"
 
 using namespace std;

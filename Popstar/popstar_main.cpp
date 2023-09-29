@@ -3,7 +3,7 @@
  * File Name:     popstar_main.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -62,7 +62,7 @@ static int menu(void)
     cct_gotoxy(15, 22);
 
     /* Read the correct option */
-    while (1) {
+    while (true) {
         char optn = _getch();
         if (optn == 0 || optn == -32)
             optn = _getch();
@@ -77,7 +77,7 @@ static int menu(void)
         }
         else
             continue;
-    } // end of while (1)
+    } // end of while (true)
 }
 
 /*
@@ -91,7 +91,7 @@ int main()
     srand((unsigned int)(time(0)));
 
     /* Call the corresponding execution functions for each menu item */
-    while (1) {
+    while (true) {
         switch (menu()) {
             case 'A':
             case 'a':
@@ -132,5 +132,5 @@ int main()
                 return 0;
         } // end of switch (menu())
         wait_for_end();
-    } // end of while (1)
+    } // end of while (true)
 }

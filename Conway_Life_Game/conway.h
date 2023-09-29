@@ -3,7 +3,7 @@
  * File Name:     conway.h
  * File Function: Conway类、图形化界面函数、主体函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #pragma once

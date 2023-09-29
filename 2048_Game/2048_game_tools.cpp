@@ -3,7 +3,7 @@
  * File Name:     2048_game_tools.cpp
  * File Function: 工具函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -74,7 +74,7 @@ int enter_digit(int x, int y, const char* prompt)
 
     /* Input a number */
     char input;
-    while (1) {
+    while (true) {
         input = _getch();
         if (input == 0 || input == -32)
             input = _getch();

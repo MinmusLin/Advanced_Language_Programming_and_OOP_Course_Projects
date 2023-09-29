@@ -3,7 +3,7 @@
  * File Name:     str_proc_funcs.cpp
  * File Function: 字符串处理函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include "../common/str_proc_funcs.h"
@@ -19,7 +19,7 @@ using namespace std;
 int strlen_array(const char str[])
 {
     int i = -1;
-    while (1) {
+    while (true) {
         if (str[++i])
             continue;
         else
@@ -38,7 +38,7 @@ int strlen_array(const char str[])
 int strcat_array(char s1[], const char s2[])
 {
     int i = strlen_array(s1), j = 0;
-    while (1) {
+    while (true) {
         if (s2[j]) {
             s1[i++] = s2[j++];
             continue;
@@ -79,7 +79,7 @@ int strncat_array(char s1[], const char s2[], const int len)
 int strcpy_array(char s1[], const char s2[])
 {
     int i = 0, j = 0;
-    while (1) {
+    while (true) {
         if (s2[j]) {
             s1[i++] = s2[j++];
             continue;
@@ -119,7 +119,7 @@ int strncpy_array(char s1[], const char s2[], const int len)
 int strcmp_array(const char s1[], const char s2[])
 {
     int i = 0;
-    while (1) {
+    while (true) {
         if (s1[i] == s2[i]) {
             if (s1[i])
                 i++;
@@ -144,7 +144,7 @@ int strcasecmp_array(const char s1[], const char s2[])
 {
     int i = 0;
     char a, b;
-    while (1) {
+    while (true) {
         a = s1[i];
         b = s2[i];
         if (a >= 'A' && a <= 'Z')
@@ -176,7 +176,7 @@ int strcasecmp_array(const char s1[], const char s2[])
 int strncmp_array(const char s1[], const char s2[], const int len)
 {
     int i = 0;
-    while (1) {
+    while (true) {
         if (s1[i] == s2[i]) {
             if (s1[i]) {
                 if (++i == len)
@@ -203,7 +203,7 @@ int strcasencmp_array(const char s1[], const char s2[], const int len)
 {
     int i = 0;
     char a, b;
-    while (1) {
+    while (true) {
         a = s1[i];
         b = s2[i];
         if (a >= 'A' && a <= 'Z')
@@ -375,7 +375,7 @@ char* strcat_pointer(char* s1, const char* s2)
         return NULL;
     if (s2 == NULL)
         return s1;
-    while (1) {
+    while (true) {
         if (*p2) {
             *p1 = *p2;
             p1++;
@@ -431,7 +431,7 @@ char* strcpy_pointer(char* s1, const char* s2)
     if (s1 == NULL)
         return NULL;
     if (s2 != NULL)
-        while (1) {
+        while (true) {
             if (*p2) {
                 *p1 = *p2;
                 p1++;
@@ -489,7 +489,7 @@ int strcmp_pointer(const char* s1, const char* s2)
     else if (s1 != NULL && s2 == NULL)
         return 1;
     else
-        while (1) {
+        while (true) {
             if (*p1 == *p2) {
                 if (*p1) {
                     p1++;
@@ -522,7 +522,7 @@ int strcasecmp_pointer(const char* s1, const char* s2)
     else if (s1 != NULL && s2 == NULL)
         return 1;
     else
-        while (1) {
+        while (true) {
             char temp1 = *p1, temp2 = *p2;
             if (temp1 >= 'A' && temp1 <= 'Z')
                 temp1 += 32;
@@ -562,7 +562,7 @@ int strncmp_pointer(const char* s1, const char* s2, const int len)
     else if (s1 != NULL && s2 == NULL)
         return 1;
     else
-        while (1) {
+        while (true) {
             if (*p1 == *p2) {
                 if (*p1) {
                     p1++;
@@ -597,7 +597,7 @@ int strcasencmp_pointer(const char* s1, const char* s2, const int len)
     else if (s1 != NULL && s2 == NULL)
         return 1;
     else
-        while (1) {
+        while (true) {
             char temp1 = *p1, temp2 = *p2;
             if (temp1 >= 'A' && temp1 <= 'Z')
                 temp1 += 32;

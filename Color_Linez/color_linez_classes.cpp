@@ -3,7 +3,7 @@
  * File Name:     color_linez_classes.cpp
  * File Function: 类的成员函数的体外实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -43,7 +43,7 @@ GAME::GAME()
 void GAME::generate(CONSOLE_GRAPHICS_INFO* pCGI, int n, bool initialize)
 {
     for (int i = 0; i < n; i++)
-        while (1) {
+        while (true) {
             int r = rand() % row + 1, c = rand() % col + 1;
             if (matrix[r][c])
                 continue;

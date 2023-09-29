@@ -3,7 +3,7 @@
  * File Name:     hanoi_menu.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -46,7 +46,7 @@ int menu(void)
     cout << "--------------------------------------" << endl;
     cout << "  [请选择:] ";
     char optn;
-    while (1) {
+    while (true) {
         optn = _getch();
         if (optn >= '0' && optn <= '9') {
             cout << optn << endl << endl << endl;

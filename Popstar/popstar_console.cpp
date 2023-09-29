@@ -3,7 +3,7 @@
  * File Name:     popstar_console.cpp
  * File Function: 伪图形界面方式函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -235,7 +235,7 @@ void console_fullVersion(int divider_or_not)
                 cct_disable_mouse();
                 cct_setcursor(CURSOR_VISIBLE_NORMAL);
             } // end of while (loop1)
-        } // end of while (1)
+        } // end of while (true)
     } // end of while (loop)
 }
 
@@ -404,7 +404,7 @@ int mouse_and_keyboard_operations(int matrix[][10], int row, int column, int& X,
     cct_setcursor(CURSOR_INVISIBLE);
 
     /* Mouse and keyboard operations */
-    while (1) {
+    while (true) {
         /* Reverse display */
         if (judgment_legality(matrix, row, column, X, Y, select_r, select_c, divider_or_not, TRANSFORMATION))
             print_block(matrix, select_r, select_c, divider_or_not, COLOR_WHITE, BLOCK_WIDTH, BLOCK_HEIGHT, COORDINATE_LOCK, COORDINATE_LOCK, COORDINATE_LOCK);
@@ -716,7 +716,7 @@ void move_coordinate_keyboard(int matrix[][10], int row, int column, int select_
         /* Change the state */
         switch (keycode2) {
             case KB_ARROW_UP:
-                while (1) {
+                while (true) {
                     temp_r--;
                     if (temp_r == -1)
                         temp_r = row - 1;
@@ -725,7 +725,7 @@ void move_coordinate_keyboard(int matrix[][10], int row, int column, int select_
                 }
                 break;
             case KB_ARROW_DOWN:
-                while (1) {
+                while (true) {
                     temp_r++;
                     if (temp_r == row)
                         temp_r = 0;
@@ -734,7 +734,7 @@ void move_coordinate_keyboard(int matrix[][10], int row, int column, int select_
                 }
                 break;
             case KB_ARROW_LEFT:
-                while (1) {
+                while (true) {
                     temp_c--;
                     if (temp_c == -1)
                         temp_c = column - 1;
@@ -743,7 +743,7 @@ void move_coordinate_keyboard(int matrix[][10], int row, int column, int select_
                 }
                 break;
             case KB_ARROW_RIGHT:
-                while (1) {
+                while (true) {
                     temp_c++;
                     if (temp_c == column)
                         temp_c = 0;

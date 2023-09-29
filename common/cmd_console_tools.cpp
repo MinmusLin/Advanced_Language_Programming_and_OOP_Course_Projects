@@ -3,7 +3,7 @@
  * File Name:     cmd_console_tools.cpp
  * File Function: 伪图形界面函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -349,7 +349,7 @@ int cct_read_keyboard_and_mouse(int& MX, int& MY, int& MAction, int& keycode1, i
     INPUT_RECORD InputRec;
     DWORD res;
     COORD crPos;
-    while (1) {
+    while (true) {
         ReadConsoleInput(__hin, &InputRec, 1, &res);
         if (InputRec.EventType == KEY_EVENT) {
             keycode1 = 0x00;

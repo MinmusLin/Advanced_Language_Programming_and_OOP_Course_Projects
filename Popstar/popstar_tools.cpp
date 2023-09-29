@@ -3,7 +3,7 @@
  * File Name:     popstar_tools.cpp
  * File Function: 工具函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -23,7 +23,7 @@ using namespace std;
 void parameters_input(int& row, int& column)
 {
     /* Enter the number of rows */
-    while (1) {
+    while (true) {
         cout << "请输入行数(" << ROW_MIN << "-" << ROW_MAX << ")：" << endl;
         cin >> row;
         if (cin.good()) {
@@ -39,7 +39,7 @@ void parameters_input(int& row, int& column)
     }
 
     /* Enter the number of columns */
-    while (1) {
+    while (true) {
         cout << "请输入列数(" << COLUMN_MIN << "-" << COLUMN_MAX << ")：" << endl;
         cin >> column;
         if (cin.good()) {
@@ -147,7 +147,7 @@ void wait_for_end(void)
     cct_getxy(get_x, get_y);
 
     /* Input */
-    while (1) {
+    while (true) {
         /* Clear the input content */
         cct_showch(get_x, get_y, ' ', COLOR_BLACK, COLOR_WHITE, 3);
         cct_gotoxy(get_x, get_y);
@@ -155,7 +155,7 @@ void wait_for_end(void)
         /* Read a single character without displaying it */
         char input[4] = { 0 };
         for (int i = 0; i < 4; i++) {
-            while (1) {
+            while (true) {
                 char ch = _getch();
                 if (ch == 0 || ch == -32)
                     ch = _getch();
@@ -172,7 +172,7 @@ void wait_for_end(void)
                 }
                 else
                     continue;
-            } // end of while (1)
+            } // end of while (true)
         } // end of for
 
         /* Validate the correctness of the input */
@@ -182,7 +182,7 @@ void wait_for_end(void)
         }
         else
             break;
-    } // end of while (1)
+    } // end of while (true)
 }
 
 /*
@@ -212,7 +212,7 @@ int strcasecmp(const char s1[], const char s2[])
 {
     int i = 0;
     char a, b;
-    while (1) {
+    while (true) {
         a = s1[i];
         b = s2[i];
         if (a >= 'A' && a <= 'Z')
@@ -227,7 +227,7 @@ int strcasecmp(const char s1[], const char s2[])
         }
         else
             return a - b;
-    } // end of while (1)
+    } // end of while (true)
 }
 
 /*

@@ -3,7 +3,7 @@
  * File Name:     hanoi_solution.cpp
  * File Function: 汉诺塔综合演示解决方案函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -34,7 +34,7 @@ int strcasecmp(const char s1[], const char s2[])
 {
     int i = 0;
     char a, b;
-    while (1) {
+    while (true) {
         a = s1[i];
         b = s2[i];
         if (a >= 'A' && a <= 'Z')
@@ -116,7 +116,7 @@ void delay(int delay_optn, int singleStepDemo_or_not, int printMoveProcess_or_no
  */
 void parameters_input(int* p_n, char* p_src, char* p_tmp, char* p_dst, int* p_delay_optn, int delay_or_not)
 {
-    while (1) {
+    while (true) {
         cout << "请输入汉诺塔的层数(1-10)" << endl;
         cin >> *p_n;
         if (cin.good() && (*p_n >= 1 && *p_n <= 10)) {
@@ -129,7 +129,7 @@ void parameters_input(int* p_n, char* p_src, char* p_tmp, char* p_dst, int* p_de
             cin.ignore(65536, '\n');
         }
     }
-    while (1) {
+    while (true) {
         cout << "请输入起始柱(A-C)" << endl;
         cin >> *p_src;
         if (cin.good() && ((*p_src >= 'A' && *p_src <= 'C') || (*p_src >= 'a' && *p_src <= 'c'))) {
@@ -148,7 +148,7 @@ void parameters_input(int* p_n, char* p_src, char* p_tmp, char* p_dst, int* p_de
             cin.ignore(65536, '\n');
         }
     }
-    while (1) {
+    while (true) {
         cout << "请输入目标柱(A-C)" << endl;
         cin >> *p_dst;
         if (cin.good() && ((*p_dst >= 'A' && *p_dst <= 'C') || (*p_dst >= 'a' && *p_dst <= 'c'))) {
@@ -174,7 +174,7 @@ void parameters_input(int* p_n, char* p_src, char* p_tmp, char* p_dst, int* p_de
     }
     *p_tmp = 'A' + 'B' + 'C' - *p_src - *p_dst;
     if (delay_or_not) {
-        while (1) {
+        while (true) {
             cout << "请输入移动速度(0-5: 0-按回车单步演示 1-延时最长 5-延时最短) ";
             cin >> *p_delay_optn;
             if (cin.good() && (*p_delay_optn >= 0 && *p_delay_optn <= 5)) {
@@ -774,7 +774,7 @@ void optn_9_graphicalSolution_game(void)
         cct_gotoxy(60, 34);
         cout << "  " << endl << "                     ";
         cct_gotoxy(60, 34);
-        while (1) {
+        while (true) {
             char input[20] = { 0 };
             if (!top[_src - 'A'] && !top[_tmp - 'A'] && top[_dst - 'A']) {
                 cout << endl << "游戏结束!!!!!";
@@ -782,7 +782,7 @@ void optn_9_graphicalSolution_game(void)
                 break;
             }
             for (int i = 0; i < 20; i++)
-                while (1) {
+                while (true) {
                     char ch = _getch();
                     if (ch == 0 || ch == -32)
                         ch = _getch();

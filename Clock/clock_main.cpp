@@ -3,7 +3,7 @@
  * File Name:     clock_main.cpp
  * File Function: 主体函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <graphics.h>
@@ -22,6 +22,8 @@ int main()
 {
     /* Initialize graphical interface */
     initgraph(consoleWidth, consoleHeight);
+    HWND hwnd = GetHWnd();
+    SetWindowText(hwnd, _T("Clock"));
 
     /* Draw gradient color background */
     COLORREF start = RGB(130, 148, 196), end = RGB(255, 234, 210);

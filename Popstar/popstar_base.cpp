@@ -3,7 +3,7 @@
  * File Name:     popstar_base.cpp
  * File Function: 内部数组方式函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -93,7 +93,7 @@ void base_level(void)
     matrix_initialize(matrix, row, column);
 
     /* Complete one level */
-    while (1) {
+    while (true) {
         /* Print the current array */
         print_array(matrix, judgment_array, row, column, 0);
 
@@ -126,7 +126,7 @@ void base_level(void)
 
         /* Press the Enter key to continue */
         wait_for_enter("本次消除结束，按回车键继续新一次的消除...");
-    } // end of while (1)
+    } // end of while (true)
 }
 
 /*
@@ -225,7 +225,7 @@ int coordinate_input(int matrix[][10], int judgment_array[][12], int row, int co
     cct_getxy(get_x, get_y);
 
     /* Input */
-    while (1) {
+    while (true) {
         /* Clear the input content */
         cct_showch(get_x, get_y, ' ', COLOR_BLACK, COLOR_WHITE, 2);
         cct_gotoxy(get_x, get_y);
@@ -233,7 +233,7 @@ int coordinate_input(int matrix[][10], int judgment_array[][12], int row, int co
         /* Read a single character without displaying it */
         char input[3] = { 0 };
         for (int i = 0; i < 3; i++) {
-            while (1) {
+            while (true) {
                 char ch = _getch();
                 if (ch == 0 || ch == -32)
                     ch = _getch();
@@ -250,7 +250,7 @@ int coordinate_input(int matrix[][10], int judgment_array[][12], int row, int co
                 }
                 else
                     continue;
-            } //end of while (1)
+            } //end of while (true)
         } //end of for
 
         /* Clear the prompt message */
@@ -291,7 +291,7 @@ int coordinate_input(int matrix[][10], int judgment_array[][12], int row, int co
             cout << "输入错误，请重新输入";
             cct_setcolor();
         } // end of else
-    } // end of while (1)
+    } // end of while (true)
 }
 
 /*
@@ -310,7 +310,7 @@ int eliminate_confirm(int dst_r, int dst_c)
 
     /* Input */
     char input;
-    while (1) {
+    while (true) {
         input = _getch();
         if (input == 0 || input == -32)
             input = _getch();
@@ -329,7 +329,7 @@ int eliminate_confirm(int dst_r, int dst_c)
         }
         else
             continue;
-    } // end of while (1)
+    } // end of while (true)
 }
 
 /*

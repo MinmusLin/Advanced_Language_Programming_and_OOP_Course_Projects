@@ -3,7 +3,7 @@
  * File Name:     conway_graphics.cpp
  * File Function: 图形化界面函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <graphics.h>
@@ -21,6 +21,8 @@ void initialize_graphics(void)
 {
     /* Initialize the graphical interface */
     initgraph(leftGridMargin + rightGridMargin + gridCol * (gridSideLength + gridSpace) + gridSpace, topGridMargin + bottomGridMargin + gridRow * (gridSideLength + gridSpace) + gridSpace);
+    HWND hwnd = GetHWnd();
+    SetWindowText(hwnd, _T("Conway Life Game"));
     setbkcolor(GRID_BLANK_COLOR);
     setlinecolor(GRID_LINE_COLOR);
     cleardevice();

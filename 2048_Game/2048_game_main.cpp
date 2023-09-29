@@ -3,7 +3,7 @@
  * File Name:     2048_game_main.cpp
  * File Function: 主体函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -24,7 +24,7 @@ int main()
     srand((unsigned int)(time(0)));
 
     /* Play 2048 game */
-    while (1) {
+    while (true) {
         /* Initialize game and CGI objects */
         int row, col;
         menu(row, col);
@@ -37,7 +37,7 @@ int main()
         game.generate(&CGI);
 
         /* Read keyboard and mouse events */
-        while (1) {
+        while (true) {
             /* Determine if the game is over */
             if (print_prompt(game.get_score(), game.gameover_judgment()))
                 break;
@@ -72,6 +72,6 @@ int main()
                 if (game.gameover_judgment() == 2)
                     game.generate(&CGI);
             } // end of if (KeyCode1 == 224 && (KeyCode2 == KB_ARROW_UP || KeyCode2 == KB_ARROW_DOWN || KeyCode2 == KB_ARROW_LEFT || KeyCode2 == KB_ARROW_RIGHT))
-        } // end of while (1)
-    } // end of while (1)
+        } // end of while (true)
+    } // end of while (true)
 }

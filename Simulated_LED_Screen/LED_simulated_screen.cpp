@@ -3,7 +3,7 @@
  * File Name:     LED_simulated_screen.cpp
  * File Function: 模拟LED显示屏函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -207,7 +207,7 @@ void simulated_screen(bool is_simplified)
     cout << ">>> U.随机每字颜色" << endl;
     cout << ">>> V.闪烁" << endl;
     cout << endl << "请选择显示特效: ";
-    while (1) {
+    while (true) {
         optn = _getch();
         if (optn == 0 || optn == -32)
             optn = _getch();

@@ -3,7 +3,7 @@
  * File Name:     FastPrinter.cpp
  * File Function: 底层控制台绘制函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>

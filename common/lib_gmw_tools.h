@@ -3,7 +3,7 @@
  * File Name:     lib_gmw_tools.h
  * File Function: 消除类游戏通用函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #pragma once

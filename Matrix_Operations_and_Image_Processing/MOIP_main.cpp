@@ -3,7 +3,7 @@
  * File Name:     MOIP_main.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
     /* Call the menu function and enter the different functions */
-    while (1) {
+    while (true) {
         switch (menu()) {
             case 'A':
                 Matrix_Determinant();

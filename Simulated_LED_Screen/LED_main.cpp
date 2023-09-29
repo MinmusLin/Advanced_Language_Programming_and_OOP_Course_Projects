@@ -3,7 +3,7 @@
  * File Name:     LED_main.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/28
+ * Update Date:   2023/9/30
  ****************************************************************/
 
 #include <iostream>
@@ -62,7 +62,7 @@ static int menu(void)
     cout << "  [请选择:] ";
 
     /* Read the correct option */
-    while (1) {
+    while (true) {
         char optn = _getch();
         if (optn == 0 || optn == -32)
             optn = _getch();
@@ -83,7 +83,7 @@ static int menu(void)
  */
 int main()
 {
-    while (1) {
+    while (true) {
         switch (menu()) {
             case '1':
                 cct_setconsoletitle("Retrieve 16*16 bitmap information from HZK16");
