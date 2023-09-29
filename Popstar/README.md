@@ -98,7 +98,7 @@ Popstar
 int X = 0, Y = 0, ret, maction, keycode1, keycode2;
 cct_enable_mouse();
 cct_setcursor(CURSOR_INVISIBLE);
-while (1) {
+while (true) {
     ret = cct_read_keyboard_and_mouse(X, Y, maction, keycode1, keycode2);
     cct_gotoxy(0, 0);
     cout << setw(50) << "";

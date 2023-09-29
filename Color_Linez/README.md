@@ -155,7 +155,7 @@ int get_blank(void);
 ### 游戏主体架构
 
 ```cpp
-while (1) {
+while (true) {
     /* Initialize GAME and CONSOLE_GRAPHICS_INFO class */
     class GAME game;
     CONSOLE_GRAPHICS_INFO CGI;
@@ -173,12 +173,12 @@ while (1) {
     int startRow, startCol, targetRow, targetCol;
 
     /* Perform one operation */
-    while (1) {
+    while (true) {
         /* Determine if the game is over */
         if (!game.get_blank()) {
             cct_showstr(2, 5 + row * 2, "游戏结束! 按回车键重新开始游戏", COLOR_BLACK, COLOR_HYELLOW);
             cout << setw(42) << " ";
-            while (1) {
+            while (true) {
                 char optn = _getch();
                 if (optn == 0 || optn == -32)
                     optn = _getch();
@@ -219,7 +219,7 @@ while (1) {
             break;
 
         /* Select the target point */
-        while (1) {
+        while (true) {
             /* Read keyboard and mouse events */
             int MAction, MRow, MCol, KeyCode1 = 0, KeyCode2 = 0;
             gmw_read_keyboard_and_mouse(&CGI, MAction, MRow, MCol, KeyCode1, KeyCode2);

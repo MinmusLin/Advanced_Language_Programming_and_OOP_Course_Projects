@@ -57,7 +57,7 @@ Mine_Sweeper
 ### 游戏主体架构
 
 ```cpp
-while (1) {
+while (true) {
     /* Call the menu function */
     int row, col, mine;
     int optn = menu(row, col, mine);
@@ -79,7 +79,7 @@ while (1) {
     time_t start_time = clock();
 
     /* Read keyboard and mouse events */
-    while (1) {
+    while (true) {
         /* Print the number of mines */
         cct_showint(10, 0, mine, COLOR_BLACK, COLOR_HYELLOW);
 

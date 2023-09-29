@@ -143,7 +143,7 @@ int get_score(void);
 ### 游戏主体架构
 
 ```cpp
-while (1) {
+while (true) {
     /* Initialize GAME and CONSOLE_GRAPHICS_INFO class */
     int row, col;
     menu(row, col);
@@ -156,7 +156,7 @@ while (1) {
     game.generate(&CGI);
 
     /* Read keyboard and mouse events */
-    while (1) {
+    while (true) {
         /* Determine if the game is over */
         if (print_prompt(game.get_score(), game.gameover_judgment()))
             break;
