@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Simulated_LED_Screen", "Sim
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Conway_Life_Game", "Conway_Life_Game\Conway_Life_Game.vcxproj", "{B25A5FF2-9679-42FD-A1A0-9C45DA69A101}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tic_Tac_Toe", "Tic_Tac_Toe\Tic_Tac_Toe.vcxproj", "{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{B25A5FF2-9679-42FD-A1A0-9C45DA69A101}.Release|x64.Build.0 = Release|x64
 		{B25A5FF2-9679-42FD-A1A0-9C45DA69A101}.Release|x86.ActiveCfg = Release|Win32
 		{B25A5FF2-9679-42FD-A1A0-9C45DA69A101}.Release|x86.Build.0 = Release|Win32
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Debug|x64.ActiveCfg = Debug|x64
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Debug|x64.Build.0 = Debug|x64
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Debug|x86.ActiveCfg = Debug|Win32
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Debug|x86.Build.0 = Debug|Win32
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Release|x64.ActiveCfg = Release|x64
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Release|x64.Build.0 = Release|x64
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Release|x86.ActiveCfg = Release|Win32
+		{EEB742E4-D439-4F0A-B0CB-71BA1530C7D1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
