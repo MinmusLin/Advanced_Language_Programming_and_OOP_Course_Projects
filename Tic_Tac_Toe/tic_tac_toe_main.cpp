@@ -29,22 +29,58 @@ int main()
 
     /* Print menu and play Tic-Tac-Toe game */
     while (true) {
-        switch (menu()) {
+        int optn = menu();
+        switch (optn) {
             case 1:
             case 2:
             case 3:
             case 4: {
-                /* Initialize grid status */
                 GridStatus gridStatus[BOARD_SIZE][BOARD_SIZE] = { Empty };
-
-
                 for (int i = 0; i < BOARD_SIZE * BOARD_SIZE; i++) {
                     cout << ">>> 第 " << i + 1 << " 轮" << endl << endl;
                     while (true) {
-                        cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子行数: ";
-                        int r = input_digit(1, BOARD_SIZE);
-                        cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子列数: ";
-                        int c = input_digit(1, BOARD_SIZE);
+                        int r, c;
+                        switch (optn) {
+                            case 1:
+                                cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子行数: ";
+                                r = input_digit(1, BOARD_SIZE);
+                                cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子列数: ";
+                                c = input_digit(1, BOARD_SIZE);
+                                break;
+                            case 2:
+                                if (i % 2) {
+                                    cout << "后手(○)请输入本轮落子行数: ";
+                                    r = input_digit(1, BOARD_SIZE);
+                                    cout << "后手(○)请输入本轮落子列数: ";
+                                    c = input_digit(1, BOARD_SIZE);
+                                }
+                                else {
+                                    find_next_move_to_win(gridStatus, r, c);
+                                    cout << "先手(×)请输入本轮落子行数: " << ++r << endl;
+                                    cout << "先手(×)请输入本轮落子列数: " << ++c << endl;
+                                }
+                                break;
+                            case 3:
+                                if (i % 2) {
+                                    find_next_move_to_win(gridStatus, r, c);
+                                    cout << "后手(○)请输入本轮落子行数: " << ++r << endl;
+                                    cout << "后手(○)请输入本轮落子列数: " << ++c << endl;
+                                }
+                                else {
+                                    cout << "先手(×)请输入本轮落子行数: ";
+                                    r = input_digit(1, BOARD_SIZE);
+                                    cout << "先手(×)请输入本轮落子列数: ";
+                                    c = input_digit(1, BOARD_SIZE);
+                                }
+                                break;
+                            case 4:
+                                find_next_move_to_win(gridStatus, r, c);
+                                cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子行数: " << ++r << endl;
+                                cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子列数: " << ++c << endl;
+                                break;
+                            default:
+                                exit(-1);
+                        }
                         if (gridStatus[r - 1][c - 1] == Empty) {
                             gridStatus[r - 1][c - 1] = (i % 2 ? SecondPlayer : FirstPlayer);
                             cout << endl;
@@ -55,13 +91,14 @@ int main()
                         else
                             cout << endl << ">>> 该位置已被占用，请重新输入!" << endl << endl;
                     }
+                    GridStatus winner = check_win(gridStatus);
+                    if (winner == FirstPlayer || winner == SecondPlayer) {
+                        print_winner(winner);
+                        break;
+                    }
+                    else if (winner == Empty && i == BOARD_SIZE * BOARD_SIZE - 1)
+                        cout << ">>> 游戏结束! 平局!" << endl << endl;
                 }
-
-
-                cout << "游戏结束!" << endl;
-
-
-                cout << endl;
                 system("pause");
                 break;
             }

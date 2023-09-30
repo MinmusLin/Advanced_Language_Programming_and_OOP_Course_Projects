@@ -14,7 +14,12 @@
 /* Define constant enum variable */
 const enum GridStatus { Empty, FirstPlayer, SecondPlayer };
 
+/* Function declaration in tic_tac_toe_algorithm.cpp */
+GridStatus find_next_move_to_win(const GridStatus gridStatus[][BOARD_SIZE], int& row, int& col);
+
 /* Function declarations in tic_tac_toe_tools.cpp */
 int menu(void);
-void print_grid_status(GridStatus gridStatus[][BOARD_SIZE]);
+void print_grid_status(const GridStatus gridStatus[][BOARD_SIZE]);
 int input_digit(int lowerLimit, int upperLimit);
+GridStatus check_win(const GridStatus grid[][BOARD_SIZE]);
+void print_winner(GridStatus winner);
