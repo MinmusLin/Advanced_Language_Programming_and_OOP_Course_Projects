@@ -1,14 +1,17 @@
 /****************************************************************
  * Project Name:  Tetris
  * File Name:     tetris.h
- * File Function: Block类、Control类、历史最高分记录函数、图形化界面函数、主体函数的头文件
+ * File Function: Block类、Control类、图形化界面函数、主体函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/1
+ * Update Date:   2023/10/2
  ****************************************************************/
 
 #pragma once
 #include <graphics.h>
 #include <vector>
+
+/* Define KEYBOARD_ESC */
+#define KEYBOARD_ESC 27
 
 /* Define RGB color */
 #define GRID_LINE_COLOR RGB(210, 210, 210)
@@ -43,7 +46,7 @@ const int colorNum = 7;
 const LOGFONT Font_CN{ (topGridMargin - topInfoMargin - bottomInfoMargin), (topGridMargin - topInfoMargin - bottomInfoMargin) / 2, 0, 0, FW_DONTCARE, false, false, false, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, L"黑体" };
 const LOGFONT Font_EN{ (topGridMargin - topInfoMargin - bottomInfoMargin), 0, 0, 0, FW_BOLD, false, false, false, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, L"等线" };
 
-/* Define block category */
+/* Define block category and block limits */
 const std::vector<std::vector<std::vector<std::vector<int>>>> blockCategory = {
     { { {1,1},{1,2},{2,1},{2,2} }                                                                                     }, // "O" shape
     { { {0,1},{1,1},{2,1},{3,1} },{ {1,0},{1,1},{1,2},{1,3} }                                                         }, // "I" shape
@@ -52,6 +55,15 @@ const std::vector<std::vector<std::vector<std::vector<int>>>> blockCategory = {
     { { {0,1},{1,1},{2,1},{2,2} },{ {1,1},{1,2},{1,3},{2,1} },{ {1,1},{1,2},{2,2},{3,2} },{ {1,2},{2,0},{2,1},{2,2} } }, // "L" shape
     { { {0,2},{1,2},{2,2},{2,1} },{ {1,1},{2,1},{2,2},{2,3} },{ {1,1},{1,2},{2,1},{3,1} },{ {1,0},{1,1},{1,2},{2,2} } }, // "J" shape
     { { {2,1},{2,0},{1,1},{2,2} },{ {1,1},{0,1},{2,1},{1,2} },{ {1,2},{1,1},{2,2},{1,3} },{ {2,2},{2,1},{1,2},{3,2} } }  // "T" shape
+};
+const std::vector<std::vector<std::vector<std::vector<int>>>> blockLimits = {
+    { { {1,1},{2,2} }                                                 }, // "O" shape
+    { { {0,1},{3,1} },{ {1,0},{1,3} }                                 }, // "I" shape
+    { { {1,0},{2,2} },{ {0,1},{2,2} }                                 }, // "S" shape
+    { { {1,0},{2,2} },{ {0,1},{2,2} }                                 }, // "Z" shape
+    { { {0,1},{2,2} },{ {1,1},{2,3} },{ {1,1},{3,2} },{ {1,0},{2,2} } }, // "L" shape
+    { { {0,1},{2,2} },{ {1,1},{2,3} },{ {1,1},{3,2} },{ {1,0},{2,2} } }, // "J" shape
+    { { {1,0},{2,2} },{ {0,1},{2,2} },{ {1,1},{2,3} },{ {1,1},{3,2} } }  // "T" shape
 };
 
 /* Define Block class */
@@ -65,26 +77,34 @@ public:
     Block();
     const std::vector<std::vector<int>>& getBlock(void) const;
     const COLORREF getColor(void) const;
-    void rotate(void);
+    const int getCategory(void) const;
+    const int getDirection(void) const;
+    void rotateClockwise(void);
+    void rotateAnticlockwise(void);
 };
 
 /* Define Control class */
 class Control {
 private:
+    bool** map;
+    COLORREF** color;
     Block current;
     Block hold;
     Block next[3];
 public:
     Control();
-    void print_hold_block(void);
-    void print_next_blocks(void);
-    void rotate_current(void);
+    ~Control();
+    const Block& getCurrentBlock(void) const;
+    void printHoldBlock(void);
+    void printNextBlocks(void);
+    void rotateCurrentClockwise(void);
+    void rotateCurrentAnticlockwise(void);
+    bool printBlock(int row, int col, bool is_blank = false);
+    void refreshBlocks(void);
+    void refreshMap(int row, int col);
+    void changeCurrentAndHold(void);
 };
 
-/* Function declarations in tetris_file.cpp */
-void updateHighestScore(int score);
-int readHighestScore(void);
-
 /* Function declarations in tetris_graphics.cpp */
-void initialize_graphics(void);
-void print_grid_status(int row, int col, COLORREF color);
+void initializeGraphics(void);
+void printGridStatus(int row, int col, COLORREF color);

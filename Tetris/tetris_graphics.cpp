@@ -3,7 +3,7 @@
  * File Name:     tetris_graphics.cpp
  * File Function: 图形化界面函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/1
+ * Update Date:   2023/10/2
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -12,7 +12,7 @@
 using namespace std;
 
 /*
- * Function Name:    print_specified_grid
+ * Function Name:    printSpecifiedGrid
  * Function:         Print a grid with specified number of rows and columns
  * Input Parameters: int startRow
  *                   int startCol
@@ -20,7 +20,7 @@ using namespace std;
  *                   int col
  * Return Value:     void
  */
-static void print_specified_grid(int startRow, int startCol, int row = gridRow, int col = gridCol)
+static void printSpecifiedGrid(int startRow, int startCol, int row = gridRow, int col = gridCol)
 {
     int offsetX = startCol * (gridSideLength + gridSpace), offsetY = startRow * (gridSideLength + gridSpace);
     for (int i = 0; i <= row; i++)
@@ -36,7 +36,7 @@ static void print_specified_grid(int startRow, int startCol, int row = gridRow, 
 }
 
 /*
- * Function Name:    print_frame
+ * Function Name:    printFrame
  * Function:         Print frame
  * Input Parameters: int startRow
  *                   int startCol
@@ -44,7 +44,7 @@ static void print_specified_grid(int startRow, int startCol, int row = gridRow, 
  *                   int endCol
  * Return Value:     void
  */
-static void print_frame(int startRow, int startCol, int endRow, int endCol)
+static void printFrame(int startRow, int startCol, int endRow, int endCol)
 {
     /* Set line color */
     setlinecolor(BLACK);
@@ -72,12 +72,12 @@ static void print_frame(int startRow, int startCol, int endRow, int endCol)
 }
 
 /*
- * Function Name:    initialize_graphics
+ * Function Name:    initializeGraphics
  * Function:         Initialize the graphical interface
  * Input Parameters: void
  * Return Value:     void
  */
-void initialize_graphics(void)
+void initializeGraphics(void)
 {
     /* Initialize the graphical interface */
     initgraph(leftGridMargin + rightGridMargin + (gridCol + displayGridSideLength + 1) * (gridSideLength + gridSpace) + gridSpace, topGridMargin + bottomGridMargin + gridRow * (gridSideLength + gridSpace) + gridSpace);
@@ -88,22 +88,22 @@ void initialize_graphics(void)
     cleardevice();
 
     /* Print specified grids */
-    print_specified_grid(0, 0);
-    print_specified_grid(4, gridCol + 1, displayGridSideLength, displayGridSideLength);
-    print_specified_grid(5 + 1 * (displayGridSideLength + 1), gridCol + 1, displayGridSideLength, displayGridSideLength);
-    print_specified_grid(5 + 2 * (displayGridSideLength + 1), gridCol + 1, displayGridSideLength, displayGridSideLength);
-    print_specified_grid(5 + 3 * (displayGridSideLength + 1), gridCol + 1, displayGridSideLength, displayGridSideLength);
+    printSpecifiedGrid(0, 0);
+    printSpecifiedGrid(4, gridCol + 1, displayGridSideLength, displayGridSideLength);
+    printSpecifiedGrid(5 + 1 * (displayGridSideLength + 1), gridCol + 1, displayGridSideLength, displayGridSideLength);
+    printSpecifiedGrid(5 + 2 * (displayGridSideLength + 1), gridCol + 1, displayGridSideLength, displayGridSideLength);
+    printSpecifiedGrid(5 + 3 * (displayGridSideLength + 1), gridCol + 1, displayGridSideLength, displayGridSideLength);
 
     /* Print frames */
-    print_frame(0, 0, gridRow, gridCol);
-    print_frame(4, gridCol + 1, 4 + displayGridSideLength, gridCol + 1 + displayGridSideLength);
-    print_frame(5 + 1 * (displayGridSideLength + 1), gridCol + 1, 5 + 1 * (displayGridSideLength + 1) + displayGridSideLength, gridCol + 1 + displayGridSideLength);
-    print_frame(5 + 2 * (displayGridSideLength + 1), gridCol + 1, 5 + 2 * (displayGridSideLength + 1) + displayGridSideLength, gridCol + 1 + displayGridSideLength);
-    print_frame(5 + 3 * (displayGridSideLength + 1), gridCol + 1, 5 + 3 * (displayGridSideLength + 1) + displayGridSideLength, gridCol + 1 + displayGridSideLength);
+    printFrame(0, 0, gridRow, gridCol);
+    printFrame(4, gridCol + 1, 4 + displayGridSideLength, gridCol + 1 + displayGridSideLength);
+    printFrame(5 + 1 * (displayGridSideLength + 1), gridCol + 1, 5 + 1 * (displayGridSideLength + 1) + displayGridSideLength, gridCol + 1 + displayGridSideLength);
+    printFrame(5 + 2 * (displayGridSideLength + 1), gridCol + 1, 5 + 2 * (displayGridSideLength + 1) + displayGridSideLength, gridCol + 1 + displayGridSideLength);
+    printFrame(5 + 3 * (displayGridSideLength + 1), gridCol + 1, 5 + 3 * (displayGridSideLength + 1) + displayGridSideLength, gridCol + 1 + displayGridSideLength);
 
-    /* Print highest score */
+    /* Print prompt information */
     TCHAR infoText[96];
-    _stprintf(infoText, _T("[历史最高分：%d] 按空格键开始游戏"), readHighestScore());
+    _stprintf(infoText, _T("游戏得分：0 按空格键开始游戏"));
     settextcolor(BLACK);
     settextstyle(&Font_CN);
     outtextxy(leftGridMargin, topInfoMargin, infoText);
@@ -118,14 +118,14 @@ void initialize_graphics(void)
 }
 
 /*
- * Function Name:    print_grid_status
+ * Function Name:    printGridStatus
  * Function:         Print grid status
  * Input Parameters: int row
  *                   int col
  *                   COLORREF color
  * Return Value:     void
  */
-void print_grid_status(int row, int col, COLORREF color)
+void printGridStatus(int row, int col, COLORREF color)
 {
     /* Calculate coordinates */
     int x = leftGridMargin + col * (gridSideLength + gridSpace) + gridSpace, y = topGridMargin + row * (gridSideLength + gridSpace) + gridSpace;

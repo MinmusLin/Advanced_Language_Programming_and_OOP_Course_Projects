@@ -3,7 +3,7 @@
  * File Name:     tetris_block.cpp
  * File Function: Block类的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/1
+ * Update Date:   2023/10/2
  ****************************************************************/
 
 #include "tetris.h"
@@ -48,17 +48,57 @@ const COLORREF Block::getColor(void) const
 }
 
 /*
- * Function Name:    rotate
+ * Function Name:    getCategory
+ * Function:         Get private category variable
+ * Input Parameters: void
+ * Return Value:     private category variable
+ * Notes:            Class external implementation of member functions
+ */
+const int Block::getCategory(void) const
+{
+    return category;
+}
+
+/*
+ * Function Name:    getDirection
+ * Function:         Get private direction variable
+ * Input Parameters: void
+ * Return Value:     private direction variable
+ * Notes:            Class external implementation of member functions
+ */
+const int Block::getDirection(void) const
+{
+    return direction;
+}
+
+/*
+ * Function Name:    rotateClockwise
  * Function:         Rotate the current direction clockwise
  * Input Parameters: void
  * Return Value:     void
  * Notes:            Class external implementation of member functions
  */
-void Block::rotate(void)
+void Block::rotateClockwise(void)
 {
-    if (direction + 1 == blockCategory[category][direction].size())
+    if (direction + 1 == blockCategory[category].size())
         direction = 0;
     else
         direction++;
+    block = blockCategory[category][direction];
+}
+
+/*
+ * Function Name:    rotateAnticlockwise
+ * Function:         Rotate the current direction anticlockwise
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Block::rotateAnticlockwise(void)
+{
+    if (direction == 0)
+        direction = blockCategory[category].size() - 1;
+    else
+        direction--;
     block = blockCategory[category][direction];
 }

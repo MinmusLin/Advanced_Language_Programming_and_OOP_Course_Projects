@@ -20,9 +20,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tetris_file.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="tetris_graphics.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
