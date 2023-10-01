@@ -149,7 +149,7 @@ int main()
                             }
                         }
                     }
-                    else if (key == KEYBOARD_ESC) { // Pause
+                    else if (key == KEYBOARD_ESC) { // Quit
                         return 0;
                     }
                 }
