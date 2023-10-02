@@ -45,6 +45,14 @@ Control::Control()
     for (int i = 0; i < gridRow; i++)
         for (int j = 0; j < gridCol; j++)
             color[i][j] = GRID_BLANK_COLOR;
+
+    /* Complete the preparations */
+    resetCurrentRowAndCol();
+    printEliminatedLines(0, true);
+    printScore(0, true);
+    refreshMap();
+    printHoldBlock();
+    printNextBlocks();
 }
 
 /*
@@ -60,6 +68,42 @@ Control::~Control()
     for (int i = 0; i < gridRow; i++)
         delete[] color[i];
     delete[] color;
+}
+
+/*
+ * Function Name:    getScore
+ * Function:         Get private score variable
+ * Input Parameters: void
+ * Return Value:     private score variable
+ * Notes:            Class external implementation of member functions
+ */
+const int& Control::getScore(void) const
+{
+    return score;
+}
+
+/*
+ * Function Name:    getCurrentRow
+ * Function:         Get private current row variable
+ * Input Parameters: void
+ * Return Value:     private current row variable
+ * Notes:            Class external implementation of member functions
+ */
+const int& Control::getCurrentRow(void) const
+{
+    return currentRow;
+}
+
+/*
+ * Function Name:    getCurrentCol
+ * Function:         Get private current column variable
+ * Input Parameters: void
+ * Return Value:     private current column variable
+ * Notes:            Class external implementation of member functions
+ */
+const int& Control::getCurrentCol(void) const
+{
+    return currentCol;
 }
 
 /*
@@ -181,13 +225,13 @@ void Control::refreshBlocks(void)
 }
 
 /*
- * Function Name:    refresh map
- * Function:         Refresh map
+ * Function Name:    refreshBlock
+ * Function:         Refresh block
  * Input Parameters: void
  * Return Value:     void
  * Notes:            Class external implementation of member functions
  */
-void Control::refreshMap(int row, int col)
+void Control::refreshBlock(int row, int col)
 {
     for (int i = 0; i < static_cast<int>(current.getBlock().size()); i++) {
         map[row + current.getBlock()[i][0]][col + current.getBlock()[i][1]] = true;
@@ -204,7 +248,252 @@ void Control::refreshMap(int row, int col)
  */
 void Control::changeCurrentAndHold(void)
 {
-    Block tmp = current;
-    current = hold;
-    hold = tmp;
+    swap(current, hold);
+}
+
+/*
+ * Function Name:    eliminateLines
+ * Function:         Eliminate lines
+ * Input Parameters: void
+ * Return Value:     true / false
+ * Notes:            Class external implementation of member functions
+ */
+bool Control::eliminateLines(void)
+{
+    /* Set whether to refresh the map flag */
+    bool flag = false;
+
+    /* Eliminate lines */
+    int lines = 0;
+    for (int i = gridRow - 1; i >= 0; i--) {
+        bool is_true = true;
+        for (int j = 0; j < gridCol; j++)
+            if (!map[i][j]) {
+                is_true = false;
+                break;
+            }
+        if (is_true) {
+            eliminatedLines++;
+            lines++;
+            flag = true;
+            for (int j = 0; j < gridCol; j++) {
+                map[i][j] = false;
+                color[i][j] = GRID_BLANK_COLOR;
+            }
+        }
+    }
+
+    /* Allocate dynamic memory for line status */
+    bool* lineStatus = new(nothrow) bool[gridRow] {false};
+    if (lineStatus == NULL)
+        exit(-1);
+
+    /* Calculate line status */
+    for (int i = 0; i < gridRow; i++)
+        for (int j = 0; j < gridCol; j++)
+            if (map[i][j]) {
+                lineStatus[i] = true;
+                break;
+            }
+
+    /* Drop lines */
+    for (int i = gridRow - 1; i >= 0; i--)
+        if (lineStatus[i]) {
+            int dropCount = 0;
+            for (int j = i + 1; j < gridRow; j++) {
+                if (!lineStatus[j])
+                    dropCount++;
+                else
+                    break;
+            }
+            if (dropCount > 0)
+                swap(lineStatus[i], lineStatus[i + dropCount]);
+                for (int j = 0; j < gridCol; j++) {
+                    swap(map[i][j], map[i + dropCount][j]);
+                    swap(color[i][j], color[i + dropCount][j]);
+                }
+        }
+
+    /* Update score */
+    switch (lines) {
+        case 0:
+            break;
+        case 1:
+            score += oneLineScore;
+            break;
+        case 2:
+            score += twoLinesScore;
+            break;
+        case 3:
+            score += threeLinesScore;
+            break;
+        case 4:
+            score += fourLinesScore;
+            break;
+        default:
+            exit(-1);
+    }
+
+    /* Free dynamic memory */
+    delete[] lineStatus;
+
+    /* Return whether to refresh the map flag */
+    return flag;
+}
+
+/*
+ * Function Name:    refreshMap
+ * Function:         Refresh map
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::refreshMap(void)
+{
+    printEliminatedLines(eliminatedLines);
+    printScore(score);
+    for (int i = 0; i < gridRow; i++)
+        for (int j = 0; j < gridCol; j++)
+            printGridStatus(i, j, color[i][j]);
+}
+
+/*
+ * Function Name:    resetCurrentRowAndCol
+ * Function:         Reset current row and column
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::resetCurrentRowAndCol(void)
+{
+    currentRow = -blockLimits[getCurrentBlock().getCategory()][getCurrentBlock().getDirection()][0][0];
+    currentCol = gridCol / 2 - 2;
+}
+
+/*
+ * Function Name:    rotateRight
+ * Function:         Rotate right
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::rotateRight(void)
+{
+    printBlock(currentRow, currentCol, true);
+    rotateCurrentClockwise();
+    if (!printBlock(currentRow, currentCol)) {
+        rotateCurrentAnticlockwise();
+        printBlock(currentRow, currentCol);
+    }
+}
+
+/*
+ * Function Name:    softDrop
+ * Function:         Soft drop
+ * Input Parameters: void
+ * Return Value:     true / false
+ * Notes:            Class external implementation of member functions
+ */
+bool Control::softDrop(void)
+{
+    printBlock(currentRow, currentCol, true);
+    currentRow++;
+    if (!printBlock(currentRow, currentCol)) {
+        currentRow--;
+        printBlock(currentRow, currentCol);
+        refreshBlock(currentRow, currentCol);
+        return true;
+    }
+    return false;
+}
+
+/*
+ * Function Name:    moveLeft
+ * Function:         Move left
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::moveLeft(void)
+{
+    if (currentCol >= 1 - blockLimits[getCurrentBlock().getCategory()][getCurrentBlock().getDirection()][0][1]) {
+        printBlock(currentRow, currentCol, true);
+        currentCol--;
+        if (!printBlock(currentRow, currentCol)) {
+            currentCol++;
+            printBlock(currentRow, currentCol);
+        }
+    }
+}
+
+/*
+ * Function Name:    moveRight
+ * Function:         Move Right
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::moveRight(void)
+{
+    if (currentCol <= gridCol - blockLimits[getCurrentBlock().getCategory()][getCurrentBlock().getDirection()][1][1] - 2) {
+        printBlock(currentRow, currentCol, true);
+        currentCol++;
+        if (!printBlock(currentRow, currentCol)) {
+            currentCol--;
+            printBlock(currentRow, currentCol);
+        }
+    }
+}
+
+/*
+ * Function Name:    changeHold
+ * Function:         Change hold
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::changeHold(void)
+{
+    printBlock(currentRow, currentCol, true);
+    changeCurrentAndHold();
+    printBlock(currentRow, currentCol);
+    printHoldBlock();
+}
+
+/*
+ * Function Name:    rotateLeft
+ * Function:         Rotate left
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::rotateLeft(void)
+{
+    printBlock(currentRow, currentCol, true);
+    rotateCurrentAnticlockwise();
+    if (!printBlock(currentRow, currentCol)) {
+        rotateCurrentClockwise();
+        printBlock(currentRow, currentCol);
+    }
+}
+
+/*
+ * Function Name:    hardDrop
+ * Function:         Hard drop
+ * Input Parameters: void
+ * Return Value:     void
+ * Notes:            Class external implementation of member functions
+ */
+void Control::hardDrop(void)
+{
+    while (true) {
+        printBlock(currentRow, currentCol, true);
+        currentRow++;
+        if (!printBlock(currentRow, currentCol)) {
+            currentRow--;
+            printBlock(currentRow, currentCol);
+            refreshBlock(currentRow, currentCol);
+            break;
+        }
+    }
 }

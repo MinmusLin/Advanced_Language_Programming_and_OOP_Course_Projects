@@ -102,19 +102,20 @@ void initializeGraphics(void)
     printFrame(5 + 3 * (displayGridSideLength + 1), gridCol + 1, 5 + 3 * (displayGridSideLength + 1) + displayGridSideLength, gridCol + 1 + displayGridSideLength);
 
     /* Print prompt information */
-    TCHAR infoText[96];
-    _stprintf(infoText, _T("游戏得分：0 按空格键开始游戏"));
+    TCHAR infoText[16];
     settextcolor(BLACK);
-    settextstyle(&Font_CN);
-    outtextxy(leftGridMargin, topInfoMargin, infoText);
-    _stprintf(infoText, _T("Lines:"));
     settextstyle(&Font_EN);
+    _stprintf(infoText, _T("Lines:"));
     outtextxy(leftGridMargin + (gridCol + 1) * (gridSideLength + gridSpace), topInfoMargin + 1 * (gridSideLength + gridSpace) + infoOffset, infoText);
     _stprintf(infoText, _T("Hold:"));
     outtextxy(leftGridMargin + (gridCol + 1) * (gridSideLength + gridSpace), topInfoMargin + 4 * (gridSideLength + gridSpace) + infoOffset, infoText);
     _stprintf(infoText, _T("Next:"));
     outtextxy(leftGridMargin + (gridCol + 1) * (gridSideLength + gridSpace), topInfoMargin + (6 + displayGridSideLength) * (gridSideLength + gridSpace) + infoOffset, infoText);
-    settextstyle(&Font_CN);
+
+    /* Print game rules */
+    IMAGE img;
+    loadimage(&img, _T("data/game_rules.png"));
+    putimage(gameRulesX, gameRulesY, &img);
 }
 
 /*
@@ -133,4 +134,42 @@ void printGridStatus(int row, int col, COLORREF color)
     /* Print grid status */
     setfillcolor(color);
     solidrectangle(x, y, x + gridSideLength - 1, y + gridSideLength - 1);
+}
+
+/*
+ * Function Name:    printEliminatedLines
+ * Function:         Print eliminated lines
+ * Input Parameters: int eliminatedLines
+ *                   bool is_first
+ * Return Value:     void
+ */
+void printEliminatedLines(int eliminatedLines, bool is_first)
+{
+    TCHAR infoText[16];
+    if (is_first)
+        _stprintf(infoText, _T("%d        "), eliminatedLines);
+    else
+        _stprintf(infoText, _T("%d"), eliminatedLines);
+    settextcolor(BLACK);
+    settextstyle(&Font_EN);
+    outtextxy(leftGridMargin + (gridCol + 1) * (gridSideLength + gridSpace), topInfoMargin + 1 * (gridSideLength + gridSpace) + 6 * infoOffset, infoText);
+}
+
+/*
+ * Function Name:    printScore
+ * Function:         Print score
+ * Input Parameters: int score
+ *                   bool is_first
+ * Return Value:     void
+ */
+void printScore(int score, bool is_first)
+{
+    TCHAR infoText[32];
+    if (is_first)
+        _stprintf(infoText, _T("游戏得分：%d         "), score);
+    else
+        _stprintf(infoText, _T("游戏得分：%d"), score);
+    settextcolor(BLACK);
+    settextstyle(&Font_CN);
+    outtextxy(leftGridMargin, topInfoMargin, infoText);
 }

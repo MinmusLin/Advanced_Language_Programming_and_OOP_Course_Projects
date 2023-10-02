@@ -32,5 +32,8 @@
     <ClCompile Include="tetris_block.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="tetris_game.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

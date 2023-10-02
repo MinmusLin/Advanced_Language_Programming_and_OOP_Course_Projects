@@ -1,7 +1,7 @@
 /****************************************************************
  * Project Name:  Tetris
  * File Name:     tetris.h
- * File Function: Block类、Control类、图形化界面函数、主体函数的头文件
+ * File Function: Block类、Control类、游戏函数、图形化界面函数、主体函数的头文件
  * Author:        Jishen Lin (林继申)
  * Update Date:   2023/10/2
  ****************************************************************/
@@ -37,10 +37,17 @@ const int bottomInfoMargin = 10;
 const int topGridMargin = 40;
 const int bottomGridMargin = 15;
 const int leftGridMargin = 15;
-const int rightGridMargin = 15;
+const int rightGridMargin = 260;
 const int displayGridSideLength = 4;
 const int infoOffset = 6;
 const int colorNum = 7;
+const int gameRulesX = 460;
+const int gameRulesY = 15;
+const int oneLineScore = 10;
+const int twoLinesScore = 25;
+const int threeLinesScore = 45;
+const int fourLinesScore = 70;
+const int delayTime = 500;
 
 /* Define constant LOGFONT variables */
 const LOGFONT Font_CN{ (topGridMargin - topInfoMargin - bottomInfoMargin), (topGridMargin - topInfoMargin - bottomInfoMargin) / 2, 0, 0, FW_DONTCARE, false, false, false, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, L"黑体" };
@@ -70,9 +77,9 @@ const std::vector<std::vector<std::vector<std::vector<int>>>> blockLimits = {
 class Block {
 private:
     std::vector<std::vector<int>> block;
+    COLORREF color;
     int category;
     int direction;
-    COLORREF color;
 public:
     Block();
     const std::vector<std::vector<int>>& getBlock(void) const;
@@ -87,6 +94,10 @@ public:
 class Control {
 private:
     bool** map;
+    int eliminatedLines = 0;
+    int score = 0;
+    int currentRow;
+    int currentCol;
     COLORREF** color;
     Block current;
     Block hold;
@@ -94,6 +105,9 @@ private:
 public:
     Control();
     ~Control();
+    const int& getScore(void) const;
+    const int& getCurrentRow(void) const;
+    const int& getCurrentCol(void) const;
     const Block& getCurrentBlock(void) const;
     void printHoldBlock(void);
     void printNextBlocks(void);
@@ -101,10 +115,25 @@ public:
     void rotateCurrentAnticlockwise(void);
     bool printBlock(int row, int col, bool is_blank = false);
     void refreshBlocks(void);
-    void refreshMap(int row, int col);
+    void refreshBlock(int row, int col);
     void changeCurrentAndHold(void);
+    bool eliminateLines(void);
+    void refreshMap(void);
+    void resetCurrentRowAndCol(void);
+    void rotateRight(void);
+    bool softDrop(void);
+    void moveLeft(void);
+    void moveRight(void);
+    void changeHold(void);
+    void rotateLeft(void);
+    void hardDrop(void);
 };
+
+/* Function declaration in tetris_game.cpp */
+bool tetris(void);
 
 /* Function declarations in tetris_graphics.cpp */
 void initializeGraphics(void);
 void printGridStatus(int row, int col, COLORREF color);
+void printEliminatedLines(int eliminatedLines, bool is_first = false);
+void printScore(int score, bool is_first = false);

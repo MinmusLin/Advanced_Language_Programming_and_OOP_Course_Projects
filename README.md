@@ -49,6 +49,9 @@ ASCII图像查看器和视频播放器
 * [Simulated LED Screen](Simulated_LED_Screen/README.md)
 模拟LED显示屏
 
+* [Tetris](Tetris/README.md)
+俄罗斯方块游戏
+
 * [Tic Tac Toe](Tic_Tac_Toe/README.md)
 井字棋游戏
 
@@ -61,4 +64,4 @@ ASCII图像查看器和视频播放器
 
 ## 文档更新日期
 
-2023年9月30日
+2023年10月2日

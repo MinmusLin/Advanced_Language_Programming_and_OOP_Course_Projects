@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="tetris_block.cpp" />
     <ClCompile Include="tetris_control.cpp" />
+    <ClCompile Include="tetris_game.cpp" />
     <ClCompile Include="tetris_graphics.cpp" />
     <ClCompile Include="tetris_main.cpp" />
   </ItemGroup>

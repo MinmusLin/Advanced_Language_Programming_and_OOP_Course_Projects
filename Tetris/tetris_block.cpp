@@ -97,7 +97,7 @@ void Block::rotateClockwise(void)
 void Block::rotateAnticlockwise(void)
 {
     if (direction == 0)
-        direction = blockCategory[category].size() - 1;
+        direction = static_cast<int>(blockCategory[category].size()) - 1;
     else
         direction--;
     block = blockCategory[category][direction];
