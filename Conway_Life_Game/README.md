@@ -121,7 +121,7 @@ void refreshMap(void)
 
 ## 相关资料
 
-* [EasyX Documentation](https://docs.easyx.cn/)
+* [EasyX Documentation](https://docs.easyx.cn)
 
 * 康威生命游戏
 
@@ -155,4 +155,4 @@ void refreshMap(void)
 
 ## 文档更新日期
 
-2023年9月30日
+2023年10月2日
