@@ -3,7 +3,7 @@
  * File Name:     Main.cpp
  * File Function: 菜单函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/10/23
  ****************************************************************/
 
 #include <iostream>
@@ -36,7 +36,7 @@ static int menu(void)
     cct_setconsoleborder(120, 40, 120, 9000);
 
     /* Display menu items */
-    cout << "                 ASCII图像查看器和视频播放器" << endl;
+    cout << "                ASCII图像查看器和视频播放器" << endl;
     cout << "            ASCII Image Viewer and Video Player" << endl;
     cout << "-----------------------------------------------------------" << endl;
     cout << "  1.逐元素矩阵运算（运算符重载方式）" << endl;
