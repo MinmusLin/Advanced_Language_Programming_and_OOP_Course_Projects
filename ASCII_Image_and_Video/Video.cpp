@@ -3,7 +3,7 @@
  * File Name:     Video.cpp
  * File Function: 视频播放函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/23
+ * Update Date:   2023/10/26
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS

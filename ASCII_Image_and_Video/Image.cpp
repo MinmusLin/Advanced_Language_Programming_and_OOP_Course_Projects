@@ -3,7 +3,7 @@
  * File Name:     Image.cpp
  * File Function: 图像查看函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/23
+ * Update Date:   2023/10/26
  ****************************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS

@@ -3,7 +3,7 @@
  * File Name:     gluttonous_snake.h
  * File Function: Control类、Snake类、历史最高分记录函数、游戏函数、图形化界面函数、主体函数、菜单函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/10/26
  ****************************************************************/
 
 #pragma once
@@ -60,12 +60,12 @@ const int deathCountMaximum = 5;
 const int timeThreshold = 180;
 const int timeAIThreshold = 10;
 
-/* Define constant enum variables */
-const enum Mode { BasicMode, AdvancedMode, ExpertMode, HumanVsHumanMode, HumanVsAIMode, AIVsAIMode, ResetHighestScore, Quit };
-const enum GridCondition { GridBlank, GridWall, SnakeHead, SnakeBody, GoodFood, GreatFood, BadFood, BoomFood, GridObstacle };
-const enum Direction { Up, Down, Left, Right, InvalidDirection };
-const enum SnakeCategory { SnakeA, SnakeB, InvalidSnakeCategory };
-const enum EndPageCategory { PageDefault, PageHumanSnakeA, PageHumanSnakeB, PageAISnakeA, PageAISnakeB };
+/* Define enum variables */
+enum Mode { BasicMode, AdvancedMode, ExpertMode, HumanVsHumanMode, HumanVsAIMode, AIVsAIMode, ResetHighestScore, Quit };
+enum GridCondition { GridBlank, GridWall, SnakeHead, SnakeBody, GoodFood, GreatFood, BadFood, BoomFood, GridObstacle };
+enum Direction { Up, Down, Left, Right, InvalidDirection };
+enum SnakeCategory { SnakeA, SnakeB, InvalidSnakeCategory };
+enum EndPageCategory { PageDefault, PageHumanSnakeA, PageHumanSnakeB, PageAISnakeA, PageAISnakeB };
 
 /* Define constant LOGFONT variable */
 const LOGFONT Font{ (topGridMargin - topInfoMargin - bottomInfoMargin), (topGridMargin - topInfoMargin - bottomInfoMargin) / 2, 0, 0, FW_DONTCARE, false, false, false, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, PROOF_QUALITY, DEFAULT_PITCH, L"黑体" };

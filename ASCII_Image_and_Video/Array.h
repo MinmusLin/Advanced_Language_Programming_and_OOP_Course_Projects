@@ -3,7 +3,7 @@
  * File Name:     Array.h
  * File Function: Array类的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/23
+ * Update Date:   2023/10/26
  ****************************************************************/
 
 #pragma once
@@ -15,7 +15,9 @@
 /* Define constant variables */
 const int consoleWindowsSize = 150;
 const char asciiStrength[] = { '@','M','N','H','Q','$','O','C','?','7','1','>','!',':','-','.' };
-const enum Operation { Add, Sub, Mul, Div, Opp, MatMulNum, NumMulMat, MatDivNum, NumDivMat };
+
+/* Define Operation */
+enum Operation { Add, Sub, Mul, Div, Opp, MatMulNum, NumMulMat, MatDivNum, NumDivMat };
 
 /* Define Array class */
 class Array {

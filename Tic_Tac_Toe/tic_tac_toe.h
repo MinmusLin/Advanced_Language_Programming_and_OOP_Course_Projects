@@ -3,7 +3,7 @@
  * File Name:     tic_tac_toe.h
  * File Function: 算法函数、主体函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/10/26
  ****************************************************************/
 
 #pragma once
@@ -11,8 +11,8 @@
 /* Macro definition */
 #define BOARD_SIZE 3
 
-/* Define constant enum variable */
-const enum GridStatus { Empty, FirstPlayer, SecondPlayer };
+/* Define GridStatus */
+enum GridStatus { Empty, FirstPlayer, SecondPlayer };
 
 /* Function declaration in tic_tac_toe_algorithm.cpp */
 GridStatus find_next_move_to_win(const GridStatus gridStatus[][BOARD_SIZE], int& row, int& col);
