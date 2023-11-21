@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Array.h"
 
+/* Namespace */
 using namespace std;
 
 /*

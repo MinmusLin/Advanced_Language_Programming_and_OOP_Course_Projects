@@ -11,6 +11,7 @@
 #include <Windows.h>
 #include "../common/cmd_console_tools.h"
 
+/* Namespace */
 using namespace std;
 
 /* Function declaration in Matrix.cpp */

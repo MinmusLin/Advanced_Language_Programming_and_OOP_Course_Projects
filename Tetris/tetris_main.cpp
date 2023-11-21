@@ -9,6 +9,7 @@
 #include <ctime>
 #include "tetris.h"
 
+/* Namespace */
 using namespace std;
 
 /*

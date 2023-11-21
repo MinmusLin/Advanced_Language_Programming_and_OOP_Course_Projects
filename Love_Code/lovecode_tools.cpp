@@ -14,6 +14,7 @@
 #include "lovecode.h"
 #include "pixel_matrixs.h"
 
+/* Namespace */
 using namespace std;
 
 /*

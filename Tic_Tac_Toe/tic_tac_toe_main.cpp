@@ -10,6 +10,7 @@
 #include "..\common\cmd_console_tools.h"
 #include "tic_tac_toe.h"
 
+/* Namespace */
 using namespace std;
 
 /*

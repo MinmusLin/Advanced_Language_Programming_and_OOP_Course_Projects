@@ -11,6 +11,7 @@
 #include "../common/lib_gmw_tools.h"
 #include "2048_game.h"
 
+/* Namespace */
 using namespace std;
 
 /*

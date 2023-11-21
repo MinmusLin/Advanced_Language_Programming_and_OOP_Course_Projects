@@ -11,6 +11,7 @@
 #include <ctime>
 #include "clock.h"
 
+/* Namespace */
 using namespace std;
 
 /*

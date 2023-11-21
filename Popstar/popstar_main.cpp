@@ -13,6 +13,7 @@
 #include "..\common\cmd_console_tools.h"
 #include "popstar.h"
 
+/* Namespace */
 using namespace std;
 
 /*

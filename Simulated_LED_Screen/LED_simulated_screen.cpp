@@ -14,6 +14,7 @@
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_hdc_tools.h"
 
+/* Namespace */
 using namespace std;
 
 /* Macro definition */

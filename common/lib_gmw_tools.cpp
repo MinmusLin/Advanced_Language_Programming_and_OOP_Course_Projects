@@ -13,6 +13,7 @@
 #include "../common/cmd_console_tools.h"
 #include "../common/lib_gmw_tools.h"
 
+/* Namespace */
 using namespace std;
 
 /*

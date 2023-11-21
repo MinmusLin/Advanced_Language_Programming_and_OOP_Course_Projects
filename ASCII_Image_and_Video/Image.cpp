@@ -15,6 +15,7 @@
 #include "../common/PicReader.h"
 #include "Array.h"
 
+/* Namespace */
 using namespace std;
 
 /*

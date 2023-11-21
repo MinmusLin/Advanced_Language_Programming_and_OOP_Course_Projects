@@ -9,6 +9,7 @@
 #include <Windows.h>
 #include "tic_tac_toe.h"
 
+/* Namespace */
 using namespace std;
 
 /*

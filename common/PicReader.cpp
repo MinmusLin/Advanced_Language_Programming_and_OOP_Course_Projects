@@ -9,6 +9,7 @@
 #include <iostream>
 #include "../common/PicReader.h"
 
+/* Namespace */
 using namespace std;
 
 /*

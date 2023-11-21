@@ -12,6 +12,7 @@
 #include "../common/lib_gmw_tools.h"
 #include "color_linez.h"
 
+/* Namespace */
 using namespace std;
 
 /*

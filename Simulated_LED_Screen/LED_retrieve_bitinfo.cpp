@@ -12,6 +12,7 @@
 #include <iomanip>
 #include "../common/cmd_console_tools.h"
 
+/* Namespace */
 using namespace std;
 
 /*

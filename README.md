@@ -28,6 +28,9 @@ ASCII图像查看器和视频播放器
 * [Gluttonous Snake](Gluttonous_Snake/README.md)
 贪吃蛇游戏
 
+* [Gomoku](Gomoku/README.md)
+五子棋AI对战程序
+
 * [Hanoi Tower Demonstration](Hanoi_Tower_Demonstration/README.md)
 汉诺塔综合演示解决方案
 

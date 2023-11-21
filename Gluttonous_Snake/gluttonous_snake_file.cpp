@@ -10,6 +10,7 @@
 #include <cstdio>
 #include "gluttonous_snake.h"
 
+/* Namespace */
 using namespace std;
 
 /*

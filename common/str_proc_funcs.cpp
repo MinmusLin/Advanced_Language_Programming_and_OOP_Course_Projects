@@ -9,8 +9,6 @@
 #include "../common/str_proc_funcs.h"
 #include <cstdio>
 
-using namespace std;
-
 /*
  * Function Name:    strlen_array
  * Function:         求字符串str的长度(数组法实现)

@@ -12,6 +12,7 @@
 #include <graphics.h>
 #include "conway.h"
 
+/* Namespace */
 using namespace std;
 
 /*

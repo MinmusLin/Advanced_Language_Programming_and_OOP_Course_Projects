@@ -17,6 +17,7 @@
 #include "../common/FastPrinter.h"
 #include "Array.h"
 
+/* Namespace */
 using namespace std;
 
 /* Function declaration in Image.cpp */

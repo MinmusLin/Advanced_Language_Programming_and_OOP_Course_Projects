@@ -9,6 +9,7 @@
 #include <conio.h>
 #include "tetris.h"
 
+/* Namespace */
 using namespace std;
 
 /*

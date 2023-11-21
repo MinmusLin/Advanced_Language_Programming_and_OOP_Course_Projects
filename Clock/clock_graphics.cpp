@@ -10,6 +10,7 @@
 #include <cmath>
 #include "clock.h"
 
+/* Namespace */
 using namespace std;
 
 /*

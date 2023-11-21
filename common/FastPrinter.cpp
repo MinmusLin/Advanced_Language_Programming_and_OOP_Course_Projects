@@ -9,6 +9,7 @@
 #include <iostream>
 #include "../common/FastPrinter.h"
 
+/* Namespace */
 using namespace std;
 
 /*

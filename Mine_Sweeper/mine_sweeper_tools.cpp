@@ -12,6 +12,7 @@
 #include "../common/lib_gmw_tools.h"
 #include "mine_sweeper.h"
 
+/* Namespace */
 using namespace std;
 
 /*

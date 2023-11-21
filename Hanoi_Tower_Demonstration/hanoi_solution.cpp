@@ -13,6 +13,7 @@
 #include "..\common\cmd_console_tools.h"
 #include "hanoi.h"
 
+/* Namespace */
 using namespace std;
 
 /* Define static global variables */
