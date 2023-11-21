@@ -1,180 +1,63 @@
-# Tic Tac Toe
+# Gomoku
 
 ## 项目名称
 
-Tic_Tac_Toe
+Gomoku
 
 ## 项目实现功能
 
-井字棋游戏
+五子棋AI对战程序
+
+### 比赛规则
+
+本规则是五子棋的原始规则。
+
+* 对局在一个12*12的方形网格上进行；
+
+* 对局由两名玩家（被称为黑方和白方）进行。黑方先行，然后玩家轮流在空棋位上放置自己的棋子；
+
+* 对局在一名玩家成功地以自己的颜色形成连续五颗或以上棋子的一条直线时结束，这条直线可以是水平、垂直或对角线上的；
+
+* 如果棋盘上的所有空棋位都被占据，并且没有玩家达到获胜条件，对局被视为和棋；
+
+* 轮到己方走子时，大脑程序需要在2秒时间内给出落子方案；
+
+* 每一局中，己方不能使用超过90秒的总时间（对方走子时不算己方用时）；
+
+* 大脑程序任何时刻都不能使用超过350MB的内存；
+
+* 在对方走子时，己方的程序会继续保持运行。
+
+### 输入输出格式
+
+五子棋大脑程序需要从标准输入（ `stdin` ）接收指令，并相应地做出响应，将响应输出到标准输出（ `stdout` ）。每一个指令都独占一行。大脑程序的响应也需要独占一行（即跟随一个换行符 `'\n'` ）。以下是大脑程序需要支持的指令。
+
+#### START [FIELD]
+
+在开始对局前，大脑程序一定会收到该指令，指令表明了己方有关的信息。 `FIELD` 代表该己方大脑执子颜色， `FIELD` 为 `1` 时代表己方执黑棋， `FIELD` 为 `2` 时代表己方执白棋。收到该指令后，大脑程序需要在1秒响应OK，否则判负。
+
+#### PLACE [X] [Y]
+
+该指令代表一次对手的行棋， `X` 、 `Y` 是对手要放置棋子的行列坐标（坐标从 `0` 开始）。大脑程序不需要回复该指令。
+
+#### TURN
+
+该指令代表轮到己方操作。大脑程序收到该指令后，经过计算得出己方走子，并将要放置棋子的行坐标、列坐标作为响应内容。大脑程序需要在指定时限内做出走子响应，否则判负。该指令可能直接出现在 `START` 指令之后，即己方执黑棋开局，也可能出现在一次 `PLACE` 指令之后，即对手落子完毕轮到己方落子。注意，若对手落子完毕后对局直接结束，则 `PLACE ` 指令之后不会跟随有 `TURN` 指令。
+
+#### END [FIELD]
+
+代表该局比赛结束，其中 `FIELD` 代表获胜方， `FIELD` 为 `0` 时是平局， `FIELD` 为 `1` 时是己方获胜， `FIELD` 为 `2` 时是对方获胜。在收到该指令后，大脑程序不需要做任何响应，可以自行决定是否要退出程序。该指令可能在任何时刻出现，例如出现在 `BEGIN` 前的话，可能是对手程序崩溃导致的这场比赛直接结束。
 
 ## 项目文件组成
 
-* `cmd_console_tools.h`
-伪图形界面函数工具集的头文件
-
-* `tic_tac_toe.h`
-算法函数、主体函数、工具函数的头文件
-
 ### 源文件
 
-* `cmd_console_tools.cpp`
-伪图形界面函数工具集的实现
-
-* `tic_tac_toe_algorithm.cpp`
-算法函数的实现
-
-* `tic_tac_toe_main.cpp`
-主体函数的实现
-
-* `tic_tac_toe_tools.cpp`
-工具函数的实现
+* `gomoku.cpp`
+五子棋AI对战程序的实现
 
 ## 项目技术细节
 
-### 游戏主体架构
-
-```cpp
-while (true) {
-    int optn = menu();
-    switch (optn) {
-        case 1:
-        case 2:
-        case 3:
-        case 4: {
-            GridStatus gridStatus[BOARD_SIZE][BOARD_SIZE] = { Empty };
-            for (int i = 0; i < BOARD_SIZE * BOARD_SIZE; i++) {
-                cout << ">>> 第 " << i + 1 << " 轮" << endl << endl;
-                while (true) {
-                    int r, c;
-                    switch (optn) {
-                        case 1:
-                            cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子行数: ";
-                            r = input_digit(1, BOARD_SIZE);
-                            cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子列数: ";
-                            c = input_digit(1, BOARD_SIZE);
-                            break;
-                        case 2:
-                            if (i % 2) {
-                                cout << "后手(○)请输入本轮落子行数: ";
-                                r = input_digit(1, BOARD_SIZE);
-                                cout << "后手(○)请输入本轮落子列数: ";
-                                c = input_digit(1, BOARD_SIZE);
-                            }
-                            else {
-                                find_next_move_to_win(gridStatus, r, c);
-                                cout << "先手(×)请输入本轮落子行数: " << ++r << endl;
-                                cout << "先手(×)请输入本轮落子列数: " << ++c << endl;
-                            }
-                            break;
-                        case 3:
-                            if (i % 2) {
-                                find_next_move_to_win(gridStatus, r, c);
-                                cout << "后手(○)请输入本轮落子行数: " << ++r << endl;
-                                cout << "后手(○)请输入本轮落子列数: " << ++c << endl;
-                            }
-                            else {
-                                cout << "先手(×)请输入本轮落子行数: ";
-                                r = input_digit(1, BOARD_SIZE);
-                                cout << "先手(×)请输入本轮落子列数: ";
-                                c = input_digit(1, BOARD_SIZE);
-                            }
-                            break;
-                        case 4:
-                            find_next_move_to_win(gridStatus, r, c);
-                            cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子行数: " << ++r << endl;
-                            cout << (i % 2 ? "后手(○)" : "先手(×)") << "请输入本轮落子列数: " << ++c << endl;
-                            break;
-                        default:
-                            exit(-1);
-                    }
-                    if (gridStatus[r - 1][c - 1] == Empty) {
-                        gridStatus[r - 1][c - 1] = (i % 2 ? SecondPlayer : FirstPlayer);
-                        cout << endl;
-                        print_grid_status(gridStatus);
-                        cout << endl;
-                        break;
-                    }
-                    else
-                        cout << endl << ">>> 该位置已被占用，请重新输入!" << endl << endl;
-                }
-                GridStatus winner = check_win(gridStatus);
-                if (winner == FirstPlayer || winner == SecondPlayer) {
-                    print_winner(winner);
-                    break;
-                }
-                else if (winner == Empty && i == BOARD_SIZE * BOARD_SIZE - 1)
-                    cout << ">>> 游戏结束! 平局!" << endl << endl;
-            }
-            system("pause");
-            break;
-        }
-        default:
-            return 0;
-    }
-}
-```
-
-### 算法函数的实现
-
-井字棋游戏算法：
-
-* 如果自己能赢，就下一步走法以获胜。
-
-* 如果对手能赢，就下一步走法以阻止对手获胜。
-
-* 否则，下一步走法选择一个空白位置。一个常见的优先级顺序是：中心位置 > 边缘位置 > 角落位置。
-
-```cpp
-GridStatus find_next_move_to_win(const GridStatus gridStatus[][BOARD_SIZE], int& row, int& col)
-{
-    /* Initialize temporary grid to simulate moves */
-    GridStatus tmpGridStatus[BOARD_SIZE][BOARD_SIZE];
-    for (int i = 0; i < BOARD_SIZE; i++)
-        for (int j = 0; j < BOARD_SIZE; j++)
-            tmpGridStatus[i][j] = gridStatus[i][j];
-
-    /* Iterate over empty positions to simulate possible moves */
-    for (int k = 1; k <= 2; k++)
-        for (int i = 0; i < BOARD_SIZE; i++)
-            for (int j = 0; j < BOARD_SIZE; j++)
-                if (tmpGridStatus[i][j] == Empty) {
-                    tmpGridStatus[i][j] = static_cast<GridStatus>(k);
-                    GridStatus winner = check_win(tmpGridStatus);
-                    if (winner == Empty) {
-                        tmpGridStatus[i][j] = Empty;
-                        continue;
-                    }
-                    else {
-                        row = i;
-                        col = j;
-                        return winner;
-                    }
-                }
-
-    /* If no winning or blocking move is found, choose a empty position */
-    const int preferredPositions[BOARD_SIZE * BOARD_SIZE][2] = {
-        {1, 1}, // Center
-        {0, 1}, // Middle row
-        {1, 0}, // Middle column
-        {2, 1}, // Bottom row
-        {1, 2}, // Rightmost column
-        {0, 0}, // Top left corner
-        {0, 2}, // Top right corner
-        {2, 0}, // Bottom left corner
-        {2, 2}  // Bottom right corner
-    };
-    for (int i = 0; i < BOARD_SIZE * BOARD_SIZE; i++) {
-        int r = preferredPositions[i][0], c = preferredPositions[i][1];
-        if (tmpGridStatus[r][c] == Empty) {
-            row = r;
-            col = c;
-            break;
-        }
-    }
-    return Empty;
-}
-```
+### //TODO
 
 ## 集成开发环境
 
