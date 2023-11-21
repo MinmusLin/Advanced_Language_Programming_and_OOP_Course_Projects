@@ -178,7 +178,7 @@ GridStatus find_next_move_to_win(const GridStatus gridStatus[][BOARD_SIZE], int&
 
 ## 集成开发环境
 
-* Microsoft Visual Studio
+* Microsoft Visual Studio 2022
 
 ## 编译运行环境
 
@@ -186,4 +186,4 @@ GridStatus find_next_move_to_win(const GridStatus gridStatus[][BOARD_SIZE], int&
 
 ## 文档更新日期
 
-2023年9月30日
+2023年11月21日

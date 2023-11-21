@@ -3,10 +3,13 @@
  * File Name:     gluttonous_snake.h
  * File Function: Control类、Snake类、历史最高分记录函数、游戏函数、图形化界面函数、主体函数、菜单函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/26
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef GLUTTONOUS_SNAKE_H
+#define GLUTTONOUS_SNAKE_H
+
 #include <graphics.h>
 #include <Windows.h>
 
@@ -157,3 +160,5 @@ void print_grid_status(int row, int col, GridCondition gridCondition, SnakeCateg
 void startPage(void);
 Mode menu(void);
 void endPage(EndPageCategory endPageCategory = PageDefault);
+
+#endif // !GLUTTONOUS_SNAKE_H

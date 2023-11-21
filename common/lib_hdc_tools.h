@@ -3,10 +3,12 @@
  * File Name:     lib_hdc_tools.h
  * File Function: 图形界面绘制函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef LIB_HDC_TOOLS_H
+#define LIB_HDC_TOOLS_H
 
 /* Define invalid RGB */
 #define INVALID_RGB 0x7FFFFFFF
@@ -64,3 +66,5 @@ void hdc_sector(const int point_x, const int point_y, const int radius, const in
 void hdc_circle(const int point_x, const int point_y, const int radius, const bool filled = false, const int thickness = 2, const int RGB_value = INVALID_RGB);
 void hdc_ellipse(const int point_x, const int point_y, const int radius_a, const int radius_b, const int rotation_angles = 0, const bool filled = false, const int thickness = 2, const int RGB_value = INVALID_RGB);
 #endif
+
+#endif // !LIB_HDC_TOOLS_H

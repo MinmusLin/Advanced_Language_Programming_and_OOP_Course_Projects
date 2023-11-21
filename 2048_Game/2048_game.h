@@ -3,10 +3,12 @@
  * File Name:     2048_game.h
  * File Function: 主体函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef _2048_GAME_H
+#define _2048_GAME_H
 
 /* Macro definitions */
 #define BOUNDARY 1
@@ -53,3 +55,5 @@ void menu(int& row, int& col);
 int enter_digit(int x, int y, const char* prompt);
 void initialize_CGI(CONSOLE_GRAPHICS_INFO* pCGI, int row, int col);
 bool print_prompt(int score, int status);
+
+#endif // !_2048_GAME_H

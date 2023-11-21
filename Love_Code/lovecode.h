@@ -3,10 +3,12 @@
  * File Name:     lovecode.h
  * File Function: 主体函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef LOVECODE_H
+#define LOVECODE_H
 
 /* Macro definitions */
 #define OUR_STORY_BEGINNING 1675297680
@@ -100,3 +102,5 @@ void print_starting_captions(int bg_color = COLOR_HWHITE, int fg_color = COLOR_H
 void print_elapsed_time(struct system_time& current_time, int bg_color = COLOR_HWHITE, int fg_color = COLOR_HWHITE);
 void print_heart_shape(void);
 int color(int cycle_index);
+
+#endif // !LOVECODE_H

@@ -3,11 +3,12 @@
  * File Name:     str_proc_funcs.h
  * File Function: 字符串处理函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
-#include <cstdio>
+#ifndef STR_PROC_FUNCS_H
+#define STR_PROC_FUNCS_H
 
 /* Function declarations in str_proc_funcs.cpp */
 int strlen_array(const char str[]);
@@ -42,3 +43,5 @@ int strstr_pointer(const char* str, const char* substr);
 int strrchr_pointer(const char* str, const char ch);
 int strrstr_pointer(const char* str, const char* substr);
 char* strrev_pointer(char* str);
+
+#endif // !STR_PROC_FUNCS_H

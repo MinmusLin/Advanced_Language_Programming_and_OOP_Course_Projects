@@ -3,10 +3,12 @@
  * File Name:     cmd_console_tools.h
  * File Function: 伪图形界面函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef CMD_CONSOLE_TOOLS_H
+#define CMD_CONSOLE_TOOLS_H
 
 /* Define colors */
 #define COLOR_BLACK 0
@@ -69,3 +71,5 @@ void cct_disable_mouse(void);
 int cct_read_keyboard_and_mouse(int& MX, int& MY, int& MAction, int& keycode1, int& keycode2);
 int cct_getfontinfo(void);
 void cct_setfontsize(const char* fontname, const int high, const int width = 0);
+
+#endif // !CMD_CONSOLE_TOOLS_H

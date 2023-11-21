@@ -3,11 +3,12 @@
  * File Name:     lib_gmw_tools.h
  * File Function: 消除类游戏通用函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
-#include <iostream>
+#ifndef LIB_GMW_TOOLS_H
+#define LIB_GMW_TOOLS_H
 
 /* Define status line information */
 #define TOP_STATUS_LINE 0
@@ -529,3 +530,5 @@ int tgmw_move_block(const CONSOLE_GRAPHICS_INFO* const pCGI, const int row_no, c
  * Return Value:     CCT_MOUSE_EVENT / CCT_KEYBOARD_EVENT / -1 (未调用 gmw_init 前调用其它函数)
  */
 int tgmw_read_keyboard_and_mouse(const CONSOLE_GRAPHICS_INFO* const pCGI, int& MAction, int& MRow, int& MCol, int& KeyCode1, int& KeyCode2, const bool update_lower_status_line = true);
+
+#endif // !LIB_GMW_TOOLS_H

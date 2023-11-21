@@ -3,7 +3,7 @@
  * File Name:     conway_graphics.cpp
  * File Function: 图形化界面函数的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #include <graphics.h>

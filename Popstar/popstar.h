@@ -3,10 +3,12 @@
  * File Name:     popstar.h
  * File Function: 菜单函数、内部数组方式函数、伪图形界面方式函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef POPSTAR_H
+#define POPSTAR_H
 
 /* Define print delay time */
 #define SLEEP_TIME_FRAME 1
@@ -84,3 +86,5 @@ int strcasecmp(const char s1[], const char s2[]);
 void array_incorporate(int matrix[][10], int judgment_array[][12], int row, int column);
 void array_translation(int matrix[][10], int row, int column, int graphical_or_not, int divider_or_not);
 int array_judgment(int matrix[][10], int row, int column);
+
+#endif // !POPSTAR_H

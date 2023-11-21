@@ -3,10 +3,13 @@
  * File Name:     FastPrinter.h
  * File Function: 底层控制台绘制函数工具集的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef FASTPRINTER_H
+#define FASTPRINTER_H
+
 #include <Windows.h>
 
 /* Define FastPrinter class */
@@ -41,3 +44,5 @@ public:
     void cleanSrceen(void);
     void draw(bool withColor);
 };
+
+#endif // !FASTPRINTER_H

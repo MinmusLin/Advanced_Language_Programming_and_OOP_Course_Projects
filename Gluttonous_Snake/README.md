@@ -1089,7 +1089,7 @@ void resetHighestScore(void)
 
 ## 集成开发环境
 
-* Microsoft Visual Studio
+* Microsoft Visual Studio 2022
 
 ## 编译运行环境
 
@@ -1109,4 +1109,4 @@ void resetHighestScore(void)
 
 ## 文档更新日期
 
-2023年10月2日
+2023年11月21日

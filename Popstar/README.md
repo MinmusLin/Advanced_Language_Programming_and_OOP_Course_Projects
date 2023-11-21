@@ -170,7 +170,7 @@ cct_setcursor(CURSOR_VISIBLE_NORMAL);
 
 ## 集成开发环境
 
-* Microsoft Visual Studio
+* Microsoft Visual Studio 2022
 
 ## 编译运行环境
 
@@ -180,4 +180,4 @@ cct_setcursor(CURSOR_VISIBLE_NORMAL);
 
 ## 文档更新日期
 
-2023年9月30日
+2023年11月21日

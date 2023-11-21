@@ -524,7 +524,7 @@ PlaySoundA(filename, NULL, SND_FILENAME | SND_ASYNC);
 
 ## 集成开发环境
 
-* Microsoft Visual Studio
+* Microsoft Visual Studio 2022
 
 ## 编译运行环境
 
@@ -562,4 +562,4 @@ PlaySoundA(filename, NULL, SND_FILENAME | SND_ASYNC);
 
 ## 文档更新日期
 
-2023年10月23日
+2023年11月21日

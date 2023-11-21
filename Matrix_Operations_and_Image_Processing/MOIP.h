@@ -3,10 +3,13 @@
  * File Name:     MOIP.h
  * File Function: 图像处理函数、菜单函数、矩阵运算函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef MOIP_H
+#define MOIP_H
+
 #include <opencv2/opencv.hpp>
 
 /* Define constant variables */
@@ -43,3 +46,5 @@ void output_matrix(double matrix[][maxCol], int row, int col, int x, int y, cons
 double calculate_determinant(double matrix[][maxCol], int n);
 bool get_kernel(int kernel[][kernelSize], int& kernel_sum);
 int calculate_Otsu_threshold(cv::Mat grayImage, int height, int width);
+
+#endif // !MOIP_H

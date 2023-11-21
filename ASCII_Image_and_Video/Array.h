@@ -3,11 +3,12 @@
  * File Name:     Array.h
  * File Function: Array类的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/26
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
-#include <iostream>
+#ifndef ARRAY_H
+#define ARRAY_H
 
 /* Macro definition */
 #define HIGHEST_DIMENSION 16
@@ -188,3 +189,5 @@ public:
             exit(-1);
     }
 };
+
+#endif // !ARRAY_H

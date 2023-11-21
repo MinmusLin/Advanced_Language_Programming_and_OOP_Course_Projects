@@ -3,10 +3,12 @@
  * File Name:     mine_sweeper.h
  * File Function: 主体函数、菜单函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef MINE_SWEEPER_H
+#define MINE_SWEEPER_H
 
 /* Macro definitions */
 #define UNKNOWN 0
@@ -62,3 +64,5 @@ void flood_fill(const CONSOLE_GRAPHICS_INFO* const pCGI, const int row_no, const
 void print_continuity(const CONSOLE_GRAPHICS_INFO* const pCGI, const int row_no, const int col_no, struct unit matrix[][34], const BLOCK_DISPLAY_INFO* const bdi, int row, int col);
 bool game_judgment(struct unit matrix[][34], int row, int col);
 void print_prompt(time_t start_time, bool is_success);
+
+#endif // !MINE_SWEEPER_H

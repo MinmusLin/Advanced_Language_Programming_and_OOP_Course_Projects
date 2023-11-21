@@ -3,10 +3,12 @@
  * File Name:     color_linez.h
  * File Function: 主体函数、工具函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef COLOR_LINEZ_H
+#define COLOR_LINEZ_H
 
 /* Macro definition */
 #define BOUNDARY 8
@@ -90,3 +92,5 @@ void initialize_CGI(CONSOLE_GRAPHICS_INFO* pCGI);
 void print_statistic_chart(void);
 int BFS(int grid[][col], int startRow, int startCol, int targetRow, int targetCol, struct point path[]);
 void print_moving_path(CONSOLE_GRAPHICS_INFO* pCGI, struct point path[], int startRow, int startCol, int value);
+
+#endif // !COLOR_LINEZ_H

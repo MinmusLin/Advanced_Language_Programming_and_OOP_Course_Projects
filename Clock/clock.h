@@ -3,10 +3,12 @@
  * File Name:     clock.h
  * File Function: 抗锯齿图形处理函数、主体函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef CLOCK_H
+#define CLOCK_H
 
 /* Define constant variables */
 double const PI = 3.1415926535;
@@ -44,3 +46,5 @@ const int refreshTime = 30;
 double calculate_line_SDF(int x, int y, int x1, int y1, int x2, int y2, int d);
 void line_SDF(int x1, int y1, int x2, int y2, int d, COLORREF color);
 void circle_SDF(int x, int y, int r, int d, COLORREF color);
+
+#endif // !CLOCK_H

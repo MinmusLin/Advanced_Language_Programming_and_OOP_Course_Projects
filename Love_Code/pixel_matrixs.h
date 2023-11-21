@@ -3,10 +3,12 @@
  * File Name:     pixel_matrixs.h
  * File Function: 存放点阵信息的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef PIXEL_MATRIXS_H
+#define PIXEL_MATRIXS_H
 
 /* Define pixel character matrixs */
 const int pixel_ling[16][16] = {
@@ -744,3 +746,5 @@ const int pixel_ASCII[95][16][8] = {
         {1, 1, 1, 1, 1, 1, 1, 1}
     } // '_'
 };
+
+#endif // !PIXEL_MATRIXS_H

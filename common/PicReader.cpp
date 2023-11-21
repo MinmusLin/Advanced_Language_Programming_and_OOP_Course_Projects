@@ -3,7 +3,7 @@
  * File Name:     PicReader.cpp
  * File Function: 读取图像文件函数工具集的实现
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/9/30
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #include <iostream>

@@ -60,8 +60,8 @@ ASCII图像查看器和视频播放器
 
 ## 集成开发环境
 
-* Microsoft Visual Studio
+* Microsoft Visual Studio 2022
 
 ## 文档更新日期
 
-2023年10月26日
+2023年11月21日

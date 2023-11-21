@@ -3,10 +3,13 @@
  * File Name:     tetris.h
  * File Function: Block类、Control类、游戏函数、图形化界面函数、主体函数的头文件
  * Author:        Jishen Lin (林继申)
- * Update Date:   2023/10/2
+ * Update Date:   2023/11/21
  ****************************************************************/
 
 #pragma once
+#ifndef TETRIS_H
+#define TETRIS_H
+
 #include <graphics.h>
 #include <vector>
 
@@ -137,3 +140,5 @@ void initializeGraphics(void);
 void printGridStatus(int row, int col, COLORREF color);
 void printEliminatedLines(int eliminatedLines, bool is_first = false);
 void printScore(int score, bool is_first = false);
+
+#endif // !TETRIS_H
