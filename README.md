@@ -15,55 +15,55 @@ A collection of my C++ projects.
 
 ## 解决方案项目组成
 
-* [2048 Game](2048_Game/README.md)
+* [2048 Game](2048_Game)
 2048游戏
 
-* [ASCII Image and Video](ASCII_Image_and_Video/README.md)
+* [ASCII Image and Video](ASCII_Image_and_Video)
 ASCII图像查看器和视频播放器
 
-* [Clock](Clock/README.md)
+* [Clock](Clock)
 钟表的实现
 
-* [Color Linez](Color_Linez/README.md)
+* [Color Linez](Color_Linez)
 彩球游戏
 
-* [Conway Life Game](Conway_Life_Game/README.md)
+* [Conway Life Game](Conway_Life_Game)
 康威生命游戏
 
-* [Gluttonous Snake](Gluttonous_Snake/README.md)
+* [Gluttonous Snake](Gluttonous_Snake)
 贪吃蛇游戏
 
-* [Gomoku](Gomoku/README.md)
+* [Gomoku](Gomoku)
 五子棋AI对战程序
 
-* [Hanoi Tower Demonstration](Hanoi_Tower_Demonstration/README.md)
+* [Hanoi Tower Demonstration](Hanoi_Tower_Demonstration)
 汉诺塔综合演示解决方案
 
-* [Love Code](Love_Code/README.md)
+* [Love Code](Love_Code)
 爱心代码
 
-* [Matrix Operations and Image Processing](Matrix_Operations_and_Image_Processing/README.md)
+* [Matrix Operations and Image Processing](Matrix_Operations_and_Image_Processing)
 矩阵运算与图像处理
 
-* [Mine Sweeper](Mine_Sweeper/README.md)
+* [Mine Sweeper](Mine_Sweeper)
 扫雷游戏
 
-* [Popstar](Popstar/README.md)
+* [Popstar](Popstar)
 消灭星星游戏
 
-* [RMB to Capital](RMB_to_Capital/README.md)
+* [RMB to Capital](RMB_to_Capital)
 人民币转大写
 
-* [Simulated LED Screen](Simulated_LED_Screen/README.md)
+* [Simulated LED Screen](Simulated_LED_Screen)
 模拟LED显示屏
 
-* [Tetris](Tetris/README.md)
+* [Tetris](Tetris)
 俄罗斯方块游戏
 
-* [Tic Tac Toe](Tic_Tac_Toe/README.md)
+* [Tic Tac Toe](Tic_Tac_Toe)
 井字棋游戏
 
-* [common](common/README.md)
+* [common](common)
 存放共用文件
 
 ## 集成开发环境
@@ -72,4 +72,4 @@ ASCII图像查看器和视频播放器
 
 ## 文档更新日期
 
-2023年11月24日
+2023年11月25日
