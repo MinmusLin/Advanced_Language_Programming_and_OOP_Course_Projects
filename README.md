@@ -11,7 +11,7 @@ A collection of my C++ projects.
 > Relevant courses
 > * Advanced Language Programming 2023 (2023年同济大学高级语言程序设计)
 > * Object-Oriented Programming 2023 (2023年同济大学面向对象程序设计)
-> * Programing Paradigm 2023 (2023年同济大学程序设计范式)
+> * Programing Paradigms 2023 (2023年同济大学程序设计范式)
 
 ## 解决方案项目组成
 
@@ -72,4 +72,4 @@ ASCII图像查看器和视频播放器
 
 ## 文档更新日期
 
-2024年1月13日
+2024年1月29日
