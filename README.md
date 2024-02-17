@@ -8,7 +8,7 @@ My_Cpp_Projects
 
 A collection of my advanced language programming and object-oriented programming course projects, supplemented by additional C++ projects.
 
-2023年同济大学高级语言程序设计和2023年同济大学面向对象程序设计课程项目合集，以及额外的 C++ 项目。
+2023年同济大学高级语言程序设计和2023年同济大学面向对象程序设计课程项目合集，以及额外的C++项目。
 
 > Relevant courses
 > * Advanced Language Programming 2023 (2023年同济大学高级语言程序设计)
