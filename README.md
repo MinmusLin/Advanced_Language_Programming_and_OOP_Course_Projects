@@ -13,7 +13,6 @@ A collection of my C++ projects.
 > Relevant courses
 > * Advanced Language Programming 2023 (2023年同济大学高级语言程序设计)
 > * Object-Oriented Programming 2023 (2023年同济大学面向对象程序设计)
-> * Programing Paradigms 2023 (2023年同济大学程序设计范式)
 
 ## 解决方案项目组成
 
@@ -34,9 +33,6 @@ ASCII图像查看器和视频播放器
 
 * [Gluttonous Snake](Gluttonous_Snake)
 贪吃蛇游戏
-
-* [Gomoku](Gomoku)
-五子棋AI对战程序
 
 * [Hanoi Tower Demonstration](Hanoi_Tower_Demonstration)
 汉诺塔综合演示解决方案
