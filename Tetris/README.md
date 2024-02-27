@@ -34,7 +34,7 @@ Tetris
 
 ### 资源文件
 
-* `data文件夹`
+* `/data`
 存放项目所需的资源文件
 
   * `game_rules.png`
@@ -476,4 +476,4 @@ const std::vector<std::vector<std::vector<std::vector<int>>>> blockLimits = {
 
 ## 文档更新日期
 
-2023年11月21日
+2024年2月27日

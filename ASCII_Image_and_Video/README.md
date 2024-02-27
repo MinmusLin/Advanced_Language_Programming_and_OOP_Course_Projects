@@ -66,13 +66,13 @@ ASCII图像查看器和视频播放器
 
 ### 资源文件
 
-* `images文件夹`
+* `/images`
 存放图像查看的示例图像
 
   * `demo.jpg`
   示例图像
 
-* `videos文件夹`
+* `/videos`
 存放视频播放的示例视频
 
   * `complete_demo.mp4`
@@ -562,4 +562,4 @@ PlaySoundA(filename, NULL, SND_FILENAME | SND_ASYNC);
 
 ## 文档更新日期
 
-2023年11月21日
+2024年2月27日

@@ -52,7 +52,7 @@ Hanoi_Tower_Demonstration
 
 ### 资源文件
 
-* `assets文件夹`
+* `/assets`
 存放 `README.md` 文件所需的相关图片资源
 
 ## 项目技术细节
@@ -128,4 +128,4 @@ void hanoi(int n, char src, char tmp, char dst)
 
 ## 文档更新日期
 
-2023年11月21日
+2024年2月27日

@@ -57,7 +57,7 @@ Matrix_Operations_and_Image_Processing
 
 ### 资源文件
 
-* `images文件夹`
+* `/images`
 存放图像处理的示例图像
 
   * `demo.jpg`
@@ -190,4 +190,4 @@ int calculate_Otsu_threshold(Mat grayImage, int height, int width)
 
 ## 文档更新日期
 
-2023年11月21日
+2024年2月27日

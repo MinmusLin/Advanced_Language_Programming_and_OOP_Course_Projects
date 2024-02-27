@@ -50,7 +50,7 @@ Simulated_LED_Screen
 * `lib_hdc_tools.lib`
 图形界面绘制函数工具集的静态链接库
 
-* `HZK文件夹`
+* `/HZK`
 存放GB2312对应的中文汉字库
 
   * `HZK16.dat`
@@ -459,4 +459,4 @@ tt = localtime(&current_time);
 
 ## 文档更新日期
 
-2023年11月21日
+2024年2月27日
