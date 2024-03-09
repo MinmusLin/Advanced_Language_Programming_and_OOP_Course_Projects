@@ -10,7 +10,7 @@ A collection of my advanced language programming and object-oriented programming
 
 2023年同济大学高级语言程序设计和2023年同济大学面向对象程序设计课程项目合集，以及额外的C++项目。
 
-> Relevant courses
+> ***Relevant courses***
 > * Advanced Language Programming 2023 (2023年同济大学高级语言程序设计)
 > * Object-Oriented Programming 2023 (2023年同济大学面向对象程序设计)
 
@@ -70,4 +70,4 @@ ASCII图像查看器和视频播放器
 
 ## 文档更新日期
 
-2024年2月17日
+2024年3月10日
