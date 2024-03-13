@@ -66,13 +66,13 @@ ASCII图像查看器和视频播放器
 
 ## 相关文件
 
-*[Course Handout](Course_Handout.pdf)
+* [Course Handout](Course_Handout.pdf)
 课程讲义
 
-*[Basic Knowledge Assignments](Basic_Knowledge_Assignments.pdf)
+* [Basic Knowledge Assignments](Basic_Knowledge_Assignments.pdf)
 基础知识题
 
-*[Basic Usage of VS2022 Debugging Tools](Basic_Usage_of_VS2022_Debugging_Tools.pdf)
+* [Basic Usage of VS2022 Debugging Tools](Basic_Usage_of_VS2022_Debugging_Tools.pdf)
 Visual Studio 2022 调试工具的基本使用方法
 
 ## 集成开发环境
