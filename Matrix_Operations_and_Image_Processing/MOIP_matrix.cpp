@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <iomanip>
-#include "..\common\cmd_console_tools.h"
+#include "../common/cmd_console_tools.h"
 #include "MOIP.h"
 
 /* Namespace */

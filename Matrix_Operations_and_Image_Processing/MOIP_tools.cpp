@@ -10,7 +10,7 @@
 #include <iostream>
 #include <conio.h>
 #include <Windows.h>
-#include "..\common\cmd_console_tools.h"
+#include "../common/cmd_console_tools.h"
 #include "MOIP.h"
 
 /* Namespace */

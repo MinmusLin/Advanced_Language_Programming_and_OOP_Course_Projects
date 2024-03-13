@@ -10,7 +10,7 @@
 #include <cmath>
 #include <Windows.h>
 #include <conio.h>
-#include "..\common\cmd_console_tools.h"
+#include "../common/cmd_console_tools.h"
 #include "lovecode.h"
 #include "pixel_matrixs.h"
 

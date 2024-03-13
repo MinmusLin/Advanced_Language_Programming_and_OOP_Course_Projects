@@ -10,7 +10,7 @@
 #include <conio.h>
 #include <iomanip>
 #include <Windows.h>
-#include "..\common\cmd_console_tools.h"
+#include "../common/cmd_console_tools.h"
 #include "hanoi.h"
 
 /* Namespace */

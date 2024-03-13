@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <conio.h>
-#include "..\common\cmd_console_tools.h"
+#include "../common/cmd_console_tools.h"
 #include "popstar.h"
 
 /* Namespace */

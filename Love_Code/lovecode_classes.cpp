@@ -7,7 +7,7 @@
  ****************************************************************/
 
 #include <iostream>
-#include "..\common\cmd_console_tools.h"
+#include "../common/cmd_console_tools.h"
 #include "lovecode.h"
 #include "pixel_matrixs.h"
 
