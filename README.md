@@ -1,8 +1,8 @@
-# My Cpp Projects
+# Advanced Language Programming and OOP Course Projects
 
 ## 解决方案名称
 
-My_Cpp_Projects
+Advanced_Language_Programming_and_OOP_Course_Projects
 
 ## 解决方案简介
 
@@ -81,4 +81,4 @@ Visual Studio 2022 调试工具的基本使用方法
 
 ## 文档更新日期
 
-2024年4月15日
+2024年6月6日
