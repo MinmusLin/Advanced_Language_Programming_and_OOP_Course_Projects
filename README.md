@@ -8,7 +8,7 @@ Advanced_Language_Programming_and_OOP_Course_Projects
 
 A collection of my advanced language programming and object-oriented programming course projects, and additional C++ projects.
 
-2023年同济大学高级语言程序设计和2023年同济大学面向对象程序设计课程项目合集，以及额外的C++项目。
+2023年同济大学高级语言程序设计和2023年同济大学面向对象程序设计课程项目合集，以及额外的 C++ 项目。
 
 > ***Relevant courses***
 > * Advanced Language Programming 2023 (2023年同济大学高级语言程序设计)
@@ -81,4 +81,4 @@ Visual Studio 2022 调试工具的基本使用方法
 
 ## 文档更新日期
 
-2024年6月6日
+2024年6月7日
