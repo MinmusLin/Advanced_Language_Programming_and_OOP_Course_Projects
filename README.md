@@ -17,10 +17,10 @@ A collection of my advanced language programming and object-oriented programming
 ## 解决方案项目组成
 
 * [2048 Game](2048_Game)
-2048游戏
+2048 游戏
 
 * [ASCII Image and Video](ASCII_Image_and_Video)
-ASCII图像查看器和视频播放器
+ASCII 图像查看器和视频播放器
 
 * [Clock](Clock)
 钟表的实现
@@ -53,7 +53,7 @@ ASCII图像查看器和视频播放器
 人民币转大写
 
 * [Simulated LED Screen](Simulated_LED_Screen)
-模拟LED显示屏
+模拟 LED 显示屏
 
 * [Tetris](Tetris)
 俄罗斯方块游戏
@@ -72,6 +72,12 @@ ASCII图像查看器和视频播放器
 * [Basic Knowledge Assignments](Basic_Knowledge_Assignments.pdf)
 基础知识题
 
+* [C++ Coding Style and Standards](C++_Coding_Style_and_Standards.pptx)
+C++ 代码风格与规范
+
+* [Course Experience Sharing Lecture](Course_Experience_Sharing_Lecture.pptx)
+课程经验分享讲座（勤学加油站高程场）
+
 * [Basic Usage of VS2022 Debugging Tools](Basic_Usage_of_VS2022_Debugging_Tools.pdf)
 Visual Studio 2022 调试工具的基本使用方法
 
@@ -87,4 +93,4 @@ The code and materials contained in this repository are intended for personal le
 
 ## 文档更新日期
 
-2024年6月12日
+2025年3月16日
